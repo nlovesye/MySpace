@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy3</title>
+    <script>
+    window.onload;
+    var x,y;
+    // var arr=document.getElementById('txt').value;
+    // arr=prompt("输入一个数组(如[12,23,2,12,32,23,5])：");
+    var arr=[12,23,2,12,32,23,5];
+    for(var i=0;i<arr.length;i++)
+    {
+        x=arr[i];
+        for(var j=i+1;j<arr.length;j++)
+        {
+            
+            y=arr[j];
+            if(y==x)
+            {
+                arr.splice(j,1);
+            }
+        }
+
+    }
+    document.write(arr);
+    // alert(arr.lentgh);
+    // alert(arr[1]);
+    </script>
+</head>
+<body>
+    <h2>题目：删除重复的数组元素.如：【12,23,2,12,32,23,5】输出【12,23,2,32,5】</h2>
+    <!-- <form action="">
+        输入数据：<input type="text" id="txt"> <button onclick="show()">点击查看结果</button>
+    </form> -->
+</body>
+</html>

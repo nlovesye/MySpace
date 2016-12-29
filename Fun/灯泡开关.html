@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    function a(){
+        var x=document.getElementById("img");
+        if(x.src.match("bulboff")){
+            x.src="images/pic_bulbon.gif";
+        }
+        else
+        {
+            x.src="images/pic_bulboff.gif";
+        }
+    }
+</script>
+<img id="img" src="images/pic_bulboff.gif" onclick="a()" alt="" />    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>输入数字</p>
+    <input id="txt" type="text">
+    <script>
+        function a(){
+            var x=document.getElementById("txt").value;
+            if(x==""||isNaN(x)){
+                alert("不是数字");
+            }
+            else
+            {
+                alert("输入正确");
+            }
+        }
+    </script>
+    <button onclick="a()">点击验证</button>
+</body>
+</html>

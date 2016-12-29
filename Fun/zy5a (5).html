@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy4</title>
+    <script>
+    function show()
+    {
+    window.onload;
+    // var str="37654352565467"
+    var str=document.getElementById("txt").value;
+    if(!isNaN(parseInt(str))&&str!=""&&str!=null)
+    {
+        var len=str.length;
+        var a=len%3;   //余长
+        var result=new Array();
+        var x,y;
+        var i=0;
+        switch(a)
+        {
+        case 1:i=1;
+        break;
+        case 2:i=2;
+        break;
+        default:i=3;
+        }
+        x=str.substr(0,i);
+        result+=x;
+        result+="☆";
+        for(;i<str.length;i+=3)
+        {
+        y=str.substr(i,3);
+        result+=y;
+        result+="☆";
+        }
+        result=result.substr(0,result.length-1);
+        result=result.split("☆");
+        for(var j=0;j<result.length;j++)
+        {
+        result[j]=parseInt(result[j]);
+        }
+        alert("结果为："+result);
+    }
+    else
+    {
+        alert("请输入数字字符");
+    }
+    }
+    </script>
+</head>
+<body>
+    <h2>题目：增加千分符.如：str="37654352565467" 输出【37,654,352,565,467】</h2>
+    <form action="">
+        输入数字：<input type="text" id="txt"> <button onclick="show()">点击查看结果</button>
+    </form>
+</body>
+</html>

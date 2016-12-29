@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提示框加法计算</title>
+    <script>
+    var a=prompt("请输入第一个数：");
+    if (a!=""&&a!=null)
+     {
+        var b=prompt("请输入第二个数：");
+        var result=parseFloat(a)+parseFloat(b);
+        if (isNaN(result)) 
+        {
+            alert("请正确输入数字！");
+        }
+        else{
+            document.write("结果是："+result);
+        }
+     }
+     else
+     {
+        alert("输入错误！");
+     }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

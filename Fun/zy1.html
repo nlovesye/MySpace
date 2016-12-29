@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy1</title>
+    <script>
+    window.onload;
+    var x=0;
+    var max=0;
+    var y=0;
+    var str=prompt("输入字符串：");
+    if(str!=""&&str!=null)
+    {
+    for(var i=0;i<str.length;i++)
+    {
+        for(var j=0;j<str.length;j++)
+        {
+            var ch=str.charAt(i);
+            var look=str.charAt(j);
+            if (look==ch)
+             {
+                x=x+1;
+             }
+        }
+        if(x>max)
+        {
+            max=x;
+            y=i;
+        }
+        // if(x==max)
+        // {
+        //     max=x;
+        //     y=i;
+        //     x=0;
+        //     alert("字符串中出现次数最多的是："+str[y]+"\n"+"出现次数为："+max); 
+        //     break;
+        // }
+        x=0;
+    }
+    alert("字符串中出现次数最多的是："+str[y]+"\n"+"出现次数为："+max);  
+    }
+    else
+    {
+        alert("请输入字符串");
+    }
+    </script>
+</head>
+<body>
+    <h2>题目：查找字符串当中出现最多的字符：如str="qwedsfsefqwe",输出字符:e，出现次数:3次</h2> 
+</body>
+</html>

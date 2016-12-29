@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy5</title>
+    <script>
+    window.onload;
+    var str=prompt("输入带中划线字符串(如border-top-color)：");
+    var y,z,up;
+    // var str="border-top-color";
+    var x=str.indexOf("-");
+    do
+    {
+        y=str.substr(x,2);
+        z=str[x+1];
+        up=z.toUpperCase(z);
+        str=str.replace(y,up);
+        x=str.indexOf("-");
+    }
+    while(x!=-1)
+        document.write(str); 
+    
+    // else
+    // {
+    //     document.write(str);  
+    // }
+
+    </script>
+</head>
+<body>
+    <h2>题目：中划线改小驼峰 如str=border-top-color,输出borderTopColor</h2>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy2</title>
+    <script>
+    window.onload;
+    function show()
+    {
+    var result=new Array();  //存储结果数组
+    var a=new Array();  //存储字符串数组 
+    // var str="hgo3476H5course75";
+    // var str=prompt("输入字符串：");
+    var str=document.getElementById('txt').value;
+    if(str!=""&&str!=null)
+    {
+            for(var i=0;i<str.length;i++)
+        {  
+            if(!isNaN(str[i]))
+            {
+                a+=str[i];
+                if(!isNaN(str[i])&&isNaN(str[i+1]))
+                {
+                    a+="☆";   //插入分隔符
+                    
+                }
+            }
+        }
+        a=a.substr(0,a.length-1);    //移除最后分隔符
+        result=a.split("☆");       //将得到的字符串分割并返回数组
+        for(var j=0;j<result.length;j++)  
+        {
+            result[j]=parseInt(result[j]);   //将字符串数组转成数字类型的数组
+        }
+        alert("结果为："+result);
+        // alert(typeof(result[0]));
+        // alert(result);
+    }
+    else
+    {
+        alert("没有输入内容");
+    }
+}
+    </script>
+</head>
+<body>
+    <h2>题目：返回一个只包含数字类型的数组：如str="hgo3476H5course75",输出【3476,5,75】</h2>
+    <form action="">
+    输入字符串：<input type="text" id="txt"> <button onclick="show()">点击查看结果</button>
+    </form>
+<!--     <p id="pid">点击上面按钮查看结果</p> -->
+</body>
+</html>

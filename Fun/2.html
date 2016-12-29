@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css日出日落效果</title>
+    <style type="text/css">
+    #box
+    {
+        width: 700px;
+        height: 500px;
+        border: 1px solid black;
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    #box .d1
+    {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -280px;
+        background: yellow;
+        transition: 15s;
+        left: 40%;
+    }
+    #box:hover .d1
+    {
+        transform: translateY(-700px);
+    }
+    </style>
+</head>
+<body>
+    <div id="box">把鼠标移入框内看日出日落
+        <div class="d1"></div>
+    </div>
+</body>
+</html>
