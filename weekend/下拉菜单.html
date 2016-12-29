@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .d1
+    {
+        width: 150px;
+        padding-bottom: 20px;
+        background: rgba(0,0,200,0.1);
+    }
+    ul
+    {
+        overflow: hidden;
+        border-bottom: 4px solid pink;
+    }
+    .btn
+    {
+        width: 40px;
+        height: 40px;
+        background: pink;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        font-weight: 700;
+        font-size: 52px;
+        color: #fff;
+        font-family: "黑体";
+        margin: -20px auto 0;
+        cursor: pointer;
+    }
+    li
+    {
+        list-style: none;  
+        line-height: 26px;
+    }
+    a
+    {
+        text-decoration: none; 
+    }
+    .u1
+    {
+        height: 238px;
+    }
+    </style>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        var bt = 0;
+        $(".btn").click(function()
+            {
+                if(bt == 0)
+                {
+                    $(this).prev().animate({
+                        height:330
+                    },function()
+                    {
+                        $(this).next().html("-");
+                        bt = 1;
+                    });
+                }
+                else
+                {
+                    $(this).prev().animate({
+                    height:238
+                },function()
+                {
+                    $(this).next().html("+");
+                    bt = 0;
+                });
+                }
+            });
+    })
+    </script>
+</head>
+<body>
+    <div class="d1">
+        <ul class="u1">
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+        </ul>
+        <div class="btn">+</div>
+    </div>
+</body>
+</html>

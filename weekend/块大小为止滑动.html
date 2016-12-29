@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>块大小位置滑动</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .box
+    {
+        width: 970px;
+        height: 500px;
+        border: 2px solid orange;
+        margin: 70px auto;
+    }
+    .box div h2
+    {
+        text-align: center;
+        font-size: 52px;
+        color: orange;
+        line-height: 180px;
+    }
+    .box div
+    {
+        width: 130px;
+        height: 180px;
+        background: pink;
+        bottom: 0;
+        float: left;
+        margin-top: 320px;
+        border-radius: 12px 12px 0 0;
+    }
+    .box .d1,.box .d2,.box .d3
+    {
+        margin-right: 10px;
+    }
+    </style>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {       
+        $(".box div").hover(function()
+            {
+                if($(this).index() == 0)
+                {
+                    $(this).stop().animate({
+                        width: 250,
+                        height: 500,
+                        marginTop: 0,
+                        marginLeft: (3 - $(this).index()) * 100
+                    }).siblings().stop().animate({
+                        width: 130,
+                        height: 180,
+                        marginTop: 320
+                    });
+                }
+                else
+                {
+                    $(this).siblings().stop().animate({
+                        width: 130,
+                        height: 180,
+                        marginTop: 320
+                    });
+                    $(this).stop().animate({
+                        width: 250,
+                        height: 500,
+                        marginTop: 0
+                    }).siblings(".d1").stop().animate({
+                        width: 130,
+                        height: 180,
+                        marginTop: 320,
+                        marginLeft: (3 - $(this).index()) * 100
+                    });
+                }
+            });
+    })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="d1"><h2>0</h2></div>
+        <div class="d2"><h2>1</h2></div>
+        <div class="d3"><h2>2</h2></div>
+        <div class="d4"><h2>3</h2></div>
+    </div>
+</body>
+</html>
