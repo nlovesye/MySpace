@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>秒表</title>
+    <style>
+    p
+    {
+        font-size: 32px;
+        font-weight: bold;
+        color: #ff6666;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var p = document.getElementsByTagName("p")[0];
+        var str = p.innerHTML;
+        var str1 = parseInt(str[0]), 
+        str2 = parseInt(str[1]), 
+        str3 = parseInt(str[3]), 
+        str4 = parseInt(str[4]), 
+        str5 = parseInt(str[6]), 
+        str6 = parseInt(str[7]);
+        var start = document.getElementsByTagName("button")[0];
+        var stop = document.getElementsByTagName("button")[1];
+        var resert = document.getElementsByTagName("button")[2];
+
+        function add(){
+            str6 += 1;
+            if(str6 == 10){
+                str6 = 0;
+                str5 += 1;
+            }
+            if(str5 == 10){
+                str5 = 0;
+                str4 +=1;
+            }
+            if(str4 == 10){
+                str4 = 0;
+                str3 +=1;
+            }
+            if(str3 == 6){
+                str3 = 0;
+                str2 +=1;
+            }
+            if(str2 == 10){
+                str2 = 0;
+                str1 += 1;
+            }
+            if(str1 == 10){
+                clearInterval(t);
+            }
+            p.innerHTML = "" + str1 + str2 + ":" + str3 + str4 + ":" + str5 + str6 + "";
+        }
+
+        var x = 0;
+        var t = null;
+        start.onclick = function(){
+            x += 1;
+            if(x == 2){
+                x = 0;
+                clearInterval(t);
+                p.innerHTML = "" + str1 + str2 + ":" + str3 + str4 + ":" + str5 + str6 + "";
+            }else{
+                t = setInterval(function(){
+                add();
+            },10);
+            }
+        }
+
+        stop.onclick = function(){
+            x = 0;
+            clearInterval(t);
+            str1 = 0;
+            str2 = 0;
+            str3 = 0;
+            str4 = 0;
+            str5 = 0;
+            str6 = 0;
+            p.innerHTML = "" + str1 + str2 + ":" + str3 + str4 + ":" + str5 + str6 + "";
+        }
+
+        resert.onclick = function(){
+            // clearInterval(t);
+            x = 0;
+            str1 = 0;
+            str2 = 0;
+            str3 = 0;
+            str4 = 0;
+            str5 = 0;
+            str6 = 0;
+            p.innerHTML = "" + str1 + str2 + ":" + str3 + str4 + ":" + str5 + str6 + "";
+        }
+    }
+    </script>
+</head>
+<body>
+    <p>00:00:00</p>
+    <button>开始/暂停计时</button>
+    <button>停止计时</button>
+    <button>重置</button>
+</body>
+</html>

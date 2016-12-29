@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy1</title>
+    <script>
+    window.onload = function()
+    {
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var str = document.getElementById("txt").value;
+            if(str.length < 6){
+                alert("不符合要求");
+            }else{
+                var low1 = /^\d{6,}$/ig,
+                low2 = /^[a-zA-Z]{6,}$/ig;
+                var result1 = str.match(low1),
+                result2 = str.match(low2);
+                if(result1 != null || result2 != null){
+                    alert("低级密码");
+                }else{
+                    alert("中级密码");
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="">
+        <input id="txt" type="text"><input id="btn" type="button" value="按钮">
+    </form>
+    <p>
+        检测密码强度
+        小于6位弹出不符合要求
+        如果大于6位但仅仅是数字或者字母组合的话，弹出低级密码
+        如果大于6位且是字母和数字和下划线的组合，则弹出中级密码
+        以上都忽略大小写，且都是全局匹配。用match这个方法做
+    </p>
+</body>
+</html>

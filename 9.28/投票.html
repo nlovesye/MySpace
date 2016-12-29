@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #txt
+    {
+        width: 1000px;
+        height: 50px;
+        margin: 10px auto;
+    }
+    #txt ul li
+    {
+        list-style: none;
+        float: left;
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+    #box
+    {
+        width: 1000px;
+        height: 500px;
+        border: 1px solid red;
+        margin: 50px auto;
+        margin-bottom: 0;
+        margin-top: 0;
+        overflow: hidden;
+    }
+    #box2
+    {
+        width: 1000px;
+        height: 50px;
+        margin: 10px auto;
+    }
+    #box2 ul li
+    {
+        list-style: none;
+        width: 197px;
+        height: 48px;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        color: #f66;
+        border: 1px solid red;
+        margin-right: 1px;
+    }
+    #box div
+    {
+        width: 200px;
+        height: 500px;
+        float: left;
+        position: relative;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("box");
+        var box2 = document.getElementById("box2");
+        var btn = box2.getElementsByTagName("li");
+        var txt = document.getElementById("txt");
+        var d = box.getElementsByTagName("div");
+        function add(x,y){
+            var i = 0;
+            return function(){
+                i++;
+                var bk = document.createElement("div");
+                var num = txt.getElementsByTagName("li"); 
+                bk.style.width = "160px";
+                bk.style.height = "16px";
+                bk.style.background = "url(images/1.png) no-repeat";
+                bk.style.position = "absolute";
+                bk.style.left = "20px";
+                bk.style.bottom = (i-1) * 18 + "px";
+                x.appendChild(bk);
+                num[y].innerHTML = "获得" + i + "票";
+            }
+        }
+        add();
+        var arr = [];
+        arr[0] = add(d[0],0),
+        arr[1] = add(d[1],1),
+        arr[2] = add(d[2],2),
+        arr[3] = add(d[3],3),
+        arr[4] = add(d[4],4);
+        for(var i=0;i<5;i++){
+            btn[i].onclick = arr[i];
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="txt">
+        <ul>
+            <li>获得0票</li>
+            <li>获得0票</li>
+            <li>获得0票</li>
+            <li>获得0票</li>
+            <li>获得0票</li>
+        </ul>
+    </div>
+    <div id="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="box2">
+        <ul>
+            <li id="btn1">投票</li>
+            <li id="btn2">投票</li>
+            <li id="btn3">投票</li>
+            <li id="btn4">投票</li>
+            <li id="btn5">投票</li>
+        </ul>
+    </div>
+</body>
+</html>

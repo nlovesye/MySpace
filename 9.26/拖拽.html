@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+    #box
+    {
+        width: 200px;
+        height: 200px;
+        background: yellow;
+        border: 1px solid #f66;
+        position: absolute;
+        left: 46%;
+        top: 12%;
+    }
+    #Box
+    {
+        width: 1200px;
+        height: 700px;
+        border: 1px solid red;
+        margin: 50px auto;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("box"); 
+        box.addEventListener("mousedown",function(e){
+            var even = e || window.event;
+            var left = even.clientX - parseInt(box.offsetLeft),
+            top = even.clientY - parseInt(box.offsetTop);
+            document.onmousemove = function move(even){
+                var even = even || window.event;
+                box.style.left = even.clientX - left  + "px";
+                box.style.top = even.clientY - top + "px";
+                var bl = parseInt(box.style.left),
+                bt = parseInt(box.style.top);
+                var maxw = 1720;
+                maxh = 776;
+                if(bl < 360){
+                    box.style.left = 360 + "px";
+                }
+                if(bl > 1360){
+                    box.style.left = 1360 + "px";
+                }
+                if(bt < 51){
+                    box.style.top = 51 + "px";
+                }
+                if(bt > 551){
+                    box.style.top = 551 + "px";
+                }
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        });
+    }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="Box"></div>
+</body>
+</html>

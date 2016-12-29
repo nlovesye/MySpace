@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy2</title>
+    <script>
+    window.onload = function()
+    {
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var p = document.getElementById("pid");
+            var str = document.getElementById("txt").value;
+            var pattern = /\d+/g;
+            var result = str.match(pattern);
+            for(var i=0;i<result.length;i++){
+                result[i] = parseInt(result[i]);
+            }
+            // p.innerHTML = result + "<br />" + typeof(result[0]) + "<br />" + result.length;
+            p.innerHTML = "结果为：" + result;
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="">
+        <input id="txt" type="text"><input id="btn" type="button" value="按钮">
+    </form>
+    <p>
+        题目：返回一个只包含数字类型的数组,如输入:123sdasd213,返回123,213
+    </p>
+    <p id="pid"></p>
+</body>
+</html>

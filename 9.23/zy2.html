@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>秒表</title>
+    <script>
+    window.onload = function()
+    {
+        var start = document.getElementsByTagName("button")[0];
+        var stop = document.getElementsByTagName("button")[1];
+        var resert = document.getElementsByTagName("button")[2];
+        var h = document.getElementsByTagName("h1")[0];
+        var m = h.getElementsByTagName("span")[0];
+        var s = h.getElementsByTagName("span")[1];
+        var f = h.getElementsByTagName("span")[2];
+        var i = 0 , j = 0 , k = 0;
+        var t1,t2,t3;
+        function add1(){
+            i += 1;
+            if(i<10){
+                m.innerHTML = "0" + i;
+            }else{
+                m.innerHTML = i;
+            }
+            if(i>=59){
+                i = -1;
+            }
+        }
+        function add2(){
+            j += 1;
+            if(j<10){
+                s.innerHTML = "0" + j;
+            }else{
+                s.innerHTML = j;
+            }
+            if(j>=59){
+                j = -1;
+            }
+        }
+        function add3(){
+            k += 1;
+            if(k<10){
+                f.innerHTML = "0" + k;
+            }else{
+                f.innerHTML = k;
+            }
+            if(k>=99){
+                k = -1;
+            }
+        }
+        start.onclick = function(){
+                t1 = setInterval(function(){
+                add1();
+            },60000);
+                t2 = setInterval(function(){
+                add2();
+            },1000);
+                t3 = setInterval(function(){
+                add3();
+            },1000);
+        }
+        stop.onclick = function(){
+            clearInterval(t1);
+            clearInterval(t2);
+            clearInterval(t3);
+        }
+        resert.onclick = function(){
+            clearInterval(t1);
+            clearInterval(t2);
+            clearInterval(t3);
+            i = 0; j = 0; k = 0;
+            m.innerHTML = "00";
+            s.innerHTML = "00";
+            f.innerHTML = "00";
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1><span>00</span>:<span>00</span>:<span>00</span></h1>
+    <button>开始计时</button>
+    <button>停止计时</button>
+    <button>重置</button>
+</body>
+</html>

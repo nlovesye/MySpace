@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第三题</title>
+    <script>
+    function show()
+    {
+        var txt=document.getElementById('pid');
+        var l=0;     //第i次落地时经过的距离
+        var h=100;  //起始高度
+        for(var i=1;i<=10;i++)
+        {
+            l+=h*2;
+            h=h/2;
+        }
+        l=l-100;
+        txt.innerHTML="小球第"+(i-1)+"次落地时，共经过"+l+"米，反弹"+h+"米";
+    }
+    </script>
+</head>
+<body>
+    <p>题目：一球从100米高度自由落下，每次落地后反跳回原高度的一半；再落下，求它在第10次落地时，共经过多少米？第10次反弹多高？</p>
+    <form action="">
+        <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid">点击上面按钮查看结果</p>
+</body>
+</html>

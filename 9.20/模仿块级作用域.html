@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模仿块级作用域</title>
+    <script>
+    function demo() {
+        (function() {
+            for(var i=0;i<5;i++){
+                alert(i);         //
+            }
+        })();           //马上执行，执行完后会销毁里面变量，如i
+        alert(i);    //
+    }
+    demo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy3</title>
+    <script>
+    function show() {
+    var sum = 0;
+    for(var i=0;i<100;i++) {
+        sum += Math.floor(Math.random()*10);
+    }
+    document.getElementById('pid').innerHTML = "100个0-9的随机数之和" + sum;
+    }
+    </script>
+</head>
+<body>
+    <p>求100个随机数之和，随机数要求为0—9的整数。</p>
+    <form action="">
+        <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid"></p>
+</body>
+</html>

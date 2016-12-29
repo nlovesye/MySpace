@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右下角悬浮框</title>
+    <style>
+    #d1
+    {
+        width: 5000px;
+        height: 5000px;
+    }
+    #box
+    {
+        width: 200px;
+        height: 250px;
+        border: 1px solid red;
+        position: absolute;
+        right: 20px;
+        top: 700px;
+        text-align: center;
+        font-size: 26px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("box");
+        window.onscroll = function(){
+            var lt = document.documentElement.scrollTop = document.body.scrollTop;
+            var ll = document.documentElement.scrollLeft = document.body.scrollLeft;
+            var h = document.documentElement.clientHeight;
+            var w = document.documentElement.clientWidth;
+            box.style.top = h + lt - box.offsetHeight - 20 + "px";
+            box.style.left = w + ll - box.offsetWidth - 20 + "px"; 
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="box">悬浮框</div>
+</body>
+</html>

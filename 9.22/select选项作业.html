@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择英雄</title>
+    <script>
+    window.onload = function() {
+        var slc1 = document.getElementById('slc1');
+        slc1.onchange = function change(){
+            var slc2 = document.getElementById('slc2');
+            var slc3 = document.getElementById('slc3');
+            var hero = [
+                ["诺克萨斯之手" , "亡灵战神" , "放逐之刃" , "策士统领" , "首领之傲" , "不祥之刃" , "魔蛇之拥" , "诡术妖姬" , "猩红收割者" , "刀锋之影" , "黑暗之女" , "荣耀行刑官"],
+                ["德玛西亚皇子" , "德玛西亚之力" , "德邦总管" , "光辉女郎" , "哨兵之殇" , "暗夜猎手" , "龙血武姬" , "复仇焰魂" , "德玛西亚之翼"],
+                ["天启者" , "暮光之眼" , "暗影之拳" , "刀锋意志" , "众星之子" , "无极剑圣" , "狂暴之心" , "琴瑟仙女" , "野兽之灵" , "惩戒之箭" , "影流之主" , "疾风剑豪" , "九尾妖狐"],
+                ["迅捷斥候" , "钢铁大使" , "麦林炮手" , "大发明家" , "机械公敌" , "殇之木乃伊" , "英勇投弹手" , "邪恶小法师"],
+                ["嗜血猎手" , "炼金术士" , "末日使者" , "瘟疫之源" , "祖安狂人" , "蒸汽机器人" , "风暴之怒" , "生化魔人" , "时间刺客"],
+                ["法外狂徒" , "海洋之灾" , "潮汐海灵" , "赏金猎人"],
+                ["审判天使" , "堕落天使"],
+                ["寒冰射手" , "雪人骑士" , "冰晶凤凰" , "雷霆咆哮" , "蛮族之王"],
+                ["寡妇制造者" , "金属大师"],
+                ["战争之王" , "曙光女神"],
+                ["战争女神" , "武器大师"],
+                ["探险家" , "皮城女警"],
+                ["时光守护者"],
+                ["水晶先锋"],
+                ["荒漠屠夫" , "沙漠死神"],
+                ["牛头酋长" , "酒桶" , "狂野女猎手"],
+                ["卡牌大师"],
+                ["盲僧"]
+            ];
+            var heroName = [
+                ["德莱厄斯" , "赛恩" , "瑞文" , "斯维因" , "厄加特" , "卡特琳娜" , "卡西奥配娅" , "乐芙兰" , "弗拉基米尔" , "泰隆" , "安妮" , "德莱文"],
+                ["嘉文四世" , "盖伦" , "赵信" , "拉克丝" , "加里奥" , "薇恩" , "希瓦娜" , "布兰德" , "奎因"],
+                ["卡尔玛"],
+                ["提莫"],
+                ["沃里克"],
+                ["格雷福斯"],
+                ["凯尔" , "莫甘娜"],
+                ["艾希"],
+                ["伊芙琳"],
+                ["潘森"],
+                ["希维尔" , "贾克斯"],
+                ["伊泽瑞尔"],
+                ["基兰"],
+                ["斯卡纳"],
+                ["雷克顿"],
+                ["阿利斯塔"],
+                ["崔斯特"],
+                ["李青"]
+            ];
+            slc2.length = 1;
+            var add = hero[slc1.selectedIndex-1];
+            for(var i=0;i<add.length;i++) {
+                slc2[i+1] = new Option(add[i],add[i]);
+            }
+
+            // slc2.onchange = function(){
+                slc3.length = 1+1;
+                var add2 = heroName[slc1.selectedIndex-1];
+                for(var i=0;i<add2.length;i++){
+                    slc3[i+1] = new Option(add2[i],add2[i]);
+                }
+                slc2.onchange = function() {
+                    // for(var i=0;i<add2.length;i++){
+                        slc3[slc2.selectedIndex].selected = "selected";
+                    // }
+                }
+            // }
+        }
+    }
+    </script>
+</head>
+<body>
+    <select name="" id="slc1">
+        <option value="0">选择阵营</option>
+        <option value="诺克萨斯">诺克萨斯</option>
+        <option value="德玛西亚">德玛西亚</option>
+        <option value="艾欧尼亚">艾欧尼亚</option>
+        <option value="约德尔人">约德尔人</option>
+        <option value="祖安">祖安</option>
+        <option value="比尔吉沃特港">比尔吉沃特港</option>
+        <option value="未知世界">未知世界</option>
+        <option value="弗雷尔卓德">弗雷尔卓德</option>
+        <option value="暗影岛">暗影岛</option>
+        <option value="斯坦帕部落">斯坦帕部落</option>
+        <option value="雇佣兵">雇佣兵</option>
+        <option value="皮特沃夫">皮特沃夫</option>
+        <option value="厄尔提斯坦">厄尔提斯坦</option>
+        <option value="壳人族">壳人族</option>
+        <option value="遥远的世界">遥远的世界</option>
+        <option value="宏伟屏障">宏伟屏障</option>
+        <option value="吉普赛人">吉普赛人</option>
+        <option value="中国">中国</option>
+    </select>
+    <select name="英雄" id="slc2">
+        <option value="0">可选英雄</option>
+    </select>
+    <select name="英雄名" id="slc3">
+        <option value="0">英雄名</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    #box{
+        width: 368px;
+        height: 368px;
+        margin: 20px auto;
+        border:4px solid green;
+        background: url(images/淘宝焦点图/f0.jpg) no-repeat;
+    }
+    #nav
+    {
+        width: 540px;
+        height: 100px;
+        margin: 26px auto;
+    }
+    #nav ul li
+    {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+    #nav ul li img
+    {
+        border: 2px solid green;
+    }
+    </style>
+    <script>
+    window.onload = function(){
+        var box = document.getElementById("box");
+        var li = document.getElementsByTagName("img");
+        for(var i = 0;i<li.length;i++){
+            li[i].index = i;
+            li[i].onmouseover = function(){
+                for(var j = 0;j<li.length;j++){
+                    li[j].style.border = "2px solid green";
+                }
+                this.style.border = "2px solid #f60";
+                box.style.background = "url(images/淘宝焦点图/f" + this.index + ".jpg";
+            }
+
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="nav">
+        <ul>
+            <li><img src="images/淘宝焦点图/f0.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f1.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f2.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f3.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f4.jpg" width="100" height="100" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

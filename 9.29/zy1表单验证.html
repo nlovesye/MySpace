@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <script>
+    window.onload = function()
+    {
+        var e = document.getElementsByName("email")[0];
+        var pass1 = document.getElementsByName("password")[0];
+        var pass2 = document.getElementsByName("password")[1];
+        var btn = document.getElementsByName("btn")[0];
+        function use(){
+            var evalue = e.value;
+            var p1 = document.getElementById("p1");
+            var reg1 = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+            if(evalue == "" || !reg1.test(evalue)){
+                p1.innerHTML = "Email错误";
+                e.style.borderColor = "red";
+                return false;
+            }
+            else
+            {
+                p1.innerHTML = "Email验证成功";
+                e.style.borderColor = "green";
+                return true;
+            }
+        }
+        function ps1(){
+            var m1 = pass1.value;
+            var p2 = document.getElementById("p2");
+            var reg2 = /^(?=.*[a-z].*)(?=.*[A-Z].*)(?=.*\w.*).{6,12}$/;
+            if(m1 == "" || !reg2.test(m1)){
+                p2.innerHTML = "密码错误";
+                pass1.style.borderColor = "red";
+                return false;   
+            }
+            else{
+                p2.innerHTML = "密码验证成功";
+                pass1.style.borderColor = "green";
+                return true;
+            }
+        }
+        function ps2(){
+            var m1 = pass1.value;
+            var m2 = pass2.value;
+            var p3 = document.getElementById("p3");
+            if(m2 == "" || m1 !== m2){
+                p3.innerHTML = "两次输入密码不一致";
+                pass2.style.borderColor = "red";
+                return false;
+            }
+            else{
+                p3.innerHTML = "正确";
+                pass2.style.borderColor = "green";
+                return true;
+            }
+        }
+
+        e.onblur = function(){
+            use();
+        }        
+        pass1.onblur = function(){
+            ps1();
+        }
+        pass2.onblur = function(){
+            ps2();
+        }
+        var fm = document.getElementsByName("fm")[0];
+        fm.onsubmit = function(){
+            return (use() && ps1() && ps2());
+        };
+    }
+    </script>
+</head>
+<body>
+    <form action="1.html" name="fm">
+        邮箱：<input type="text" name="email" placeholder="请输入邮箱"><span id="p1"></span><br><br>
+        密码：<input type="password" name="password"><span id="p2"></span><br><br>
+        再次输入密码：<input type="password" name="password"><span id="p3"></span><br><br>
+        <input type="submit" value="注册" name="btn">
+    </form>
+</body>
+</html>

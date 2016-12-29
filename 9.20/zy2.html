@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy2</title>
+    <script>
+    function show() {
+    var arr = [];
+    for(var i=100;i<1000;i++) {
+        if(Math.pow(parseInt(i/100),3) + Math.pow(((i-i%10)%100)/10,3) + Math.pow(i%10,3) == 1099){
+            arr.push(i);
+        }
+    }
+    document.getElementById('pid').innerHTML = "所有各位数字的立方和等于1099的3位整数是" + arr;
+    }
+    </script>
+</head>
+<body>
+    <p>求出所有各位数字的立方和等于1099的3位整数。</p>
+    <form action="">
+        <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid"></p>
+</body>
+</html>

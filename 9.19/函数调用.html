@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的调用</title>
+</head>
+<body>
+    <p id="pid"></p>
+    // <script>
+    // function myFunction(){
+    //     return this;
+    // }
+    // document.getElementById('pid').innerHTML = myFunction();
+    // </script>
+
+<!-- 函数作为方法调用 -->
+    // <script>
+    // var txt = document.getElementById('pid');
+    // var myObj = {
+    //     firstName: "N",
+    //     lastName: "S",
+    //     fullName: function() {
+    //         return this.firstName + " " + this.lastName;
+    //     }
+    // }
+    // txt.innerHTML = myObj.fullName();
+    // </script>
+
+<!-- 使用构造函数调用函数 -->
+    // <script>
+    // function myFunction(a,b) {
+    //     this.Value1 = a;
+    //     this.Value2 = b;
+    // }
+    // var x = new myFunction(7,11);
+    // document.getElementById('pid').innerHTML = x.Value1 + "." + x.Value2;
+    // </script>
+
+    // <script>
+    // function myFunction(a,b) {
+    //     return a * b;
+    // }
+    // document.getElementById('pid').innerHTML = myFunction.call(myFunction, 7,11);
+    // </script>
+
+    <script>
+    function myFunction(a,b) {
+        return a * b;
+    }
+    myArray = [7,11];
+    document.getElementById('pid').innerHTML = myFunction.apply(myArray, myArray);
+    </script>
+</body>
+</html>

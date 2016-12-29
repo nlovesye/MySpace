@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy1</title>
+    <script>
+    function show() {
+        var arr = [];
+        arr = prompt("输入一组数字（各数字用，分隔)：");
+        arr = arr.split(",");
+        // var Maxnum = arr[0],
+        // Minnum = arr[0];
+        // for(var i=1;i<arr.length;i++) {
+        //     if(arr[i]>=Maxnum){
+        //         Maxnum = arr[i];
+        //     }
+        //     if(arr[i]<=Minnum){
+        //         Minnum = arr[i];
+        //     }
+        // }
+        // // alert(arr.length);
+        // alert("最大数为" + Maxnum + "最小数为" + Minnum);
+        // 
+        // 
+        var fuck = true;
+        for(var i=0;i<arr.length;i++) {
+            if(!isNaN(arr[i])){
+                arr[i] = arr[i];
+            }
+            else{
+                fuck = false;
+            }
+        }
+        if(fuck != false){
+                arr.sort (function(a,b){
+                return a-b;
+            });
+                document.getElementById('pid').innerHTML = arr;
+        }
+        else{
+            alert("请输入数字！");
+        }
+    }
+    </script>
+</head>
+<body>
+    <p>输入5个数，并显示最大的数与最小的数。（只用条件运算符，sort()）</p>
+    <form action="">
+        <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid"></p>
+</body>
+</html>

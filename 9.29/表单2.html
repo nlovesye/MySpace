@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单2</title>
+    <script>
+    window.onload = function()
+    {
+        var user = document.getElementsByName("user")[0];
+        var password = document.getElementsByName("password")[0];
+        var s1 = document.getElementById("s1");
+        s2 = document.getElementById("s2");
+        user.onchange = function(){
+            usertest();
+        }
+        function usertest(){
+            var u = user.value;
+            var reg1 = /^\w{6,12}$/;
+            if(u == "" || !reg1.test(u)){
+                s1.innerHTML = "用户名不合法";
+                user.style.borderColor = "red";
+                return false;
+            }else{
+                s1.innerHTML = "该用户名可用";
+                user.style.borderColor = "green";
+                return true;
+            }
+        }
+        password.onchange = function(){
+            passwordtest();
+        }
+        function passwordtest(){
+            var pass = password.value;
+            var reg2 = /^(?=.*[a-z].*)(?=.*[A-Z].*)(?=.*\d.*).{6,12}$/;
+            if(pass == "" || !reg2.test(pass)){
+                s2.innerHTML = "密码强度不够";
+                password.style.borderColor = "yellow";
+                return false;
+            }else{
+                s2.innerHTML = "正确";
+                password.style.borderColor = "green";
+                return true;
+            }
+        }
+        var fm = document.getElementsByName("fm")[0];
+        fm.onsubmit = function(){
+            return (usertest() && passwordtest());
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="1.html" name="fm">
+        用户名：<input type="text" placeholder="请输入用户名" name="user"><span id="s1"></span><br><br>
+        密码：<input type="password" placeholder="请输入密码" name="password"><span id="s2"></span><br><br>
+        <input type="submit" name="btn">
+    </form>
+</body>
+</html>

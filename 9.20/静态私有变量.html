@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态私有变量</title>
+    <script>
+    (function() {
+        var name = "嘉文四世";              //静态私有变量
+        Hero = function(){
+            Hero.prototype.getName = function() {
+                return name;
+            }
+            Hero.prototype.setName = function(sname) {
+                name = sname;
+            }
+        }
+    })()
+    var h1 = new Hero();
+    alert(h1.getName());
+    h1.setName("盖伦");
+    alert(h1.getName());
+
+    var h2 = new Hero();
+    alert(h2.getName());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

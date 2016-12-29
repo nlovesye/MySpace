@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .box
+    {
+        width: 600px;
+        height: 350px;
+        margin: 30px auto;
+        background: url(images/bg.png);
+        position: relative;
+    }
+    .d1
+    {
+        position: absolute;
+        width: 400px;
+        height: 50px;
+        top: 70px;
+        left: 50%;
+        margin-left: -200px;
+    }
+    .d2
+    {
+        position: absolute;
+        width: 400px;
+        height: 50px;
+        top: 160px;
+        left: 50%;
+        margin-left: -200px;
+    }
+    ul
+    {
+        margin-left: 15px;
+    }
+    ul li
+    {
+        float: left;
+        margin-top: 6px;
+        margin-right: 6px;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        function time() {
+            var t=new Date();
+        var y=t.getFullYear();
+        var y1 = parseInt(y/1000),
+            y2 = parseInt((y-y1*1000)/100),
+            y3 = parseInt((y-y1*1000-y2*100)/10),
+            y4 = y%10;
+        var m=t.getMonth()+1;
+        var m1,m2;
+        if(m<10){
+            m1 = 0;
+            m2 = m;
+        }else{
+            m1 = parseInt(m/10);
+            m2 = m%10;
+        }
+        var d=t.getDate();
+        var d1,d2;
+        if(d<10){
+            d1 = 0;
+            d2 = d;
+        }else{
+            d1 = parseInt(d/10);
+            d2 = d%10;
+        }
+        var h=t.getHours();
+        var h1,h2;
+        if(h<10){
+            h1 = 0;
+            h2 = h;
+        }else{
+            h1 = parseInt(h/10);
+            h2 = h%10;
+        }
+        var min=t.getMinutes();
+        var min1,min2;
+        if(min<10){
+            min1 = 0;
+            min2 = min;
+        }else{
+            min1 = parseInt(min/10);
+            min2 = min%10;
+        }
+        var s=t.getSeconds();
+        var s1,s2;
+        if(s<10){
+            s1 = 0;
+            s2 = s;
+        }else{
+            s1 = parseInt(s/10);
+            s2 = s%10;
+        }
+        var w=t.getDay();
+        switch(w){
+            case 0: w = "seven";
+            break;
+            case 1: w = "one";
+            break;
+            case 2: w = "two";
+            break;
+            case 3: w = "three";
+            break;
+            case 4: w = "four";
+            break;
+            case 5: w = "five";
+            break;
+            default: w = "six";
+        }
+
+        // function checkTime(i)
+        // {
+        //     if(i<10)
+        //     {
+        //         i="0"+i;
+        //     }
+        //     return i;
+        // } 
+        function src(num) {
+            var str1 = "images/",
+            str2 = ".png";
+            return str1 + num +str2;
+        }
+        var img = document.getElementsByTagName('img');
+        img[0].src = src(y1);
+        img[1].src = src(y2);
+        img[2].src = src(y3);
+        img[3].src = src(y4); 
+        img[5].src = src(m1); 
+        img[6].src = src(m2); 
+        img[8].src = src(d1); 
+        img[9].src = src(d2); 
+        img[11].src = src(h1); 
+        img[12].src = src(h2); 
+        img[14].src = src(min1); 
+        img[15].src = src(min2); 
+        img[17].src = src(s1); 
+        img[18].src = src(s2); 
+        img[20].src = src(w); 
+
+        var li = document.getElementsByTagName('li');
+        var j = 180;
+        function trs(){
+            img[18].style.transform = "rotateX(" + j + "deg)"; 
+            j -= 1;
+            if(j == 0){
+                clearInterval(t1);
+                if(j == 0)
+                {
+                    j == 180;
+                }
+            }
+        }
+        var t1 = setInterval(function(){
+            trs();
+        },1)
+        }
+        time();
+        var T = setInterval(function(){
+            time()
+        },1000);
+
+        // var btn = document.getElementById('btn');
+        // btn.onclick = function(){
+        //     if(T==setInterval(function(){time()},1000)){
+        //         clearInterval(T);
+        //     }else{
+        //         T = setInterval(function(){
+        //             time()
+        //         },1000);
+        //     }
+        // }
+        
+    }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="d1">
+            <ul>
+                <li><img src="images/2.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/year.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/month.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/seven.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="d2">
+            <ul>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/sign.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/sign.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/0.png" alt=""></li>
+                <li><img src="images/week.png" alt=""></li>
+                <li><img src="images/one.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+<!--     <button id="btn">按钮</button> -->
+</body>
+</html>

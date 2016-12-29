@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第二题</title>
+    <script>
+    function show()
+    {
+        var txt=document.getElementById('pid');
+        var num=parseInt(document.getElementById('num').value);
+        var x=parseInt(num/100)*parseInt(num/100)*parseInt(num/100);
+        var y=parseInt((num-parseInt(num/100)*100)/10)*parseInt((num-parseInt(num/100)*100)/10)*parseInt((num-parseInt(num/100)*100)/10);
+        var z=parseInt((num-parseInt(num/100)*100)-parseInt((num-parseInt(num/100)*100)/10)*10)*parseInt((num-parseInt(num/100)*100)-parseInt((num-parseInt(num/100)*100)/10)*10)*parseInt((num-parseInt(num/100)*100)-parseInt((num-parseInt(num/100)*100)/10)*10);
+        if(x+y+z==num)
+        {
+            txt.innerHTML=num+"是水仙花数";
+        }
+        else
+        {
+            alert("不是水仙花数");
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="">
+        输入一个三位数：<input type="text" id="num"> <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid">点击按钮查看结果</p>
+</body>
+</html>

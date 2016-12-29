@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    function show()
+    {
+        var p=document.getElementById('pid');
+        p.innerHTML="改变段落。";
+    }
+            var p=document.getElementById("pid");
+    function Sum(x,y)
+    {
+    //     var x=3,y=7;
+        var x,y;
+        var sum=x+y;
+        return sum;
+    }
+    alert("和为："+Sum(6,5));
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid">显示</p>
+</body>
+</html>

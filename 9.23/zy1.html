@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>100条新闻随机显示5条</title>
+    <script>
+    window.onload = function()
+    {
+        var ul = document.getElementsByTagName("ul")[0];
+        var arr = [];
+        for(var i = 0 ; i<100 ; i++){
+            arr[i] = "第" + (i+1) + "条新闻";
+        }
+        var li = document.getElementsByTagName("li");
+        var arr2 = [];
+        while(arr2.length<5){
+            var num = parseInt(Math.random()*100);
+            if(arr2.indexOf(num) == -1){
+                arr2.push(num);
+            }
+        }
+        for(var i = 0 ; i<5 ; i++){
+            li[i].innerHTML = arr[arr2[i]];
+        }
+    }
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

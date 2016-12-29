@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第八题</title>
+    <script>
+    function show()
+    {
+        var txt=document.getElementById('pid');
+        var sum=0;      //完数的个数
+        var x=0;        //判断是否完数和的存储变量
+        var arr=[];
+        for(var i=1;i<1000;i++)
+        {
+            for(var j=1;j<i;j++)
+            {
+                if((i%j)==0)
+                {
+                    x+=j;
+                }
+            }
+            if(i==x)
+            {
+                sum+=1;
+                x=0;
+                arr.push(i);
+            }
+            else
+            {
+                x=0;
+            }   
+        }
+        txt.innerHTML="1000以内的完数个数为"+sum+"，这些数为"+arr;
+    }
+    </script>
+</head>
+<body>
+    <p>一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如6=1＋2＋3.编程。计算出1000以内的完数的个数</p>
+    <form action="">
+        <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid">点击上面按钮查看结果</p>
+</body>
+</html>

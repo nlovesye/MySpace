@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡换图</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    #box{
+        width: 368px;
+        height: 368px;
+        margin: 20px auto;
+        border:4px solid green;
+        background: url(images/淘宝焦点图/f0.jpg) no-repeat;
+    }
+    #nav
+    {
+        width: 540px;
+        height: 100px;
+        margin: 26px auto;
+    }
+    #nav ul li
+    {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+    #nav ul li img
+    {
+        border: 2px solid green;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var img = document.getElementsByTagName('img');
+        var box = document.getElementById('box');
+        var nav = document.getElementById('nav');
+        for(var i=0;i<img.length;i++) {
+            img[i].onmouseover = (function(t){
+                return function(){
+                    box.style.background = "url(images/淘宝焦点图/f" + t + ".jpg)";
+                    box.style.border = "4px solid #f62";
+                    img[t].style.border = "2px solid #f60";
+                    j = t;
+                }
+            })(i)
+            img[i].onmouseout = (function(t){
+                return function(){
+                    // box.style.background = "url(images/淘宝焦点图/f" + t + ".jpg)";
+                    box.style.border = "4px solid green";
+                    img[t].style.border = "2px solid green";
+                }
+            })(i)
+        }
+        function time(y) {
+            box.style.background = "url(images/淘宝焦点图/f" + y + ".jpg)";
+        }
+        var j = 0;
+        time(0);
+        var t = setInterval(function(){
+            time(j);
+            img[j].style.border = "2px solid #f60";
+            for(var i=0;i<5;i++){
+                if(i!=j){
+                    img[i].style.border = "2px solid green";
+                }
+            }
+            j += 1;
+            if(j == 5){j = 0}
+        },2000);
+        box.onmouseover = function(){
+            clearInterval(t);
+        }
+        nav.onmouseover = function(){
+            clearInterval(t);
+        }
+        box.onmouseout = function(){
+            t = setInterval(function(){
+            time(j);
+                        img[j].style.border = "2px solid #f60";
+            for(var i=0;i<5;i++){
+                if(i!=j){
+                    img[i].style.border = "2px solid green";
+                }
+            }
+            j += 1;
+            if(j == 5){j = 0}
+        },2000);
+        }
+        nav.onmouseout = function(){
+            t = setInterval(function(){
+            time(j);
+                        img[j].style.border = "2px solid #f60";
+            for(var i=0;i<5;i++){
+                if(i!=j){
+                    img[i].style.border = "2px solid green";
+                }
+            }
+            j += 1;
+            if(j == 5){j = 0}
+        },2000);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="nav">
+        <ul>
+            <li><img src="images/淘宝焦点图/f0.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f1.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f2.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f3.jpg" width="100" height="100" alt=""></li>
+            <li><img src="images/淘宝焦点图/f4.jpg" width="100" height="100" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

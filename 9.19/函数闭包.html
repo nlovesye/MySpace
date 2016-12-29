@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数闭包</title>
+</head>
+<body>
+    <script>
+    function Add() {
+        var num=0;
+        return function() {
+            num+=1;
+            alert(num);
+        }
+    }
+
+
+// 下面两种不同调用方式区别：第一种每次调用会初始化局部变量num
+//                           第二种不会，所以能达到累加的效果
+    // Add()();
+    // Add()();
+    // Add()();
+    var x = Add();
+    x();
+    x();
+    x();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一题</title>
+    <script>
+    function show()
+    {
+        var txt=document.getElementById('pid');
+        var score=parseInt(document.getElementById('score').value);
+        var grade;
+        if(score>=90&&score<=100)
+        {
+            grade="A";
+        }
+        if(score>=60&&score<90)
+        {
+            grade="B";
+        }
+        if(score>=0&&score<60)
+        {
+            grade="C";
+        }
+        txt.innerHTML="学生成绩为"+score+",学生成绩等级为"+grade;
+        if(score>100||score<0)
+        {
+            txt.innerHTML="输入错误!";
+
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="">
+        输入学生成绩：<input type="text" id="score"> <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid">查看</p>
+</body>
+</html>

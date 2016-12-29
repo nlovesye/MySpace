@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oncontextmenu事件</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box
+    {
+        width: 200px;
+        height: 500px;
+        border: 1px solid green;
+        display: none;
+        position: absolute;
+    }
+    #box ul li
+    {
+        list-style: none;
+        width: 200px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 26px;
+        font-weight: bold;
+        text-indent: 28px;
+        color: #f66;
+        cursor: pointer;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("box");
+        document.oncontextmenu = function(e){
+                var even = e || window.event;
+                even.preventDefault();
+                box.style.left = even.clientX + "px";
+                box.style.top = even.clientY + "px";
+                box.style.display = "block";
+        }
+        document.onclick = function(even){
+            var even = even || window.event;
+            box.style.display = "none";
+        }
+    }
+    </script>
+</head>
+<body>
+    <p>右键试试</p>
+    <div id="box">
+        <img src="images/1.jpg" width="200" height="170" alt="">
+        <ul>
+            <li>姓名：迷丿</li>
+            <li>职业：天尊</li>
+            <li>年龄：22</li>
+            <li>特长：很多</li>
+            <li>爱好：很多</li>
+        </ul>
+    </div>
+</body>
+</html>

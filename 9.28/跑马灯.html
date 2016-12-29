@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯效果</title>
+    <style>
+    #box
+    {
+        width: 300px;
+        height: 100px;
+        border: 1px solid red;
+        margin: 50px auto;
+    }
+    #box p
+    {
+        color: #f66;
+        text-align: center;
+    }
+    #btn
+    {
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("box");
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var txt = document.getElementById("pid");
+            var arr = ["只","有","我","才","能","带","领","我","们","走","向","胜","利","!"];
+            var t = setInterval(function(){
+                show();
+            },100);
+            var i = 0;
+            function show(){
+                txt.innerHTML += arr[i];
+                i++;
+                if(i == arr.length){
+                    clearInterval(t);
+                }
+            }        
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <p id="pid"></p>
+    </div>
+    <input id="btn" type="button" value="点我试试">
+</body>
+</html>

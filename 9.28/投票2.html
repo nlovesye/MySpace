@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票2</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #content
+    {
+        width: 800px;
+        height: 350px;
+        margin: 60px auto;
+    }
+    #content ul
+    {
+        width: 100%;
+    }
+    #content ul li
+    {
+        float: left;
+        width: 160px;
+    }
+    #num
+    {
+        height: 20px;
+        border: 1px solid orange;
+    }
+    #num li
+    {
+        text-align: center;
+        line-height: 20px;
+    }
+    #pic
+    {
+        height: 280px;
+    }
+    #pic li
+    {
+        height: 280px;
+        background: url(images/1.png) 0 280px no-repeat;
+    }
+    #btn
+    {
+        height: 50px;
+    }
+    #btn li
+    {
+        height: 50px;
+    }
+    #btn li button
+    {
+        width: 160px;
+        height: 50px;
+        line-height: 50px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var content = document.getElementById("content");
+        var num = content.getElementsByTagName("ul")[0].getElementsByTagName("span");
+        var pic = content.getElementsByTagName("ul")[1].getElementsByTagName("li");
+        var btn = content.getElementsByTagName("ul")[2].getElementsByTagName("li");
+        for(var i=0;i<btn.length;i++)
+        {
+            btn[i].index = i;
+            btn[i].onclick = function()
+            {
+                var number = parseInt(num[this.index].innerHTML);
+                number ++;
+                if(number >= 15)
+                {
+                    pic[this.index].style.background = "url(images/1.png) 0 10px no-repeat";
+                }
+                else
+                {
+                    pic[this.index].style.background = "url(images/1.png) 0 " + (280-18*number) + "px no-repeat";
+                }
+                num[this.index].innerHTML = number;
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <ul id="num">
+            <li><span>0</span></li>
+            <li><span>0</span></li>
+            <li><span>0</span></li>
+            <li><span>0</span></li>
+            <li><span>0</span></li>
+        </ul>
+        <ul id="pic">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul id="btn">
+            <li><button>点击投票</button></li>
+            <li><button>点击投票</button></li>
+            <li><button>点击投票</button></li>
+            <li><button>点击投票</button></li>
+            <li><button>点击投票</button></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.1
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML入门到精通-HTML标签入门 - By DaKang</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.dark.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>PC端页面重构</h1>
+
+</hgroup><article>
+
+<p>HTML入门到精通-HTML标签入门</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>认识DTD</h1>
+<ul>
+<li><p>文档类型定义在HTML4.0.1中，&lt;!DOCTYPE&gt;声明引用DTD,因为HTML4.0.1基于SGML。DTD规定了标记语言的规则，这样浏览器才能正确的呈现内容。</p>
+</li>
+<li><p>HTML5不基于SGML,所以不需要引用DTD。<strong>(这是以后的事儿了)</strong></p>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>认识head标签</h2>
+
+</hgroup><article>
+
+<pre><code class="markdown">&lt;head&gt;
+    &lt;title&gt;...&lt;/title&gt;
+    &lt;meta&gt;
+    &lt;link&gt;
+    &lt;style&gt;...&lt;/style&gt;
+    &lt;script&gt;...&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"   data-on-build="Slide.magic" data-on-enter="Slide.magic.init"><section class="slide-wrapper"><div class="magic"><div class="magicItem current pagedown"  data-transition="cover-circle"><article>
+<div class="magic-wrapper">
+<hgroup>
+<h2>&lt;body&gt;标签，网页上显示的内容放在这里</h2>
+
+</hgroup><article>
+
+<ul>
+<li><p>在网页上要展示出来的页面内容一定要放在body标签中。</p>
+<ul>
+<li><p>比如一个新闻网页的HTML代码：</p>
+<img src="./images/body-code.jpg" width="70%" />
+</li>
+</ul>
+</li>
+</ul>
+
+</article>
+</div>
+</article></div>
+<div class="magicItem next pagedown"  data-transition="cover-circle"><article>
+<div class="magic-wrapper">
+<article>
+<ul>
+<li><p>在浏览器中的显示效果：</p>
+<img src="./images/body-browser.jpg" width="70%" />
+</li>
+</ul>
+
+</article>
+</div>
+</article></div></div></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>认识&lt;img&gt;标签，为网页插入图片</h2>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li><p>在网页的制作中为使网页炫丽美观，肯定是缺少不了图片，可以使用&lt;img&gt;标签来插入图片。</p>
+<ul class="rollIn">
+<li>语法：<pre><code class="markdow">&lt;img src=&quot;图片地址&quot; width=&quot;400&quot; height=&quot;363&quot; alt=&quot;下载失败时的替换文本&quot; title = &quot;提示文本&quot;&gt;
+</code></pre>
+</li>
+<li><p>讲解：</p>
+<p>  1、src：规定显示图像的 URL(图像地址/图像存放的位置）图像可以是GIF，PNG，JPEG格式的图像文件。</p>
+<p>  2、alt：指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；</p>
+<p>  3、title：提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)；</p>
+<p>  4、width,height：图形宽高</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>认识&lt;a&gt;标签，为网页插入链接</h2>
+
+</hgroup><article>
+
+<pre><code class="markdow">&lt;a href=&quot;http://www.baidu.com&quot;  target=&quot;_blank&quot;  title=&quot;进入百度&quot;&gt;百度&lt;/a&gt;
+</code></pre>
+<ul>
+<li><p>讲解：</p>
+<p>  1、href : 规定链接指向的页面的 URL。</p>
+<p>  2、target : 规定在何处打开链接文档。
+  （1）_self : 默认值，表示在当前窗口
+  （2）_blank : 在新窗口</p>
+<p>  3、title : 规定关于元素的额外信息。
+    这些信息通常会在鼠标移到元素上时显示一段工具提示文本。</p>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>规范</h1>
+<ul>
+<li>编码规范<ul>
+<li>HTML标签缩进</li>
+<li>标签嵌套的话顺序不能乱</li>
+<li>引号要成对出现</li>
+</ul>
+</li>
+<li>命名规范<ul>
+<li>文件夹、文件命名尽量用有意义的英文单词（小写），不要用拼音汉字</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>THANK YOU!</h2>
+
+</hgroup><article>
+
+<p>END</p>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.1</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'slide',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+
+
+<!--placeholder-->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+</head>
+<body>
+    <button id="b1">按钮1</button>
+    <button id="b2">按钮2</button>
+    <button id="b3">按钮3</button>
+    <button id="b4">按钮4</button>
+    <script>
+    function demo() {
+        var btn = document.getElementsByTagName('button');
+        var arr = ['你点击了按钮1','你点击了按钮2','你点击了按钮3','你点击了按钮4'];
+        
+        // for(var i=0;i<btn.length;i++){
+        //     btn[i].onclick = (function(x) {
+        //         return function(){
+        //             alert(arr[x]);
+        //         }
+        //     })(i)
+        // }
+        
+        // for(var i=0;i<btn.length;i++){
+        //     (function(x){
+        //         btn[x].onclick = function(){
+        //             alert(arr[x]);
+        //         }
+        //     })(i)
+        // }
+        
+        for(var i=0;i<btn.length;i++){
+            (function(){
+                var x = i;
+                btn[x].onclick = function(){
+                    alert(arr[x]);
+                }
+            })()
+        }
+    }
+    demo();
+    </script>
+</body>
+</html>

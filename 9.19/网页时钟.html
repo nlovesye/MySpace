@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自制时钟</title>
+    <style>
+    p
+    {
+        text-align: center;
+        line-height: 32px;
+        font-family: "楷体";
+    }
+    div
+    {
+        width: 102px;
+        height: 52px;
+        margin: 10px auto;
+    }
+    button
+    {
+        width: 100px;
+        height: 50px;
+        font-size: 26px;
+        color: #f60;
+    }
+    span
+    {
+        color: #f88;
+        font-size: 26px;
+        font-weight: bold;
+    }
+    </style>
+    <script>
+    function Time()
+    {
+        var txt=document.getElementById('pid');
+        var t=new Date();
+        var y=t.getFullYear();
+        var m=t.getMonth()+1;
+        var d=t.getDate();
+        var w=t.getDay();
+        var week="";
+        var h=t.getHours();
+        var min=t.getMinutes();
+        min=checkTime(min);
+        var s=t.getSeconds();
+        s=checkTime(s);
+        switch(w)
+        {
+            case 0:week="日";
+            break;
+            case 1:week="一";
+            break;
+            case 2:week="二";
+            break;
+            case 3:week="三";
+            break;
+            case 4:week="四";
+            break;
+            case 5:week="五";
+            break;
+            default:week="六";
+        }
+        txt.innerHTML="今天是"+y+"年"+m+"月"+d+"日,星期"+week+"<br /><span>"+h+":"+min+":"+s+"</span>";
+        T=setTimeout(function()
+        {
+            Time();
+        },1000);
+    }
+    function checkTime(i)
+    {
+        if(i<10)
+        {
+            i="0"+i;
+        }
+        return i;
+    }   
+    </script>
+</head>
+<body>
+    <p>点击下面按钮获取当前时间</p>
+    <div><button onclick="Time()">按钮</button></div>
+    <p id="pid"></p>
+</body>
+</html>

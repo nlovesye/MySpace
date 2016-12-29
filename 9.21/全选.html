@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <script>
+    window.onload = function() {
+        function demo() {
+            var all = document.getElementById('all');
+            var ckbox = document.getElementsByTagName('input');
+            all.onclick = function() {
+            //     if(all.checked == true){
+            //     for(var i=1;i<ckbox.length;i++){
+            //         ckbox[i].checked = true;
+            //     }
+            // }
+            //     if(all.checked == false){
+            //     for(var i=1;i<ckbox.length;i++){
+            //         ckbox[i].checked = false;
+            //     }
+            // }
+            
+            for(var i = 0;i<ckbox.length;i++){
+                ckbox[i].checked = this.checked;
+            }
+        }
+    }
+        demo();
+    }
+    </script>
+</head>
+<body>
+    <input id="all" type="checkbox" value="全选">全选
+    <input type="checkbox" value="寒冰射手">寒冰射手
+    <input type="checkbox" value="圣枪游侠">圣枪游侠
+    <input type="checkbox" value="赏金猎人">赏金猎人
+    <input type="checkbox" value="暴走萝莉">暴走萝莉
+    <input type="checkbox" value="战争女神">战争女神
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+    ul
+    {
+        height: 50px;
+    }
+    ul li
+    {
+        list-style: none;
+        cursor: pointer;
+        float: left;
+        margin-right: 20px;
+        line-height: 50px;
+    }
+    ul li:hover
+    {
+        color: #f66;
+    }
+
+    div
+    {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+    .toGreen
+    {
+        background: green;
+    }
+    .toYellow
+    {
+        background: yellow;
+    }
+    .toRed
+    {
+        background: red;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var li = document.getElementsByTagName('li');
+        var arr = ['只有我才能带领你们走向胜利' , '人在塔在' , '枪出如龙' , '所有人都得死' , '提莫队长正在待命'];
+        for(var i=0;i<li.length;i++) {
+            li[i].onclick = (function(x) {
+                return function(){
+                    alert(arr[x]);
+                }
+            })(i)
+        }
+
+        var btn = document.getElementById('btn');
+        var d1 = document.getElementById('d1');
+        btn.onclick = function() {
+            d1.className = "toGreen";
+        }
+        var Btn = document.getElementsByTagName('input');
+        // alert(Btn[0]);
+        var arr2 = ['toGreen' , 'toYellow' , 'toRed'];
+        for(var i=0;i<Btn.length;i++) {
+            Btn[i].onclick = (function(t) {
+                return function() {
+                    d1.className = arr2[t];
+                }
+            })(i)
+        }
+
+    }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>诺克萨斯之手</li>
+        <li>德玛西亚之力</li>
+        <li>德邦总管</li>
+        <li>荒漠屠夫</li>
+        <li>迅捷斥候</li>
+    </ul>
+    <input type="button" id="btn" value="按钮1变绿色">
+    <input type="button" id="btn1" value="按钮2变黄色">
+    <input type="button" id="btn2" value="按钮3变红色">
+    <div id="d1" class=""></div>
+</body>
+</html>

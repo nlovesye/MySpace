@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第七题</title>
+    <script>
+    function show()
+    {
+        var txt=document.getElementById('pid');
+        var n=parseInt(document.getElementById('num').value);
+        var sum=0;     //
+        if(!isNaN(n))
+        {
+            for(var i=1;i<=n;i++)
+            {
+                for(var j=1;j<=n;j++)
+                {
+                    if(i>=j)
+                    {
+                      sum+=i*j;
+                    }
+                }
+            }
+            txt.innerHTML="结果为<span style='color:#f60; font-weight:bold;'>"+sum+"</span>";
+        }
+        else
+        {
+            txt.innerHTML="请输入数字";
+        }
+    }
+    </script>
+</head>
+<body>
+    <p>计算从1*1+2*1+2*2+3*1+…+3*3+…+n*1+9*2+…+n*n的值</p>
+    <form action="">
+        输入n：<input type="text" id="num"> <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid">点击上面按钮查看结果</p>
+</body>
+</html>

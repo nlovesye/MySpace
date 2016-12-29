@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标跟随</title>
+    <style>
+    #d1/*,#d2*/
+    {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: yellow;
+        position: fixed;
+    }
+    </style>
+    <script>
+    window.onload = function(){
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+        document.onmousemove = function(event){
+            var event = event || window.event;
+            d1.style.left = event.clientX - 20 + "px";
+            d1.style.top = event.clientY - 20 + "px";
+            // d2.style.left = event.clientX + 20 + "px";
+            // d2.style.top = event.clientY + 20 + "px";
+        }
+        // document.onclick = function(e){
+        //     var event = e || window.event;
+        //     d2.style.left = event.clientX - 20 + "px";
+        //     d2.style.top = event.clientY - 20 + "px";
+        // }
+        // alert(x);
+    }
+    </script>
+</head>
+<body style="height:3000px">
+    <div id="d1"></div>
+<!--     <div id="d2"></div> -->
+</body>
+</html>

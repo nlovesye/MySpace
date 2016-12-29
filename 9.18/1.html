@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .pstl
+    {
+        line-height: 24px;
+        font-size: 18px;
+        font-family: "楷体";
+        text-align: center;
+    }
+    .namestl
+    {
+        color: blue;
+    }
+    .score
+    {
+        font-weight: bold;
+        color: #fe6622;
+    }
+    </style>
+    <script>
+    function a(name,chi,math,eng)
+    {
+        var sum = chi+math+eng;
+        var avg = (chi+math+eng)/3;
+        document.write("<p class='pstl'><span class='namestl'>"+name+"</span>的总成绩为：<span class='score'>"+sum+"</span>,"+"平均成绩为：<span class='score'>"+avg+"</span></p>");
+    }
+    a("小红",59,61,60);
+    a("大D",62,61,60);
+    a("前辈",70,71,72);
+    a("鼠标",72,71,70);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

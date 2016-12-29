@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特权方法（通过闭包访问私有变量）</title>
+    <script>
+    function demo() {
+        function hero(){
+            var name = "诺克萨斯之手";
+            var age = 27;
+            function say() {
+                return ("只有我才能带领你们走向胜利。");
+            }
+            this.getName = function() {
+                return name;
+            }
+            this.getAge = function() {
+                return age;
+            }
+            this.getSay = function() {
+                return say();
+            }
+        }
+        var x = new hero();
+        alert(x.getName());
+        alert(x.getAge());
+        alert(x.getSay());
+    }
+    demo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

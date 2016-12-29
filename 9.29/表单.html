@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <script>
+    window.onload = function()
+    {
+        var user = document.getElementsByName("user")[0];
+        var password = document.getElementsByName("password")[0];
+        var btn = document.getElementsByName("btn")[0];
+        user.onfocus = function(){
+            // this.select();
+            this.value = "";
+            this.placeholder = "请输入用户名";
+            // this.blur();
+        }
+        btn.onclick = function(){
+            var u = user.value;
+            var pass = password.value;
+            var patt1 = /^\w{6,12}$/;
+            var txt1 = document.getElementById("userer");
+            var txt2 = document.getElementById("passworder");
+            if(!patt1.test(u)){
+                txt1.innerHTML = "用户名不合法";
+                return false;
+            }
+            if(!patt1.test(pass)){
+                txt2.innerHTML = "密码不合法";
+                return false;
+            }
+            return true;
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="1.html" method="post">
+        用户名：<input type="text" value="aaaaaa" name="user"><span id="userer"></span><br>
+        密码：<input type="password" name="password"><span id="passworder"></span><br>
+        <input type="submit" value="注册" name="btn">
+    </form>
+</body>
+</html>

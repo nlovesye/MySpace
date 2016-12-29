@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js回到顶部效果</title>
+    <style>
+    #box
+    {
+        width: 1190px;
+        margin: 0 auto;
+    }
+    #btn
+    {
+        width: 40px;
+        height: 40px;
+        background: url(images/top_bg.png) no-repeat left top;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        margin-left: 620px;
+        /*display: none;*/
+    }
+    #btn:hover
+    {
+        background: url(images/top_bg.png) no-repeat left bottom;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var t = setInterval(function(){
+                var l = document.documentElement.scrollTop = document.body.scrollTop;
+                var speed = l/30;
+                document.documentElement.scrollTop = document.body.scrollTop -= speed;
+                if(document.documentElement.scrollTop = document.body.scrollTop == 0){
+                    clearInterval(t);
+                }
+            },1);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="images/tb_bg.jpg" alt="">
+    </div>
+    <a id="btn" href="javascript:" title="返回顶部"></a>
+</body>
+</html>

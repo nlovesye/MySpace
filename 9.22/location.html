@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location</title>
+    <script>
+    window.onload = function() {
+        var slc = document.getElementById('slc');
+        slc.onchange = function() {
+            window.open(slc.value, '_blank');
+            // location.href = slc.value;
+        }
+    }
+    </script>
+</head>
+<body>
+    <select name="" id="slc">
+        <option value="">网页</option>
+        <option value="http://www.baidu.com">百度</option>
+        <option value="http://www.sohu.com">搜狐</option>
+        <option value="http://www.sina.com">新浪</option>
+    </select>
+</body>
+</html>

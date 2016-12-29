@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第四题</title>
+<script>
+    function show()
+    {
+        var txt=document.getElementById('pid');
+        var num=document.getElementById('num').value;
+        var a=parseInt(num.charAt(0)),
+            b=parseInt(num.charAt(4));
+        var x=parseInt(num.charAt(1));
+            y=parseInt(num.charAt(3));
+        if(num.length>5||isNaN(num))
+        {
+            alert("请输入五位数字");
+        }
+        else
+        {
+            if(a==b && x==y)
+            {
+                txt.innerHTML=num+"是回文数";
+            }
+            else
+            {
+                txt.innerHTML=num+"不是回文数";
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <p>一个5位数，判断它是不是回文数。回文数字例：12321是回文数，个位与万位相同，十位与千位相同。</p>
+    <form action="">
+        输入一个五位数：<input type="text" id="num"> <input type="button" value="按钮" onclick="show()">
+    </form>
+    <p id="pid">点击按钮查看结果</p>
+</body>
+</html>
