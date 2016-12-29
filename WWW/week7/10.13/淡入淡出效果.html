@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出效果</title>
+    <style>
+    img
+    {
+        width: 800px;
+        height: 600px;
+        opacity: 0.2;
+        filter: alpha(opacity:20);
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var pic = document.getElementById("pic");
+        var timer = null;
+        var startalpha = 20;
+        pic.onmouseover = function()
+        {
+            sport(100);
+        }
+        pic.onmouseout = function()
+        {
+            sport(20);
+        }
+        function sport(end)
+        {
+            var speed = 10;
+            clearInterval(timer);
+        }
+    }
+    </script>
+</head>
+<body>
+    <img src="images/划桨船.jpg" alt="" id="pic">
+</body>
+</html>

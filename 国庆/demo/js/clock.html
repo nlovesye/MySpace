@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    // function show()
+    // {
+    //     //  var today = new Date();
+    //     // var currentTime = today.toLocaleTimeString();
+    //     //  var clock = document.getElementById("clock");
+    //     //  clock.innerHTML = currentTime;
+    // }
+    
+    //如果方法在window.onload=function()里里面的话，它就改变了它的作用域，它就成了一个普通的内部函数。
+    //     function stopClock()  
+    //     {
+    //         clearInterval(interval);
+    //     }
+    // var interval;
+    window.onload = function()
+    {
+        function show()
+        {
+             var today = new Date();
+             var currentTime = today.toLocaleTimeString();
+             var clock = document.getElementById("clock");
+             clock.innerHTML = currentTime;
+        }
+       // show();      //防止刷新出现1秒钟的空白
+        var interval = setInterval(show,1000);     //show(),"show()",show的区别在哪?
+                                                  //setTimeout与setInterval的区别?
+        function stopClock()      
+        {
+             clearInterval(interval);
+        }
+        
+        var btn = document.getElementById("btn");
+        var btn2 = document.getElementById("btn2");
+        btn.onclick = function()                     //onclick写在外面和写在function里面的区别在哪？
+        {
+               clearInterval(interval);
+
+        }
+        btn2.onclick = function()
+        {
+             interval = setInterval(show,1000);  
+        }
+
+     }
+     
+    </script>
+</head>
+
+<body>
+    <p id="clock">&nbsp;</p>
+    <input id="btn" type="button" value="停止时钟">
+    <input id="btn2" type="button" value="恢复时钟">    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度关键字搜索</title>
+    <style>
+    #box
+    {
+        position: absolute;
+        top: 30px;
+        overflow: auto;
+        width: 200px;
+        background: rgba(200,200,200,0.3);
+    }
+    #box p
+    {
+        text-indent: 20px;
+        color: orange;
+    }
+    </style>
+    <script type="text/javascript" src="../ajax.js"></script>
+    <script>
+    window.onload = function()
+    {
+        var txt = document.getElementById("txt");
+        var btn = document.getElementById("btn");
+        var show = document.getElementById("box");
+        btn.onclick = function()
+        {
+            ajax("../../baidu.php?keyword=" + txt.value,function(x){
+                var data = JSON.parse(x);
+                show.innerHTML = "";
+                for(var i=0;i<data.s.length;i++)
+                {
+                    show.style.display = "block";
+                    show.innerHTML += "<p>" + data.s[i] + "</p>"
+                }
+            },function(y){
+                show.innerHTML = "加载失败";
+            })
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt"><input type="button" id="btn" value="关键字搜索">
+    <div id="box"></div>
+</body>
+</html>

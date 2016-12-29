@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="../../Font-Awesome-3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <style>
+    .fuck{
+        font-size: 20px;
+        color: orange;
+        font-weight: 100;
+    }
+    ul li{
+        list-style: none;
+        line-height: 26px;
+        font-size: 26px;   
+        cursor: pointer;    
+    }
+/*    i{
+        color: orange;
+    }*/
+    i.select{
+        color: orange;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var icon = document.getElementsByTagName("i");
+        for(var i=0;i<icon.length;i++){
+            icon[i].onclick=function(){
+                for(var j=0;j<icon.length;j++){
+                    icon[j].className = icon[j].className.replace("select"," ");
+                    console.log(1);
+                }
+                this.className += " select";
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- <p class=""><i class="iconfont">&#xe62b;</i>fuck</p>
+    <div class="icon-flag">垃圾图标</div> -->
+    <i class="icon-chevron-right fuck"></i>
+    <i class="icon-github-alt fuck"></i>
+    <ul>
+        <li><i class="icon-github-alt select"></i>列表项1</li>
+        <li><i class="icon-github"></i>列表项2</li>
+        <li><i class="icon-h-sign"></i>列表项3</li>
+        <li><i class="icon-hospital"></i>列表项4</li>
+        <li><i class="icon-beaker"></i>列表项5</li>
+        <li><i class="icon-medkit"></i>列表项6</li>
+        <li><i class="icon-user-md"></i>列表项7</li>
+    </ul>
+</body>
+</html>

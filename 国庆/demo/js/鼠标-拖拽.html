@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       #div1
+       {
+            width:200px;
+            height:200px;
+            background: red;
+            position: absolute;
+       }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            
+            var disX = 0;
+            var disY = 0; 
+            oDiv.onmousedown = function(e)
+            { 
+                   var oEvent = e || window.event;
+                   disX = oEvent.clientX - oDiv.offsetLeft;      
+                   disY = oEvent.clientY - oDiv.offsetTop;
+                   document.onmousemove = function(event)
+                   {
+                        var event = event || window.event;
+                        var left = event.clientX-disX;
+                        var top = event.clientY - disY;
+                        if(left<=0)
+                        {
+                            left=0;
+                        }
+                       // console.log(oDiv.offsetWidth);
+                        //console.log(oDiv.style.width)
+                        else if(left >= document.documentElement.clientWidth-oDiv.offsetWidth)
+                        {
+                             left = document.documentElement.clientWidth-oDiv.offsetWidth;
+                        }
+                          if(top<=0)
+                        {
+                            top=0;
+                        }
+                       // console.log(oDiv.offsetWidth);
+                        //console.log(oDiv.style.width)
+                        else if(top >= document.documentElement.clientHeight-oDiv.offsetHeight)
+                        {
+                             top = document.documentElement.clientHeight-oDiv.offsetHeight;
+                        }
+
+                        oDiv.style.left = left +"px";
+                        oDiv.style.top = top +"px";
+
+                   }
+                   document.onmouseup = function(e)
+                   {
+                        var oEvent = e || window.event;
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                   }
+                   return false;
+            }
+          
+
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

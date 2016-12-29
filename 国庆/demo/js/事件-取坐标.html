@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>   
+    .div1
+    {
+        width:1000px;
+        height:500px;
+        border:1px solid red;
+        background: yellow;
+    }
+    </style>
+<script>
+window.onload = function()
+{
+       oDiv = document.getElementsByTagName("div")[0];
+       oDiv.onmousemove = function(even)
+       {
+           var e = even || window.event;
+           console.log(e.clientX+" "+e.clientY);
+       }
+}
+</script>
+</head>
+<body>
+    <div class="div1"></div>
+</body>
+</html>

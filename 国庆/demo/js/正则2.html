@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <script>    
+         var str = "a6";
+         var patt = /wg{2}[23]b$/; //不需要以w开头，但是需要包含wgg2b
+         var patt = /[qw]{2}/;  //二个字母必须连在一起
+         var patt = /^a35{2}[789][e45]{3}[abc]{2}$/; 
+         var patt = /^ae?v$/;  //问号代表0次或1次等价于{0,1}
+         var patt = /^ae*v$/;   //星号代表0次以上，无上限
+         var patt = /^ae+v$/;   //加号代表1次以上，无上限
+         var patt = /^\w{6,12}$/;  //6位以上，12位以下的字母，数字或者下划线
+         var patt = /^[^2]6$/; //不以2开头的，6结尾的
+         var patt = /^a\.6$/;  //.代表任何单个字符,注意在new RegExp下的用法,需要加\\个转义
+         var patt = /^[a|b|c]6$/; //等价于/^[abc]6$/
+         var result = patt.test(str);
+         alert(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

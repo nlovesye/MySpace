@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>间断滚动</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #box
+    {
+        margin: 30px auto;
+        width: 780px;
+        height: 240px;
+        border: 1px solid #f55;
+        overflow: hidden;
+        position: relative;
+    }
+    #d1
+    {
+        width: 1560px;
+        height: 240px;
+        position: relative;
+    }
+    ul li
+    {
+        float: left;
+    }
+    #u1
+    {
+        position: absolute;
+        left: 0px;
+    }
+    #u2
+    {
+        position: absolute;
+        left: 780px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var u1 = document.getElementById("u1");
+        var u2 = document.getElementById("u2");
+        var lf1 = parseInt(getstyle(u1,"left"));
+        var lf2 = parseInt(getstyle(u2,"left"));
+        function mov(){
+            // i++;
+            // if(i == 6){
+            //     i = 0;
+            // }
+            function action(){
+                var speed = 1;
+                lf1 -= speed;
+                lf2 -= speed;
+                if(lf1 > -780 && lf2 > 0){
+                    u1.style["left"] = lf1 + "px";
+                    u2.style["left"] = lf2 + "px";
+                    if(lf1 == -156 || lf1 == -312 || lf1 == -468 || lf1 == -624 || lf1 == -780){
+                        clearInterval(t);
+                        if(T){
+                            clearInterval(T);
+                        }
+                        var T = setInterval(function(){
+                            mov();
+                        },2000);
+                    }
+                }
+                else{
+                    lf1 = 0;
+                    lf2 = 780;
+                }
+                // if(lf2 > 0){
+                //     u2.style["left"] = lf2 + "px";
+                // }
+                // else{
+                //     lf2 = 780;
+                // }
+            }
+            if(t){
+                clearInterval(t);
+            }
+            var t = setInterval(function(){
+                action();
+            },20);
+        }
+        mov();
+        function getstyle(element,property){
+            var left;
+            if(!document.defaultView){
+                left = element.currentStyle[property];
+            }
+            else{
+                left = document.defaultView.getComputedStyle(element)[property];
+            }
+            return left;
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="d1">
+            <ul id="u1">
+                <li><img src="images/1.jpg" width="156" height="240"></li>
+                <li><img src="images/2.jpg" width="156" height="240"></li>
+                <li><img src="images/3.jpg" width="156" height="240"></li>
+                <li><img src="images/4.jpg" width="156" height="240"></li>
+                <li><img src="images/5.jpg" width="156" height="240"></li>
+            </ul>
+            <ul id="u2">
+                <li><img src="images/1.jpg" width="156" height="240"></li>
+                <li><img src="images/2.jpg" width="156" height="240"></li>
+                <li><img src="images/3.jpg" width="156" height="240"></li>
+                <li><img src="images/4.jpg" width="156" height="240"></li>
+                <li><img src="images/5.jpg" width="156" height="240"></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

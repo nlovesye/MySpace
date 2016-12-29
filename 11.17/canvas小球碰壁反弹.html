@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas小球碰壁反弹</title>
+    <style>
+    canvas{
+        border: 1px solid orange;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 50px auto;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var color=["orange","green","yellow","red","pink","purple","blue","gray"];
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var arr = [];
+        var t = null;
+
+        function ran(a,b){
+            return Math.floor(Math.random() * (b - a) + a + 1);
+        }
+        
+        function Circle(){
+            this.ra = ran(10,26);
+            this.x = ran(this.ra,800-this.ra);
+            this.y = ran(this.ra,600-this.ra);
+            this.col = "rgb("+ran(0,255)+","+ran(0,255)+","+ran(0,255)+")";
+            this.speed1 = ran(1,6);
+            this.speed2 = ran(1,6);
+            this.draw = draw;
+            this.move = move;
+        }
+
+        function draw(){
+            context.beginPath();
+            context.fillStyle=this.col;
+            context.arc(this.x,this.y,this.ra,0,2*Math.PI*180,false);
+            context.fill();
+        }
+
+        function move(){
+            if(this.x<=this.ra){
+                this.speed1 = -this.speed1;
+            }
+            if(this.x>=800-this.ra){
+                this.speed1 = -this.speed1;
+            }
+            if(this.y<=this.ra){
+                this.speed2 = -this.speed2;
+            }
+            if(this.y>=600-this.ra){
+                this.speed2 = -this.speed2;
+            }
+            this.x += this.speed1;
+            this.y += this.speed2;
+        }
+        
+        for(var i=0;i<ran(300,700);i++){
+            var circle = new Circle();
+            arr.push(circle);
+        }
+
+        function animation(){
+            context.clearRect(0,0,canvas.width,canvas.height);
+            for(var i=0;i<arr.length;i++){
+                arr[i].draw();
+                arr[i].move();
+            }
+            window.requestAnimationFrame(animation);
+        }
+        // animation();
+        
+        t = setInterval(function(){
+            context.clearRect(0,0,canvas.width,canvas.height);
+            for(var i=0;i<arr.length;i++){
+                arr[i].draw();
+                arr[i].move();
+            }
+        },10);
+
+    }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width=800 height=600></canvas>
+</body>
+</html>

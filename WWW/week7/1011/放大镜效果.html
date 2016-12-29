@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜效果</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .content
+    {
+        width: 1000px;
+        height: 600px;
+    }
+    #smpic
+    {
+        width: 300px;
+        height: 300px;
+        border: 1px solid orange;
+        position: relative;
+        cursor: move;
+        /*overflow: hidden;*/
+    }
+    #smpic img
+    {
+        width: 300px;
+        height: 300px;
+    }
+    #smpic .glass
+    {
+        width: 120px;
+        height: 120px;
+        background: rgba(200,106,10,0.2);
+        position: absolute;
+        display: none;
+    }
+    #show
+    {
+        width: 500px;
+        height: 500px;
+        border: 1px solid orange;
+        position: relative;
+        left: 306px;
+        top: -300px;
+        display: none;
+        overflow: hidden;
+    }
+    #show img
+    {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("smpic");
+        var glass = box.getElementsByTagName("div")[0];
+        var show = document.getElementById("show");
+        var img = show.getElementsByTagName("img")[0];
+
+        box.onmouseover = function()
+        {
+            glass.style.display = "block";
+            show.style.display = "block";
+        }
+        box.onmouseout = function()
+        {
+            glass.style.display = "none";
+            show.style.display = "none";
+        }
+        
+        
+
+        box.onmousemove = function(e)
+        {
+            // alert(show.clientWidth);
+            img.style.width = show.clientWidth * (box.clientWidth/glass.offsetWidth) + "px";
+            img.style.height = show.clientHeight * (box.clientHeight/glass.offsetHeight) + "px";
+            var e = e || window.event;
+            var maxw = box.clientWidth - glass.offsetWidth;
+            var maxh = box.clientHeight - glass.offsetHeight;
+            var maxW = img.clientWidth - show.clientWidth;
+            var maxH = img.clientHeight - show.clientHeight;
+            var x = e.clientX - (glass.offsetWidth)/2;
+            var y = e.clientY - (glass.offsetHeight)/2;
+            var X = (e.clientX - (glass.offsetWidth)/2) * (show.clientWidth/glass.offsetWidth);
+            var Y = (e.clientY - (glass.offsetHeight)/2) * (show.clientHeight/glass.offsetHeight);
+
+            glass.style.left = x + "px";
+            glass.style.top = y + "px";
+            img.style.left = -X + "px";
+            img.style.top = -Y + "px";
+
+            if(glass.offsetLeft <= 0)
+            {
+                glass.style.left = 0 + "px";
+                img.style.left = 0 + "px";
+            }
+            if(glass.offsetTop <= 0)
+            {
+                glass.style.top = 0 + "px";
+                img.style.top = 0 + "px";
+            }
+            if(glass.offsetLeft >= maxw)
+            {
+                glass.style.left = maxw + "px";
+                img.style.left = -maxW + "px";
+            }
+            if(glass.offsetTop >= maxh)
+            {
+                glass.style.top = maxh + "px";
+                img.style.top = -maxH + "px";
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div id="smpic">
+            <img src="images/大海图片.jpg" alt="">
+            <div class="glass"></div>
+        </div>
+        <div id="show">
+            <img src="images/大海图片.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

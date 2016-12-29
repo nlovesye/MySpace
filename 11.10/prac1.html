@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac1</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div class="app">
+        <p>{{myinfo.split('').reverse().join('')}}</p>
+        <input v-model="myinfo">
+    </div>
+    <hr>
+    <div class="d2">
+        <ul>
+            <li v-for="myinfo in myinfos">
+                {{myinfo.shit}}
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="d3">
+        <p v-if="Math.random()>0.6">大于0.6</p>
+        <p v-else>不大于0.6</p>
+    </div>
+    <script>
+    new Vue({
+        el: ".d3",
+        data : {
+            myinfos:
+            [
+            {txt:"fuck1"},
+            {txt:"fuck2"},
+            {shit:"Fuck"},
+            {shit:"Fuck2"}
+            ]
+        }
+    });
+    </script>
+</body>
+</html>

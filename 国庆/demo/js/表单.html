@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<form action="winOpenClose.html" method="post">
+    用户名:<input type="text" name="user"  value="insomnia" >
+     <span id="userMsg"></span><br>
+    身份证:<input type="text" name="id"><span id="idMsg"></span><br>
+    <input type="submit" value="注册" name="btn">
+</form>
+    <script type="text/javascript">
+             var user = document.getElementsByName("user")[0];
+             //user.focus();
+             user.onfocus = function()
+             {
+                  //this.placeholder = ""; //点击后文字消失
+                  //this.select();
+                  //this.blur();   //禁止输入
+             }
+
+             user.onblur = function()
+             {
+                  // /alert("失去焦点");
+             }
+             
+             var btn = document.getElementsByName("btn")[0];
+             var id = document.getElementsByName("id")[0];
+             var userMsg = document.getElementById("userMsg");
+             var idMsg = document.getElementById("idMsg");
+             btn.onclick = function()
+             {
+                   var uVal = user.value;
+                   var patt = /^\w{6,12}$/;
+                   if(!patt.test(uVal))
+                   {
+                        //alert("d");
+                         userMsg.innerHTML = "用户名不合法"
+                        return false;
+                   }
+                   var idVal = id.value;
+                   var patt = /^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/;
+                   if(!patt.test(idVal))
+                   {
+                         idMsg.innerHTML = "身份证不合法";
+                         return false;
+                   }
+                return true;
+             }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安卓机器人</title>
+    <script src="../jquery-2.1.4.js"></script>
+    <style>
+    .box{
+        width: 600px;
+        height: 600px;
+        margin: 100px auto 0;
+        /*border: 1px solid orange;*/
+        position: relative;
+        overflow: hidden;
+    }
+    .head{
+        cursor: pointer;
+        width: 200px;
+        height: 100px;
+        border-radius: 100px 100px 0 0;
+        background: rgba(171,205,5,0.9);
+        margin: 80px auto 0;
+        position: relative;
+        transition: all 200ms;
+        -webkit-transform-origin: left bottom;
+                transform-origin: left bottom;
+    }
+    .head:hover{
+        -webkit-transform: rotate(-30deg);
+                transform: rotate(-30deg);
+    }
+    .head .ear{
+        width: 6px;
+        height: 40px;
+        position: absolute;
+        border-radius: 3px;
+        background: rgba(171,205,5,0.9);
+        top: -20px;
+    }
+    .head .lear{
+        -webkit-transform: rotate(-30deg);
+                transform: rotate(-30deg);
+        left: 20%;
+    }
+    .head .rear{
+        -webkit-transform: rotate(30deg);
+                transform: rotate(30deg);
+        right: 20%;
+    }
+    .head .eye{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        top: 40px;
+    }
+    .head .leye{
+        left: 20%;
+    }
+    .head .reye{
+        right: 20%;
+    }
+    .body{
+        width: 200px;
+        height: 220px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        border-radius: 0 0 20px 20px;
+        background: rgba(171,205,5,0.9);
+    }
+    .hand{
+        cursor: pointer;
+        position: absolute;
+        width: 50px;
+        height: 180px;
+        background: rgba(171,205,5,0.9);
+        border-radius: 25px;
+        top: 190px;
+        /*transition: all 200ms;*/
+        -webkit-transform-origin: 25px 25px;
+                transform-origin: 25px 25px;
+    }
+    .lhand{
+        left: 130px;
+    }
+    .rhand{
+        right: 130px;
+    }
+/*    .lhand:hover{
+        transform: rotate(20deg);
+    }
+    .rhand:hover{
+        transform: rotate(-20deg);
+    }*/
+
+
+    .foot{
+        width: 50px;
+        height: 80px;
+        position: absolute;
+        background: rgba(171,205,5,0.9);
+        border-radius: 0 0 25px 25px;
+        top: 410px;
+    }
+    .lfoot{
+        left: 40%;
+    }
+    .rfoot{
+        right: 40%;
+    }
+
+    .body input{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        height: 30px;
+        margin: auto;
+        cursor: pointer;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var box = document.getElementById("box");
+        var lhand = box.getElementsByTagName("div")[6];
+        var rhand = box.getElementsByTagName("div")[7];
+
+        lhand.onclick=function(){
+            var t = null;
+            var d = 0;
+            var d2 = 45;
+            clearInterval(t);
+            t = setInterval(function(){
+                d += 1;
+                if(d >= 45){
+                    d2 -= 1;
+                    lhand.style.transform="rotate("+d2+"deg)";
+                    if(d2 <= 0){
+                        clearInterval(t);
+                    }
+                }else{
+                    lhand.style.transform="rotate("+d+"deg)";
+                }
+            },10);
+        }
+        rhand.onclick=function(){
+            var t = null;
+            var d = 0;
+            var d2 = 180;
+            clearInterval(t);
+            t = setInterval(function(){
+                d += 1;
+                if(d >= 180){
+                    d2 -= 1;
+                    rhand.style.transform="rotate(-"+d2+"deg)";
+                    if(d2 <= 0){
+                        clearInterval(t);
+                    }
+                }else{
+                    rhand.style.transform="rotate(-"+d+"deg)";
+                }
+            },10);
+        }
+
+    }
+    </script>
+    <script>
+    $(function()
+    {
+        $("input").click(function(){
+            var lx = 50;
+            var ly = 50;
+            var nDivl = document.createElement("div");
+            var nDivr = document.createElement("div");
+            $(nDivl).css({
+                "position":"absolute",
+                "box-sizing":"border-box",
+                "width":"0px",
+                "height":"0px",
+                "left":lx-0+"px",
+                "top":ly-0+"px",
+                "border-radius":"50%",
+                "border":"1px solid pink"
+            }).animate({
+                "width":"50px",
+                "height":"50px",
+                "left":lx-25+"px",
+                "top":ly-25+"px"
+            },4000,function(){
+                $(this).remove();
+            });
+            $(nDivr).css({
+                "position":"absolute",
+                "box-sizing":"border-box",
+                "width":"0px",
+                "height":"0px",
+                "right":lx-0+"px",
+                "top":ly-0+"px",
+                "border-radius":"50%",
+                "border":"1px solid orange"
+                // "background":"red"
+            }).animate({
+                "width":"50px",
+                "height":"50px",
+                "right":lx-25+"px",
+                "top":ly-25+"px"
+            },4000,function(){
+                $(this).remove();
+            });
+            $(".head").append(nDivl);
+            $(".head").append(nDivr);
+        });
+    })
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="head">
+            <div class="lear ear"></div>
+            <div class="rear ear"></div>
+            <div class="leye eye"></div>
+            <div class="reye eye"></div>
+        </div>
+        <div class="body">
+            <input type="button" value="按钮">
+        </div>
+        <div class="hand lhand"></div>
+        <div class="hand rhand"></div>
+        <div class="foot lfoot"></div>
+        <div class="foot rfoot"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缓冲运动</title>
+    <style>
+    .d1{
+        width: 100px;
+        height: 100px;
+        background: pink;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+    }
+    .line{
+        width: 1px;
+        height: 500px;
+        background: black;
+        position: absolute;
+        left: 500px;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        function move(){
+            var d1=document.getElementById("d1");
+            setInterval(function(){
+                var speed = (500-d1.offsetLeft)/20;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed); //解决到不了终点问题
+                // console.log(speed);
+                d1.style.left=d1.offsetLeft+speed+"px";
+            },20);
+        }
+        var btn=document.getElementsByTagName("input")[0];
+        btn.onclick=move;
+
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="开始运动">
+    <div class="d1" id="d1"></div>
+    <div class="line"></div>
+</body>
+</html>

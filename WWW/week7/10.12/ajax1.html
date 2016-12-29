@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script>
+    window.onload = function()
+    {
+        var user = document.getElementsByName("user")[0];
+        var txt = document.getElementById("txt");
+        user.onchange = function()
+        {
+            var xmlhttp;
+            if(window.XMLHttpRequest)
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else
+            {
+                xmlhttp = new ActiveXObject("Microsoft XMLHTTP");
+            }
+            xmlhttp.open("get",'../../1.php?q=' + user.value,true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function()
+            {
+                if(xmlhttp.readyState == 4 && xmlhttp.status ==200)
+                {
+                    txt.innerHTML = xmlhttp.responseText;
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="">
+        用户名：<input type="text" id="user" name="user"><span id="txt"></span><br><br>
+        密码：<input type="password" id="password" name="password"><br>
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>

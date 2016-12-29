@@ -1,0 +1,173 @@
+*{margin: 0;padding: 0;box-sizing: border-box;font-size: 100%;outline:0;font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family: "苹方";}
+li{list-style: none;}
+a{text-decoration: none;}
+
+.header{
+    height: 3.4rem;
+    background: #1a83d1;
+    position: relative;
+}
+.header a.userpic{
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: #fff;
+    margin: 1.12rem auto 0;
+}
+.header a .message{
+    color: #fff;
+    position: absolute;
+    right: 0.24rem;
+    top: 0.24rem;
+    font-size: 0.42rem;
+}
+.header a .message span{
+    background: red;
+    font-size: 0.12rem;
+    width: 0.18rem;
+    height: 0.18rem;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    line-height: 0.18rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.header h2{
+    text-align: center;
+    line-height: 0.32rem;
+    margin: 0.1rem 0 0;
+}
+.header h2 a{
+    font-size: 0.3rem;
+    line-height: 0.32rem;
+    color: #fff;
+}
+
+.userdata{
+    height: 2.4rem;
+    background: #1175bf;
+}
+.userdata .row{
+    height: 50%;
+}
+.userdata .row:first-child{
+    border-bottom: 0.01rem solid #fff;
+}
+.userdata .row .col-xs-6{
+    padding-top: 0.12rem;
+}
+.userdata .row .col-xs-6 a{
+    font-size: 0.3rem;
+    line-height: 0.36rem;
+    color: #fff;
+}
+.userdata .row .col-xs-6 h3{
+    font-size: 0.5rem;
+    line-height: 0.66rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.btnbox{
+    height: 1.2rem;
+    position: relative;
+}
+.btnbox .btn1,.btnbox .btn2{
+    position: absolute;
+    display: block;
+    width: 2.16rem;
+    height: 0.64rem;
+    border-radius: 0.12rem;
+    text-align: center;
+    line-height: 0.64rem;
+    font-size: 0.32rem;
+    top: 0;bottom: 0;margin: auto;
+}
+.btnbox .btn1{
+    border: 0.01rem solid #57baf4;
+    color: #57baf4;
+    left: 16%;
+}
+.btnbox .btn2{
+    background: #fb4b24;
+    color: #fff;
+    right: 16%;
+}
+
+.list{
+    margin-bottom: 1.2rem;
+}
+.list .row .col-xs-4{
+    height: 2.06rem;
+    border: 0.01rem solid #f6f6f6;
+    text-align: center;
+}
+.list .row .col-xs-4 div{
+    width: 0.74rem;
+    height: 0.74rem;
+    border-radius: 50%;
+    margin: 0.5rem auto 0.2rem;
+    color: #fff;
+    font-size: 0.42rem;
+    line-height: 0.74rem;
+}
+.list .row a:nth-child(1) div{
+    background: #ffab30;
+}
+.list .row a:nth-child(2) div{
+    background: #54ceba;
+}
+.list .row a:nth-child(3) div{
+    background: #32a9f2;
+}
+.list .row a:nth-child(4) div{
+    background: #40d37b;
+}
+.list .row a:nth-child(5) div{
+    background: #0989ff;
+}
+.list .row .col-xs-4 p{
+    font-size: 0.32rem;
+    line-height: 0.42rem;
+    color: #000;
+}
+
+.footnav{
+    width: 100%;
+    background: #f6f6f6;
+    position: fixed;
+    bottom: 0;
+    height: 1.01rem;
+    border-top: 0.01rem solid #bfbfc1;
+}
+.footnav ul{
+    width: 100%;
+}
+.footnav ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.footnav ul li a div{
+    width: 0.46rem;
+    height: 0.46rem;
+    color: #696e73;
+    margin: 0.16rem auto 0;
+    font-size: 0.32rem;
+    line-height: 0.46rem;
+}
+.footnav ul li a{
+    color: #999;
+    font-size: 0.24rem;
+    line-height: 0.32rem;
+}
+.footnav ul li a.select{
+    color: #1d80d3;
+}
+.footnav ul li a div.select{
+    color: #1d80d3;
+}

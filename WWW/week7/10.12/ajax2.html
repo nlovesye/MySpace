@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax2</title>
+    <script>
+    window.oninput = function()
+    {
+        var user = document.getElementsByName("user")[0];
+        var txt = document.getElementById("txt");
+        user.oninput = function()
+        {
+            var xml;
+            if(window.XMLHttpRequest)
+            {
+                xml = new XMLHttpRequest();
+            }
+            else
+            {
+                xml = new ActiveXObject("Microsoft XMLHTTP");
+            }
+            xml.open("get","../../ajax1.php?q=" + user.value,true);
+            xml.send();
+            xml.onreadystatechange = function()
+            {
+                if(xml.readyState == 4 && xml.status == 200)
+                {
+                    txt.innerHTML = xml.responseText;
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <form action="">
+        用户名：<input type="text" id="user" name="user" value=""><br><br>
+        密码：<input type="password" id="password" name="password"><br>
+        <input type="submit" value="注册"><br><br>
+        <p id="txt"></p>
+    </form>
+</body>
+</html>

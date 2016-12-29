@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   
+</head>
+<body>
+    <input type="button" id="btn" value="调用" />
+     <script>
+         //this是指当前对象,只能读，不能写，不能修改
+         // alert(this); 
+          //在函数外，this代表window
+          // 在函数内
+          //   1. 函数被直接调用
+          //      this指向window
+          //   2. 被事件调用   
+          //      this指向是谁调用了函数，this就指向谁. 
+          //
+          //
+          function f()
+          {
+             alert(this);
+          }
+         // / document.onclick = f;
+          //f();
+          var btn = document.getElementById("btn");
+          btn.onclick = f;
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      .toGreen
+      {
+            border:5px solid green;
+      }
+     
+    </style>
+    <script>
+    window.onload= function(){
+        var btn = document.getElementById("btn");
+        // alert(btn.type);
+        // btn.type = "text";
+        // btn.value= "花菜";
+
+        // btn.onmouseover = function()
+        // {
+        //     alert("w");
+        // }
+        var alink = document.getElementById("alink");
+        // alert(alink.innerHTML);  //不光输出内容，而且把内容对应的html标签也输出
+        // alert(alink.innerText);  //只输出内容
+        var iDiv = document.getElementById("iDiv");
+        iDiv.style.width = "200px";    //需要加引号
+        iDiv.style.height = "200px";
+        iDiv.style.background = "red";
+        btn.onclick = function()
+        {
+             // alert("b");
+             iDiv.className = "toGreen"; //注意是className,不是class
+        }
+         var lis = document.getElementsByTagName("li");  //返回是数组
+         alert(lis.length);
+         alert(lis[0].innerText);
+    }
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="按钮">
+    <a id="alink" href="http://www.baidu.com"><span>百度</span></a>
+    <div id="iDiv">改变DIV</div>
+    <ul>
+        <li>狮子</li>
+        <li>老虎</li>
+        <li>大象</li>
+        <li>猴子</li>
+    </ul>
+</body>
+</html>

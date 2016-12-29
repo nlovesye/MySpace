@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <script>
+     window.onload=function(){
+        var username=document.getElementsByName("username")[0];
+        var userHint=document.getElementById("userHint");
+            username.onblur=function(){
+            var xhr;
+                if (window.XMLHttpRequest){
+                   xhr=new XMLHttpRequest();
+                }else{
+                   xhr=new ActiveXObject("Microsoft.XMLHTTP")
+                }
+            xhr.open("get","1.php?q="+username.value,true);
+            xhr.send();
+
+            xhr.onreadystatechange=function(){
+                if (xhr.readyState==4&&xhr.status==200){
+                    userHint.innerHTML=xhr.responseText;
+                }
+            }
+        }
+     }   
+    </script>
+</head>
+<body>
+<h1>AJAX的练习</h1>
+<form action="">
+       用户名：<input type="text" name="username"/><span id="userHint"></span><br />
+       密 码：<input type="password" name="pass" /><br />
+       <input type="submit" value="注册" />
+</form>   
+</body>
+</html>

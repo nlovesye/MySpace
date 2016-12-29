@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy2</title>
+    <style>
+    html{
+        background: rgba(245,244,206,0.6);
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .box{
+        width: 1200px;
+        height: 600px;
+        margin: 50px auto;
+        padding: 80px;
+    }
+    .box>div{
+        width: 280px;
+        height: 420px;
+        background: rgba(246,241,177,0.9);
+        float: left;
+        margin-right: 100px;
+        text-align: center;
+        padding: 12px;
+        overflow: hidden;
+    }
+    .box>div:last-child{
+        margin-right: 0;
+    }
+    .box>div h1{
+        font-size: 22px;
+    }
+    .box>div a img{
+        width: 180px;
+        height: 250px;
+        margin: 8px 0;
+    }
+    .box>div p{
+        text-align: left;
+        text-indent: 32px;
+        font-size: 12px;
+    }
+    </style>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script>
+    $(function()
+    {
+        $.ajax({
+            type: "Get",
+            url: "data.json",
+            dataType: "json",
+            success: function(data){
+                var pic;
+                var div;
+                for(var i=0;i<data.length;i++){
+                    div = $(".box").children("div").eq(i);
+                    div.children("h1").html(data[i].title);
+                    pic = $('<img src="'+data[i].url+'"/>');
+                    div.children("a").children("div").append(pic);
+                    div.children("p").html(data[i].inf);
+                }
+                var t = null;
+                var k = 0;
+                var i = 3;
+                clearInterval(t);
+                t = setInterval(function(){
+                    var div = $(".box").children("div").eq(k);
+                    var nDiv = $("<h1>"+data[i].title+"</h1><a><div><img src='"+data[i].url+"' /></div></a><p>"+data[i].inf+"</p>");
+                    // div.children("h1").fadeOut();
+                    // div.children("a").children("div").children("img").fadeOut();
+                    // div.children("p").fadeOut();  
+                    div.empty().append(nDiv);
+                    nDiv.fadeIn();
+                    k++;
+                    i++;
+                    if(k == 3){
+                        k = 0;
+                    }
+                    if(i == data.length-1){
+                        i = 0;
+                    }
+                },8000);
+            }
+        });
+
+    })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <h1></h1>
+            <a><div></div></a>
+            <p></p>
+            <!-- <div></div> -->
+        </div>
+        <div>
+            <h1></h1>
+            <a><div></div></a>
+            <p></p>
+            <!-- <div></div> -->
+        </div>
+        <div>
+            <h1></h1>
+            <a><div></div></a>
+            <p></p>
+            <!-- <div></div> -->
+        </div>
+    </div>
+</body>
+</html>

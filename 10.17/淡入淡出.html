@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        // $("#show").click(function()
+        //     {
+        //         $(this).fadeTo("slow",0.2);
+        //     });
+        // $("#show").click(function()
+        //     {
+        //         $(this).fadeToggle(2000);
+        //     });
+        $("button").click(function()
+            {
+                $("#show").fadeToggle(2000);
+            });
+    })
+    </script>
+    <style>
+    #show
+    {
+        width: 400px;
+        height: 400px;
+        background: rgb(100,200,10);
+    }
+    </style>
+</head>
+<body>
+    <div id="show"></div>
+    <button>按钮</button>
+</body>
+</html>

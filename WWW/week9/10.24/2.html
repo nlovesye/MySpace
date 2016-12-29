@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    }
+    body
+    {
+        background: rgba(150,150,150,0.1);
+    }
+    .box
+    {
+        width: 300px;
+        height: 420px;
+        border-top: 1px solid #f60;
+        background: #fff;
+        text-align: center;
+        position: relative;
+    }
+    .box h3
+    {
+        height: 30px;
+        color: #ffac13;
+        font-size: 16px;
+        font-weight: normal;
+        margin-top: 50px;
+        line-height: 30px;
+    }
+    .box .show ul li h2
+    {
+        font-size: 20px;
+        font-weight: normal;
+        margin-top: 20px;
+        line-height: 26px;
+    }
+    .box .show ul li .p1
+    {
+        color: #b0b0b0;
+        font-size: 12px;
+        line-height: 26px;
+    }
+    .box .show ul li img
+    {
+        margin-top: 60px;
+    }
+    .box .show
+    {
+        height: 340px;
+        position: relative;
+        overflow: hidden;
+    }
+    .box .show ul
+    {
+        width: 1200px;
+        position: absolute;
+        /*left: -300px;*/
+    }
+    .box .show ul li
+    {
+        list-style: none;
+        float: left;
+        width: 300px;
+    }
+    .box a
+    {
+        text-decoration: none;
+        display: none;
+        width: 20px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        background: #b0b0b0;
+        line-height: 50px;
+        color: #fff;
+        font-size: 22px;
+        opacity: 0.2;
+    }
+    .box .lbtn
+    {
+        left: 0;
+    }
+    .box .rbtn
+    {
+        right: 0;
+    }
+    .box .tab
+    {
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+    }
+    .box .tab li
+    {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #b0b0b0;
+        display: inline-block;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .box .tab li:hover
+    {
+        background: #f60;
+    }
+    .box .tab li.select
+    {
+        background: #fff;
+        border: 2px solid #f60;
+        width: 6px;
+        height: 6px;
+    }
+    </style>
+    <script src="../jquery-2.1.4.js"></script>
+    <script>
+    $(function()
+    {
+        $(".box").mouseenter(function()
+            {
+                $(this).children("a").fadeIn();
+            }).mouseleave(function()
+            {
+                $(this).children("a").fadeOut();
+            });
+        $(".box a").hover(function()
+            {
+                $(this).stop().animate({opacity:0.6});
+            },function()
+            {
+                $(this).stop().animate({opacity:0.2});
+            });
+
+        var index = 0;
+        $(".box .lbtn").click(function()
+            {
+                index--;
+                if(index == -1)
+                {
+                    index = 3;
+                }
+                $(this).siblings("div").children().stop().animate(
+                    {
+                        left: -300 * index
+                    });
+                $(this).siblings("ul").children().eq(index).addClass("select").siblings().removeClass("select");
+            });
+        $(".box .rbtn").click(function()
+            {
+                index++;
+                if(index == 4)
+                {
+                    index = 0;
+                }
+                $(this).siblings("div").children().stop().animate(
+                    {
+                        left: -300 * index
+                    });
+                $(this).siblings("ul").children().eq(index).addClass("select").siblings().removeClass("select");
+            });
+
+        $(".tab li").click(function()
+            {
+                index = $(this).index();
+                $(".show ul").stop().animate(
+                    {
+                        left: -300 * $(this).index()
+                    });
+                $(this).addClass("select").siblings().removeClass("select");
+            });
+    })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h3>图书</h3>
+        <div class="show">
+            <ul>
+                <li>
+                    <h2>哈利·波特与魔法石</h2>
+                    <p class="p1">哈利波特来了</p>
+                    <img src="images/01.jpg" alt="">
+                </li>
+                <li>
+                    <h2>特价专区</h2>
+                    <p class="p1">精选畅销好书，特价促销，天天更新，天天特价！</p>
+                    <p class="p2">限时优惠</p>
+                    <img src="images/02.jpg" alt="">
+                </li>
+                <li>
+                    <h2>特价专区</h2>
+                    <p class="p1">精选畅销好书，特价促销，天天更新，天天特价！</p>
+                    <p class="p2">限时优惠</p>
+                    <img src="images/03.jpg" alt="">
+                </li>
+                <li>
+                    <h2>特价专区</h2>
+                    <p class="p1">精选畅销好书，特价促销，天天更新，天天特价！</p>
+                    <p class="p2">限时优惠</p>
+                    <img src="images/04.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+        <a href="javascript:;" class="lbtn">＜</a>
+        <a href="javascript:;" class="rbtn">＞</a>
+        <ul class="tab">
+            <li class="select"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

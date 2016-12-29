@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+    #box{
+        width:200px;
+        height:200px;
+        position: relative;
+        margin:0 auto;
+    }
+   
+    #box img{
+        width:200px;
+        height:200px;
+    }
+    #glass{
+        width:100px;
+        height:100px;
+        position: absolute;
+        display:none;
+        top:0px;
+        left:0px;
+        background: gold;
+        opacity:0.3;
+        cursor:move;
+    }
+    #big{
+        width:400px;
+        height:400px;
+        border:1px solid #ccc;
+        position: relative;
+        overflow:hidden;
+        margin:0 auto;
+        display:none;
+    }
+    #img{
+        width:800px;
+        height:800px;
+        position:absolute;
+        top:-800px;
+        left:-800px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="images/fk_big.jpg" alt="">
+        <div id="glass"></div>
+    </div>
+    <div id="big">
+        <img id="img" src="images/fk_big.jpg" alt="">
+    </div>
+    <script>
+    var glass=document.getElementById('glass');
+    var oBox=document.getElementById('box');
+    var img=document.getElementById('img');
+    var big=document.getElementById('big');
+    var disX=0;
+    var disY=0;
+    oBox.onmouseover=function(e){
+        big.style.display='block'
+        glass.style.display='block';
+        var e=e||window.event;
+        glass.style.left=e.clientX-oBox.offsetLeft+'px';
+        glass.style.top=e.clientY-oBox.offsetTop+'px';
+        if((e.clientX-oBox.offsetLeft)>(oBox.offsetWidth-glass.offsetWidth)){
+            glass.style.left=oBox.offsetWidth-glass.offsetWidth+'px';
+        }
+        if((e.clientY-oBox.offsetTop)>(oBox.offsetHeight-glass.offsetHeight)){
+            glass.style.top=oBox.offsetHeight-glass.offsetHeight+'px';
+        }
+        img.style.left=-4*glass.offsetLeft+'px';
+        img.style.top=-4*glass.offsetTop+'px';
+    }
+    oBox.onmouseout=function(){
+        big.style.display='none';
+        glass.style.display='none';
+    }
+    glass.onmousedown=function(e){
+        var e=e||window.event;
+        disX=e.clientX-glass.offsetLeft;
+        disY=e.clientY-glass.offsetTop;
+        document.onmousemove=function(e){
+            var e=e||window.event;
+            var left=e.clientX-disX;
+            var top=e.clientY-disY;
+            if(left<0){
+                left=0;
+            }else if(left>oBox.offsetWidth-glass.offsetWidth){
+                left=oBox.offsetWidth-glass.offsetWidth;
+            }
+            if(top<0){
+                top=0;
+            }else if(top>oBox.offsetHeight-glass.offsetHeight){
+                top=oBox.offsetHeight-glass.offsetHeight;
+            }
+            glass.style.left=left+'px';
+            glass.style.top=top+'px';
+            
+            if(img.offsetLeft<-3*(oBox.offsetWidth-glass.offsetWidth)){
+                img.style.left=-3*(oBox.offsetWidth-glass.offsetWidth)+'px';
+             }else if(img.offsetLeft>0){
+                img.style.left=0;
+             }
+             if(img.offsetTop<-3*(oBox.offsetHeight-glass.offsetHeight)){
+                img.style.top=-3*(oBox.offsetHeight-glass.offsetHeight)+'px';
+            }else if(img.offsetTop>0){
+                img.style.top=0;
+            }
+            img.style.left=-4*glass.offsetLeft+'px';
+            img.style.top=-4*glass.offsetTop+'px';
+        }
+        document.onmouseup=function(){
+            document.onmousemove=null;
+            this.onmouseup=null;
+        }
+        return false;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机碰墙</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="400" style="border:1px dashed #000;margin:50px auto;background:rgba(0,0,0,0.8);box-shadow:0 0 30px #000;display:block;"></canvas>
+    <button id="btn" style="width:50px;height:20px;margin:20px auto;display:block;">换肤</button>
+    <script>
+    // alert(Math.floor(1.1));
+        var btn=document.getElementById('btn');
+        var canvas=document.getElementById("canvas");
+        var c=canvas.getContext("2d");
+        var arr=[];
+        function rand(a,b){
+            return Math.floor(Math.random() * (b - a) + a + 1);
+        }
+
+        btn.onclick=function(){
+            canvas.style.background='rgba('+ rand(0, 255)+','+rand(0, 255)+','+rand(0, 255)+',0.8)';
+        }
+        //构造函数
+        
+        function Circle(){
+            this.radius=rand(20,40);
+            this.translateX=rand(this.radius,canvas.width-this.radius);
+            this.translateY=rand(this.radius,canvas.height-this.radius);
+            this.fillStyle ='rgb('+ rand(0, 255)+','+rand(0, 255)+','+rand(0, 255)+')';
+            this.moveX=rand(0,4)>2?-rand(0,4):rand(0,4);
+            this.moveY=rand(0,4)>2?-rand(0,4):rand(0,4);
+            this.draw=drawCircle;
+            this.move=move;
+        }
+
+        function drawCircle(){
+            c.save();
+            c.beginPath();
+            c.arc(this.translateX,this.translateY,this.radius,0,2*Math.PI);
+            c.fillStyle=this.fillStyle;
+            c.fill();
+            c.restore();
+        }
+        function move(){
+            if(this.translateX+this.moveX-this.radius<0||this.translateX+this.moveX+this.radius>canvas.width){
+                this.moveX=-this.moveX;
+            }
+            if(this.translateY+this.moveY-this.radius<0||this.translateY+this.moveY+this.radius>canvas.height){
+                this.moveY=-this.moveY;
+            }
+            this.translateX+=this.moveX;
+            this.translateY+=this.moveY;
+        }
+        for(var i=0;i<rand(50,3000);i++){
+            var circle=new Circle();
+            arr.push(circle);
+        }
+        function animation(){
+            c.clearRect(0,0,canvas.width,canvas.height);
+            for(var i=0;i<arr.length;i++){
+                arr[i].draw();
+                arr[i].move();
+            }
+            window.requestAnimationFrame(animation);
+        }
+        animation();
+        
+        
+    
+    </script>
+</body>
+</html>

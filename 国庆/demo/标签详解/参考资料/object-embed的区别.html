@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.cnblogs.com/top5/archive/2009/08/07/1540871.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>OBJECT和EMBED标签 - 与122213223114客园</title>
+<link type="text/css" rel="stylesheet" href="./object-embed的区别_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./object-embed的区别_files/bundle-FFandIE.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/top5/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/top5/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/top5/wlwmanifest.xml">
+<script src="./object-embed的区别_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'top5', cb_enable_mathjax=false;</script>
+<script src="./object-embed的区别_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<!--PageBeginHtml Block Begin-->
+<div style="text-align:center;background:#000">
+
+</div>
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/top5/"><img id="blogLogo" src="./object-embed的区别_files/logo.png" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/top5/">与时俱进</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div style="display:none;"><img src="./object-embed的区别_files/body.gif"></div>
+	<div id="navigator">
+		
+<!--done-->
+			<ul id="navList">
+				<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+				<li><a id="MyLinks1_SpaceLink" class="menu" href="http://space.cnblogs.com/">社区</a></li>
+				<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/top5/">首页</a></li>
+				<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+				<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B">联系</a></li>
+				<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+				<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/top5/rss">订阅</a>
+				<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/top5/rss"><img src="./object-embed的区别_files/xml.gif" alt="订阅"></a></li>
+			</ul>
+
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 2083&nbsp;
+文章- 0&nbsp;
+评论- 456&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="topicList">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="./object-embed的区别_files/object-embed的区别.html">OBJECT和EMBED标签</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body">OBJECT和EMBED标签 <br><br>一、介绍： <br>我们要在网页中正常显示flash内容，那么页面中必须要有指定flash路径的标 签。也就是OBJECT和EMBED标签。OBJECT标签是用于windows平台的IE浏览器的，而EMBED是用于windows和 Macintosh平台下的Netscape Navigator浏览器以及Macintosh平台下的IE浏览器。windows平台的IE利用Activex控件来播放flash而其它的浏览器则 使用Netscape插件技术来播放flash。 <br><br>下面是简单的网页中插入flash的代码示例： <br><br>Code:<br><br>&lt;OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" <br>codebase="<font color="#0000ff">http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0</font>" <br>WIDTH="550" HEIGHT="400" id="myMovieName"&gt; <br>&lt;PARAM NAME=movie VALUE="myFlashMovie.swf"&gt; <br>&lt;PARAM NAME=quality VALUE=high&gt; <br>&lt;PARAM NAME=bgcolor VALUE=#FFFFFF&gt; <br>&lt;EMBED src="/support/flash/ts/documents/myFlashMovie.swf" quality=high bgcolor=#FFFFFF WIDTH="550" HEIGHT="400" <br>NAME="myMovieName" ALIGN="" TYPE="application/x-shockwave-flash" <br>PLUGINSPAGE="<font color="#0000ff">http://www.macromedia.com/go/getflashplayer</font>"&gt; <br>&lt;/EMBED&gt; <br>&lt;/OBJECT&gt;<br><br>二、为什么要使用以上全部的标签？能省略某些标签不？ <br>OBJECT 标签是用于windows IE3.0及以后浏览器或者其它支持Activex控件的浏览器。“classid”和“codebase”属性必须要精确地按上例所示的写法写，它们告 诉浏览器自动下载flash player的地址。如果你没有安装过flash player 那么IE3.0以后的浏览器会跳出一个提示框访问是否要自动安装flash player。当然，如果你不想让那些没有安装flash player的用户自动下载播放器，或许你可以省略掉这些代码。 <br>EMBED标签是用于Netscape Navigator2.0及以后的浏览器或其它支持Netscape插件的浏览器。“pluginspage”属性告诉浏览器下载flash player的地址，如果还没有安装flash player的话，用户安装完后需要重启浏览器才能正常使用。 <br>为了确保大多数浏览器能正常显 示flash，你需要把EMBED标签嵌套放在OBJECT标签内，就如上面代码例子一样。支持Activex控件的浏览器将会忽略OBJECT标签内的 EMBED标签。Netscape和使用插件的IE浏览器将只读取EMBED标签而不会识别OBJECT标签。也就是说，如果你省略了EMBED标签，那 firefox就不能识别你的flash了（不过纳闷的是，省略了object只写embed，IE也能正常显示flash，呵呵，具体的再仔细看看 了）。 <br><br>下面列出了用于发布影片的OBJECT和EMBED标签的必要以及可选属性。 <br><br>一、必需属性： <br>·CLASSID-设置浏览器的Activex控件，仅用于OBJECT标签。 <br>·CODEBASE-设置flash Activex控件的位置，因而如果浏览器如果没有安装的话，可以自动下载安装。仅用于OBJECT标签。 <br>·WIDTH-以百分比或象素指定flash影片的宽度。 <br>·HEIGHT-以百分比或象素指定flash影片的高度。 <br>·SRC-指定影片的下载地址。仅用于EMBED标签。 <br>·PLUGINSPAGE-设置flash 插件的位置，因而如果浏览器如果没有安装的话，可以自动下载安装。仅用于EMBED标签。 <br>·MOVIE-指定影片的下载地址。仅用于OBJECT标签。 <br><br>二、可选属性及可用的值： <br>·ID-设定变量名，用于脚本代码的引用。仅用于OBJECT。 <br>·NAME -设定变量名，用于脚本代码（如javascript）的引用。仅用于EMBED。 <br>·SWLIVECONNECT - （true或false）指定当flash player第一次下载时，是否启用java。如果些属性省略，默认值为false。你果你在相同页同使用javascript和flash，java必须使用FSCommand来工作。 <br>·PLAY -（true或false）指定flash影片是否在下载完成后就自动播放，如果省略此属性，则默认为true。 <br>·LOOP - （true或false）指定影片播放完最后一帧后是停止还是继续循环播放，如果省略此属性，则默认为true。 <br>·MENU - （true或false） <br>·True 显示全部的菜单，允许用户放大，缩小等控制影片播放等操作。 <br>·False 显示只包含设置选项和关于flash的菜单。 <br>·QUALITY - (low, high, autolow, autohigh, best ) <br>·Low 速度优于美观，而且不应用反锯齿。 <br>·Autolow 刚开始着重于速度，但当需要时随时提升美观。 <br>·Autohigh 同时着重播放速度和美观，但需要时则牺牲美观来保证播放速度。 <br>·Medium 应用一些反锯齿而不平滑位图。它质量高于low设置而低于high设置。 <br>·High 美观优于播放速度，而且一直应用反锯齿。如果影片不包含动画，位图会被平滑化;而如果影片包含动画，位图将不变平滑。 <br>·Best 提供最好的显示质量而不考虑播放速度。所有输出都应用反锯齿及所有位图都被平滑化。 <br>·SCALE - (showall, noborder, exactfit) <br>·Default(Show all)影片在指定的区域内显示，但保持原始的比例。影片两侧将会出现边框。 <br>·No Boder 收缩影片以适合指定的区域，保持影片不失真，但部分影片将可能将裁切。然而保持影片的原始比例。 <br>·Exact Fit 使整个影片在指定的区域内显示，影片有可能变形失真，而且不保持原始的比例。 <br>·ALIGN - (l, t, r, b) <br>·默认为居中，当浏览器窗口小于影片时，边缘会被裁切。 <br>·Left,Right,Top,Bottom按照相应的设置沿浏览器的边缘对齐。如果需要，另外三边将被裁切。 <br>·SALIGN - (l, t, r, b, tl, tr, bl, br) <br>·L,R,T,B <br>·TL,TR <br>·BL,BR <br>·WMODE- (window, opaque, transparent) 设置flash影片的window mode属性，指定flash在浏览器中的透明，层叠及位置。 <br>·Window 影片在浏览器中自己的矩形窗口内播放。 <br>·Opaque 影片隐藏了所有在它后面的内容。 <br>·Transparent 使flash影片透明，显示透明影片后面的网页内容。这将会降低动画的性能。而且这个属性不是在所有浏览器中都可用的。 <br>·BGCOLOR - （#RRGGBB, 十六进制RGB值。）指定影片的背景颜色。使用这个属性覆盖flash中设定的背景颜色。 <br>·BASE - 设定基准目录或URL，用来解决所以flash中的相对路径。类似网页中的&lt;base&gt;标签。 <br>·FLASHVARS 传递变量到flash player，需要flash player6及以后的版本。 <br>·传递root级变量到影片。字符串的格式是用“&amp;”分隔的name=value集。 <br>·浏览器支持64kB大小的字符串长度。 <br>·更多关于FlashVars的信息，请查看相关文档。</div><div id="MySignature" style="display: block;"><div>
+
+
+
+</div></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/top5/category/203582.html">Html</a></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/top5/tag/OBJECT/">OBJECT</a>, <a href="http://www.cnblogs.com/top5/tag/EMBED/">EMBED</a>, <a href="http://www.cnblogs.com/top5/tag/%E6%A0%87%E7%AD%BE/">标签</a></div>
+<div id="blog_post_info"><div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1540871,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://msg.cnblogs.com/send/%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./object-embed的区别_files/icon_weibo_24.png" alt=""></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./object-embed的区别_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/top5/" target="_blank"><img src="./object-embed的区别_files/sample_face.gif" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/top5/">与时俱进</a><br>
+<a href="http://home.cnblogs.com/u/top5/followees">关注 - 3</a><br>
+<a href="http://home.cnblogs.com/u/top5/followers">粉丝 - 810</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(1540871,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+	<div class="buryit" onclick="votePost(1540871,&#39;Bury&#39;)"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/top5/archive/2009/08/07/1540870.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/top5/archive/2009/08/07/1540870.html" title="发布于2009-08-07 08:30">embed 元素的用法</a><br><a href="http://www.cnblogs.com/top5/archive/2009/08/10/1542578.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/top5/archive/2009/08/10/1542578.html" title="发布于2009-08-10 08:30">C#/winform采集百度hi文章</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2009-08-07 08:32</span> <a href="http://www.cnblogs.com/top5/">与时俱进</a> 阅读(<span id="post_view_count">12431</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=1540871" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/top5/archive/2009/08/07/1540871.html#" onclick="AddToWz(1540871);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=54434,cb_entryId=1540871,cb_blogApp=currentBlogApp,cb_blogUserGuid='042d1f5d-e618-de11-9510-001cf0cd104b',cb_entryCreatedDate='2009/8/7 8:32:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/top5/archive/2009/08/07/1540871.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/top5/archive/2009/08/07/1540871.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://www.rongcloud.cn/" target="_blank">【推荐】融云即时通讯云－豆果美食、Faceu等亿级APP都在用</a><br><a href="http://www.gcpowertools.com.cn/products/spreadjs/?utm_source=cnblogs&utm_medium=blogpage&utm_term=bottom&utm_content=SpreadJS&utm_campaign=community" target="_blank">【推荐】怎样将“在线Excel“嵌入你的开发系统中？</a><br><a href="http://click.aliyun.com/m/3037/" target="_blank">【推荐】阿里云高性能云服务器+SSD云盘，让业务响应0延迟</a><br></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"><a href="https://www.wilddog.com/?utm_source=cnblogs&utm_medium=banner&utm_campaign=orangemarch" target="_blank"><img width="300" height="250" src="./object-embed的区别_files/cnblogs-300x250-1.jpg" alt=""></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/545089/" target="_blank">App Store占全球移动App收入比例达到58%</a><br> ·  <a href="http://news.cnblogs.com/n/545088/" target="_blank">Linus Torvalds：Linux背后的智者</a><br> ·  <a href="http://news.cnblogs.com/n/545087/" target="_blank">苹果官方HomeKit应用来了 第三方该怎么办</a><br> ·  <a href="http://news.cnblogs.com/n/545086/" target="_blank">从Google学到的厕所文化</a><br> ·  <a href="http://news.cnblogs.com/n/545085/" target="_blank">科幻成真：索尼研发能拍照能录像的隐形眼镜</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="ad_c2" class="c_ad_block"><a href="https://www.jpush.cn/?from=cnblogs01" target="_blank"><img width="468" height="60" src="./object-embed的区别_files/24442-20160307140747632-1210035054.jpg" alt=""></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/543110/" target="_blank">架构漫谈（九）：理清技术、业务和架构的关系</a><br> ·  <a href="http://kb.cnblogs.com/page/542725/" target="_blank">架构漫谈（八）：从架构的角度看如何写好代码</a><br> ·  <a href="http://kb.cnblogs.com/page/542257/" target="_blank">架构漫谈（七）：不要空设架构师这个职位，给他实权</a><br> ·  <a href="http://kb.cnblogs.com/page/541740/" target="_blank">架构漫谈（六）：软件架构到底是要解决什么问题？</a><br> ·  <a href="http://kb.cnblogs.com/page/541188/" target="_blank">架构漫谈（五）：什么是软件</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);    
+});
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: topicList 文章列表容器-->
+
+	<div id="sideBar" class="forFlow">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><a href="http://nba.vancl.com/?source=u114cx&sourcesuninfo=ad-0-1-103-0-2" target="_blank"><img src="./object-embed的区别_files/adpics.aspx" width="200" height="200" border="0"></a>
+<div><p>友情链接：</p><p><a href="http://blog.sina.com.cn/s/blog_6bcdefec0100n01d.html" target="_blank">同里老宅院民居客栈</a> </p>
+<p><a href="http://www.wjdwlxs.com/" target="_blank">吴江东吴旅行社</a></p>
+<p><a href="http://www.114cx.net/" target="_blank">114查询</a></p></div><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/top5/">与时俱进</a><br>园龄：<a href="http://home.cnblogs.com/u/top5/" title="入园时间：2009-03-25">7年1个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/top5/followers/">810</a><br>关注：<a href="http://home.cnblogs.com/u/top5/followees/">3</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger(&#39;042d1f5d-e618-de11-9510-001cf0cd104b&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="日历">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2009/07/01&#39;);return false;">&lt;</a></td><td align="center">2009年8月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2009/09/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/01.html"><u>1</u></a></td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/05.html"><u>5</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/06.html"><u>6</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/07.html"><u>7</u></a></td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center">9</td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/10.html"><u>10</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/11.html"><u>11</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/12.html"><u>12</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/13.html"><u>13</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/14.html"><u>14</u></a></td><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/15.html"><u>15</u></a></td></tr><tr><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/16.html"><u>16</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/17.html"><u>17</u></a></td><td align="center">18</td><td align="center">19</td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/20.html"><u>20</u></a></td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/21.html"><u>21</u></a></td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/23.html"><u>23</u></a></td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/27.html"><u>27</u></a></td><td align="center">28</td><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/top5/archive/2009/08/29.html"><u>29</u></a></td></tr><tr><td class="CalWeekendDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+
+</div>
+</div>
+
+</div><div id="sidebar_categories">
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/top5/category/224972.html">3D类(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/top5/category/210865.html">Android(138)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/top5/category/188516.html">Apache(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/top5/category/183399.html">asp(31)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/top5/category/183398.html">asp.net,C#(497)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/top5/category/260297.html">BSD(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/top5/category/239268.html">C,C++(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/top5/category/183397.html">Css(46)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/top5/category/214320.html">DirectX,OpenGL,ffmpeg,mencoder(41)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/top5/category/215851.html">Dos和批处理(26)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/top5/category/183434.html">DreamWeaver(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/top5/category/183811.html">Exchange(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/top5/category/184667.html">Firebird(31)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/top5/category/221315.html">FireFox插件(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/top5/category/201743.html">Flash,Actionscript,Flex(69)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/top5/category/209513.html">Grub(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/top5/category/214425.html">GTK(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/top5/category/203582.html">Html(32)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/top5/category/215364.html">IIS(31)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/top5/category/280518.html">iPhone(45)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/top5/category/356470.html">iTextSharp(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/top5/category/383878.html">Java(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_22" href="http://www.cnblogs.com/top5/category/189536.html">JavaScript(222)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_23" href="http://www.cnblogs.com/top5/category/202399.html">JQuery(56)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_24" href="http://www.cnblogs.com/top5/category/251077.html">json,xml(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_25" href="http://www.cnblogs.com/top5/category/215165.html">lighttpd(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_26" href="http://www.cnblogs.com/top5/category/182828.html">Linux(128)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_27" href="http://www.cnblogs.com/top5/category/215188.html">Live-Cd(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_28" href="http://www.cnblogs.com/top5/category/308450.html">Lua</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_29" href="http://www.cnblogs.com/top5/category/214146.html">Lucene(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_30" href="http://www.cnblogs.com/top5/category/214424.html">Mono(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_31" href="http://www.cnblogs.com/top5/category/183403.html">MySQL(37)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_32" href="http://www.cnblogs.com/top5/category/211174.html">Nginx(33)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_33" href="http://www.cnblogs.com/top5/category/183401.html">Oracle(31)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_34" href="http://www.cnblogs.com/top5/category/239346.html">P2P(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_35" href="http://www.cnblogs.com/top5/category/203227.html">PHP(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_36" href="http://www.cnblogs.com/top5/category/215520.html">PostgreSQL(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_37" href="http://www.cnblogs.com/top5/category/216407.html">Python(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_38" href="http://www.cnblogs.com/top5/category/204404.html">Rewrite(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_39" href="http://www.cnblogs.com/top5/category/183428.html">SEO(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_40" href="http://www.cnblogs.com/top5/category/183402.html">SQL Server(34)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_41" href="http://www.cnblogs.com/top5/category/184668.html">Sqlite(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_42" href="http://www.cnblogs.com/top5/category/215187.html">Squid(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_43" href="http://www.cnblogs.com/top5/category/215362.html">ssl(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_44" href="http://www.cnblogs.com/top5/category/215365.html">Tomcat(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_45" href="http://www.cnblogs.com/top5/category/212074.html">UML建模(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_46" href="http://www.cnblogs.com/top5/category/189133.html">VBA(39)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_47" href="http://www.cnblogs.com/top5/category/215920.html">Visual Basic,VBS(23)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_48" href="http://www.cnblogs.com/top5/category/215363.html">vpn(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_49" href="http://www.cnblogs.com/top5/category/219005.html">Windows技巧/注册表(32)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_50" href="http://www.cnblogs.com/top5/category/183807.html">安全(37)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_51" href="http://www.cnblogs.com/top5/category/204228.html">采集(29)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_52" href="http://www.cnblogs.com/top5/category/213108.html">常用(67)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_53" href="http://www.cnblogs.com/top5/category/229590.html">短信(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_54" href="http://www.cnblogs.com/top5/category/217131.html">发音(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_55" href="http://www.cnblogs.com/top5/category/188515.html">服务器(34)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_56" href="http://www.cnblogs.com/top5/category/215519.html">负载均衡(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_57" href="http://www.cnblogs.com/top5/category/183810.html">黑客(33)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_58" href="http://www.cnblogs.com/top5/category/229229.html">后期制作(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_59" href="http://www.cnblogs.com/top5/category/276717.html">汇编(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_60" href="http://www.cnblogs.com/top5/category/183809.html">集群(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_61" href="http://www.cnblogs.com/top5/category/216119.html">接口(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_62" href="http://www.cnblogs.com/top5/category/222424.html">经典语录(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_63" href="http://www.cnblogs.com/top5/category/246607.html">口才、沟通、写作(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_64" href="http://www.cnblogs.com/top5/category/182815.html">浏览器(25)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_65" href="http://www.cnblogs.com/top5/category/217626.html">流媒体(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_66" href="http://www.cnblogs.com/top5/category/236488.html">其它技术(21)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_67" href="http://www.cnblogs.com/top5/category/210915.html">启动盘(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_68" href="http://www.cnblogs.com/top5/category/218874.html">嵌入式开发(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_69" href="http://www.cnblogs.com/top5/category/221584.html">摄影,摄像(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_70" href="http://www.cnblogs.com/top5/category/214417.html">数据恢复(25)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_71" href="http://www.cnblogs.com/top5/category/183400.html">数据库(102)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_72" href="http://www.cnblogs.com/top5/category/212794.html">系统封装(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_73" href="http://www.cnblogs.com/top5/category/227335.html">协议(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_74" href="http://www.cnblogs.com/top5/category/211894.html">新闻(133)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_75" href="http://www.cnblogs.com/top5/category/183812.html">虚拟机(17)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_76" href="http://www.cnblogs.com/top5/category/235833.html">音乐、伴奏(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_77" href="http://www.cnblogs.com/top5/category/182827.html">游戏(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_78" href="http://www.cnblogs.com/top5/category/210294.html">在线编辑器(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_79" href="http://www.cnblogs.com/top5/category/188058.html">正则式(13)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/top5/archive/2013/11.html">2013年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/top5/archive/2013/10.html">2013年10月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/top5/archive/2013/09.html">2013年9月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/top5/archive/2013/08.html">2013年8月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/top5/archive/2013/07.html">2013年7月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/top5/archive/2013/06.html">2013年6月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/top5/archive/2013/05.html">2013年5月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/top5/archive/2013/04.html">2013年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/top5/archive/2013/03.html">2013年3月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/top5/archive/2013/01.html">2013年1月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/top5/archive/2012/12.html">2012年12月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/top5/archive/2012/11.html">2012年11月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/top5/archive/2012/10.html">2012年10月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/top5/archive/2012/09.html">2012年9月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/top5/archive/2012/08.html">2012年8月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/top5/archive/2012/07.html">2012年7月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/top5/archive/2012/06.html">2012年6月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/top5/archive/2012/05.html">2012年5月 (53)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/top5/archive/2012/04.html">2012年4月 (31)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/top5/archive/2012/03.html">2012年3月 (57)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/top5/archive/2012/02.html">2012年2月 (43)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/top5/archive/2012/01.html">2012年1月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/top5/archive/2011/12.html">2011年12月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/top5/archive/2011/11.html">2011年11月 (26)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/top5/archive/2011/10.html">2011年10月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/top5/archive/2011/09.html">2011年9月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/top5/archive/2011/08.html">2011年8月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/top5/archive/2011/07.html">2011年7月 (42)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/top5/archive/2011/06.html">2011年6月 (35)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/top5/archive/2011/05.html">2011年5月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/top5/archive/2011/04.html">2011年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/top5/archive/2011/03.html">2011年3月 (39)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/top5/archive/2011/02.html">2011年2月 (31)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/top5/archive/2011/01.html">2011年1月 (47)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/top5/archive/2010/12.html">2010年12月 (28)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/top5/archive/2010/11.html">2010年11月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/top5/archive/2010/10.html">2010年10月 (41)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/top5/archive/2010/09.html">2010年9月 (24)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/top5/archive/2010/08.html">2010年8月 (36)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_39" href="http://www.cnblogs.com/top5/archive/2010/07.html">2010年7月 (19)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_40" href="http://www.cnblogs.com/top5/archive/2010/06.html">2010年6月 (85)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_41" href="http://www.cnblogs.com/top5/archive/2010/05.html">2010年5月 (25)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_42" href="http://www.cnblogs.com/top5/archive/2010/04.html">2010年4月 (82)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_43" href="http://www.cnblogs.com/top5/archive/2010/03.html">2010年3月 (155)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_44" href="http://www.cnblogs.com/top5/archive/2010/02.html">2010年2月 (96)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_45" href="http://www.cnblogs.com/top5/archive/2010/01.html">2010年1月 (55)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_46" href="http://www.cnblogs.com/top5/archive/2009/12.html">2009年12月 (147)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_47" href="http://www.cnblogs.com/top5/archive/2009/11.html">2009年11月 (116)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_48" href="http://www.cnblogs.com/top5/archive/2009/10.html">2009年10月 (244)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_49" href="http://www.cnblogs.com/top5/archive/2009/09.html">2009年9月 (130)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_50" href="http://www.cnblogs.com/top5/archive/2009/08.html">2009年8月 (69)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_51" href="http://www.cnblogs.com/top5/archive/2009/07.html">2009年7月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_52" href="http://www.cnblogs.com/top5/archive/2009/06.html">2009年6月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_53" href="http://www.cnblogs.com/top5/archive/2009/05.html">2009年5月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_54" href="http://www.cnblogs.com/top5/archive/2009/04.html">2009年4月 (58)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_55" href="http://www.cnblogs.com/top5/archive/2009/03.html">2009年3月 (37)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">需要</h3>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/top5/archive/2012/02/12/2347751.html#3422732">1. Re:Android 实现文件上传功能(upload)</a></li>
+        <li class="recent_comment_body">你好，我也想要完整代码，447328311@qq.com 非常感谢</li>
+        <li class="recent_comment_author">--vervains91</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/top5/archive/2010/03/12/1684559.html#3414607">2. Re:Microsoft.Office.Interop.Excel.dll下载</a></li>
+        <li class="recent_comment_body">已拿走，谢了</li>
+        <li class="recent_comment_author">--丶静安</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/top5/archive/2011/10/07/2200922.html#3403512">3. Re:复制到剪贴板的js代码（兼容ie、firefox、chorme、safari...什么都兼容！）</a></li>
+        <li class="recent_comment_body">我试了下，只兼容IE，其他浏览器没有效果</li>
+        <li class="recent_comment_author">--Victor.lu</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/top5/p/3143837.html#3384846">4. Re:比CMD更强大的命令行WMIC</a></li>
+        <li class="recent_comment_body">谢谢分享</li>
+        <li class="recent_comment_author">--了然如一</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/top5/archive/2011/03/08/1977163.html#3384141">5. Re:SQL Server数据修复常用命令DBCC</a></li>
+        <li class="recent_comment_body">也可以直接从mdf里面提取table ,procedure,view等，生成新的数据库。再附加即可。QQ：80554803</li>
+        <li class="recent_comment_author">--jogewang</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/top5/archive/2011/06/22/2086794.html">1. 全国DNS服务器IP地址【电信、网通、铁通】(117563)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2011/07/11/2103343.html">2. CSS中zoom:1的作用 ，小标签大作用(94408)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2012/05/04/2482328.html">3. Android LayoutInflater详解(81067)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2009/11/30/1614137.html">4. 网站漏洞扫描工具[黑客——别黑自己国家的网站！！！](62682)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2009/10/29/1591937.html">5. Excel-VBA操作文件四大方法(61426)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2010/02/16/1668801.html">6. C#导出Excel总结(61411)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2012/05/17/2506618.html">7. UISegmentedControl的详细使用(57918)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2009/05/07/1452135.html">8. JS获取浏览器窗口大小 获取屏幕，浏览器，网页高度宽度(52172)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2012/03/16/2402277.html">9. Android用ImageView显示本地和网上的图片(51660)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2010/04/29/1724039.html">10. C# WinForm控件、自定义控件整理（大全）(43321)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/top5/archive/2010/03/17/1687918.html">1. C#中Socket多线程编程实例(24)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2010/04/29/1724039.html">2. C# WinForm控件、自定义控件整理（大全）(9)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2012/02/12/2347751.html">3. Android 实现文件上传功能(upload)(9)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2011/10/07/2200922.html">4. 复制到剪贴板的js代码（兼容ie、firefox、chorme、safari...什么都兼容！）(9)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2011/05/19/2051175.html">5. 《C#4.0中文视频教程共20课完整版》下载(8)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/top5/archive/2010/04/29/1724039.html">1. C# WinForm控件、自定义控件整理（大全）(19)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2012/05/04/2482328.html">2. Android LayoutInflater详解(16)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2010/02/16/1668801.html">3. C#导出Excel总结(8)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2009/11/30/1614137.html">4. 网站漏洞扫描工具[黑客——别黑自己国家的网站！！！](8)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2009/09/22/1571709.html">5. Apache的Order Allow,Deny 详解(8)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2009/09/08/1562239.html">6. DIV CSS完美兼容IE6/IE7/FF的通用方法(4)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2009/12/28/1633837.html">7. Global.asax详解(4)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2012/05/17/2506604.html">8. UITableView的详细使用(4)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2011/07/11/2103343.html">9. CSS中zoom:1的作用 ，小标签大作用(4)</a></li><li><a href="http://www.cnblogs.com/top5/archive/2012/02/14/2351959.html">10. 纯CSS画的基本图形（矩形、圆形、三角形、多边形、爱心、八卦等）(3)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2016 与时俱进
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+<!--PageEndHtml Block Begin-->
+<div style="text-align:center;background:#fff">
+<div style="text-align:left;line-height:30px;width:960px;margin:auto">友情链接：<a href="http://blog.sina.com.cn/s/blog_6bcdefec0100n01d.html" target="_blank">同里老宅院民居客栈</a> 
+<a href="http://www.wjdwlxs.com/" target="_blank">吴江东吴旅行社</a> 
+<a href="http://www.114cx.net/" target="_blank">114查询</a></div>
+<br>
+
+
+
+
+</div>
+<!--PageEndHtml Block End-->
+
+
+</body></html>

@@ -1,0 +1,295 @@
+*{margin: 0;padding: 0;box-sizing:border-box;font-family: "苹方";}
+body{
+    background: #f6f4f4;
+}
+.topbar{
+    height: 0.9rem;
+    background: #1a83d1;
+}
+.topbar a.iconfont{
+    position: absolute;
+    display: block;
+    font-size: 0.56rem;
+    line-height: 0.9rem;
+    color: #fff;
+}
+.topbar h2{
+    text-align: center;
+    font-size: 0.32rem;
+    color: #fff;
+    line-height: 0.9rem;
+    margin: 0;
+}
+
+.nav{
+    height: 0.72rem;
+    background: #fff;
+    border-bottom: 0.01rem solid #e1e1e1;
+}
+.nav .row{
+    height: 100%;
+    padding: 0.12rem 0 0.11rem;
+}
+.nav .row .col-xs-4{
+    height: 100%;
+    color: #1a83d1;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.49rem;  
+}
+.nav .row div:nth-child(2){
+    border-left: 0.01rem solid #666;
+    border-right: 0.01rem solid #666;
+}
+.nav .row div.select{
+    
+}
+
+.wodejifen{
+    padding: 0.16rem 0.3rem;
+    position: absolute;
+    top: 1.62rem;
+    left: 0;
+    width: 100%;
+    display: block;
+}
+.wodejifen .box{
+    width: 100%;
+}
+.wodejifen .head{
+    height: 1.03rem;
+    margin: 0 0 0.24rem;
+    background: #1a83d1;
+    line-height: 1.03rem;
+    border-radius: 0.16rem;
+    color: #fff;
+    font-size: 0.36rem;
+}
+.wodejifen .head a{
+    color: #fff;
+    float: right;
+}
+.wodejifen .head a i{
+    line-height: 1.03rem;
+}
+.wodejifen .box>div{
+    border-radius: 0.16rem;
+    background: #fff;
+    margin: 0.2rem 0;
+    height: 1.9rem;
+    position: relative;
+    overflow: hidden;
+}
+.wodejifen .box>div:nth-child(1) .tag,.wodejifen .box>div:nth-child(3) .tag{
+    width: 0.7rem;
+    height: 100%;
+    background: #1a83d1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 0.32rem;
+    line-height: 0.36rem;
+    padding: 0.23rem 0.2rem;
+    text-align: center;
+}
+.wodejifen .box>div:nth-child(2) .tag,.wodejifen .box>div:nth-child(4) .tag{
+    width: 0.7rem;
+    height: 100%;
+    background: #40d37b;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 0.32rem;
+    line-height: 0.36rem;
+    padding: 0.59rem 0.2rem;
+    text-align: center;
+}
+.wodejifen .box>div h3{
+    font-size: 0.24rem;
+    line-height: 0.24rem;
+    color: #333;
+}
+.wodejifen .box>div h3 span:last-child{
+    display: inline-block;
+    width: 0.78rem;
+    height: 0.32rem;
+    border-radius: 0.1rem;
+    text-align: center;
+    line-height: 0.3rem;
+}
+.wodejifen .box>div:nth-child(1) h3 span:last-child,.wodejifen .box>div:nth-child(3) h3 span:last-child{
+    border: 0.01rem solid #1a83d1;
+}
+.wodejifen .box>div:nth-child(2) h3 span:last-child,.wodejifen .box>div:nth-child(4) h3 span:last-child{
+    border: 0.01rem solid #40d37b;
+}
+.wodejifen .box>div p{
+    font-size: 0.24rem;
+    line-height: 0.24rem;
+    margin: 0.3rem auto auto 1.4rem;
+}
+.wodejifen .box>div p span{
+    font-size: 0.6rem;
+    line-height: 0.42rem;
+    vertical-align: top;
+}
+
+.touzihongbao{
+    width: 100%;
+    position: absolute;
+    top: 1.62rem;
+    left: 0;
+    display: none;
+}
+.touzihongbao .head{
+    width: 100%;
+    height: 1.06rem;
+    margin: 0.15rem 0 0.2rem;
+    background: #1a83d1;
+    padding: 0.16rem 0 0 0.6rem;
+    position: relative;
+}
+.touzihongbao .head p{
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 0.4rem;
+    margin: 0;padding: 0;
+}
+.touzihongbao .head a{
+    color: #fff;
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.38rem;
+}
+.touzihongbao .box{
+    padding: 0 0.28rem;
+    margin: 0.22rem 0;
+}
+.touzihongbao .box>div{
+    width: 100%;
+    height: 1.6rem;
+    border-radius: 0.16rem;
+    margin: 0.2rem 0;
+    background: #fff;
+    padding: 0.14rem 0 0 0.22rem;
+    position: relative;
+    overflow: hidden;
+}
+.touzihongbao .box>div h3{
+    font-size: 0.22rem;
+    line-height: 0.26rem;
+    margin: 0;padding: 0;
+    color: #333;
+}
+.touzihongbao .box>div p.p1{
+    color: #000;
+    font-size: 0.24rem;
+    text-indent: 1.5rem;
+    margin: 0;padding: 0;
+}
+.touzihongbao .box>div p.p1 span{
+    color: #000;
+    font-size: 0.6rem;
+    text-indent: 1.5rem;
+}
+.touzihongbao .box>div p.p2{
+    color: #cecece;
+    text-indent: 1.7rem;
+    font-size: 0.24rem;
+    margin: 0;padding: 0;
+}
+.touzihongbao .box>div .circle{
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.02rem solid #e3e5e6;
+    border-radius: 50%;
+    position: absolute;
+    right: 0.67rem;
+    top: 0.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    color: #e3e5e6;
+    font-size: 0.4rem;
+    transform: rotate(-30deg);
+    display: 
+}
+.touzihongbao .box .normal .circle{
+    display: none;
+}
+.touzihongbao .box>div .tag{
+    width: 0.67rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 0.32rem;
+    line-height: 0.36rem;
+    padding: 0.08rem 0.2rem;
+    text-align: center;
+}
+.touzihongbao .box .used .tag{
+    background: #d3d5d6;
+}
+.touzihongbao .box .normal .tag{
+    background: #1a83d1;
+}
+
+.choujiangmingxi{
+    width: 100%;
+    position: absolute;
+    top: 1.62rem;
+    left: 0;
+    display: none;
+}
+.choujiangmingxi .head{
+    width: 100%;
+    height: 1.03rem;
+    margin: 0.15rem 0 0.2rem;
+    background: #1a83d1;
+    padding: 0.16rem 0 0 0.6rem;
+    position: relative;
+}
+.choujiangmingxi .head span{
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 0.78rem;
+    margin: 0;padding: 0;
+}
+.choujiangmingxi .head a{
+    color: #fff;
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.38rem;
+}
+.choujiangmingxi .box{
+    width: 100%;
+    background: #fff;
+    padding-bottom: 4rem;
+    border-top: 0.01rem solid #e1e1e1;
+}
+.choujiangmingxi .box div{
+    width: 100%;
+    height: 0.82rem;
+    border-bottom: 0.01rem solid #e1e1e1;
+}
+.choujiangmingxi .box div ul{
+    width: 100%;
+}
+.choujiangmingxi .box div ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 0.81rem;
+    color: #333;
+    font-size: 0.24rem;
+}
+.choujiangmingxi .box div:first-child ul li{
+    font-size: 0.28rem;
+}

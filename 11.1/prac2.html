@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac2</title>
+    <style>
+    .d1{
+        width: 100px;
+        height: 150px;
+        background: pink;
+        position:absolute;
+        right: 0;
+    }
+    .bar{
+        height: 5000px;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var d1=document.getElementById("d1");
+        var t = null;
+
+        window.onscroll=function(){
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            move(document.documentElement.clientHeight-d1.offsetHeight+scrollTop);
+        }
+        function move(end){
+            clearInterval(t);
+            t = setInterval(function(){
+                var speed=(end-d1.offsetTop)/2;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                if(end == d1.offsetTop){
+                    clearInterval(t);
+                }
+                else{
+                    d1.style.top=d1.offsetTop+speed+"px";
+                }
+            },20);
+        }
+
+    }
+    </script>
+</head>
+<body>
+    <div class="d1" id="d1"></div>
+    <div class="bar"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+     
+     function avg(m)
+      {
+        var a=8,b=9;
+        var c;
+        c=(a+b)/2;
+         // a = 6;
+       //  alert(l);
+         return c;
+      }
+         l = 10;
+        var n=9;
+        n=avg(5)+n;
+        // alert(l);
+      
+        // alert(m);
+        //alert(n);
+
+
+        //全局变量:保证变量正确的初始化顺序的前提下，在程序的任何位置都能访问。
+        //（1）在函数外用var声明的
+        // (2) 在任何位置首次使用没有用var声明的变量
+        //
+        //
+        //
+        //局部变量:在函数外是不能访问的吧。
+        //（1）在函数内用var声明的
+        //(2) 函数的参数
+      //   function demo() { 
+      //     var a="外面不能访问我！"; 
+      //   } 
+      // // alert(a); 
+      //  demo(); 
+      //  alert(a); 
+      function demo() {
+          alert(globalVar); 
+      } 
+        demo(); 
+       var globalVar="Hello!";
+       demo();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

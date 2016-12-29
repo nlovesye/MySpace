@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac1</title>
+    <style>
+    #can{
+        background: rgba(255,192,203,0.1);
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var arr = [
+            {p:[{x:100,y:100},{x:100,y:300},{x:300,y:300}],color:"red"},
+            {p:[{x:300,y:300},{x:100,y:100},{x:500,y:100}],color:"green"},
+            {p:[{x:500,y:100},{x:500,y:300},{x:300,y:300}],color:"yellow"},
+            {p:[{x:500,y:300},{x:300,y:500},{x:100,y:300}],color:"orange"},
+        ];
+        var canvas = document.getElementById("can");
+        var context = canvas.getContext("2d");
+        for(var i=0;i<arr.length;i++){
+            draw(arr[i]);
+        }
+        function draw(nm){
+            context.beginPath();
+            context.moveTo(nm.p[0].x,nm.p[0].y);
+            for(var i=1;i<nm.p.length;i++){
+                context.lineTo(nm.p[i].x,nm.p[i].y);
+            }
+            context.closePath();
+            context.fillStyle=nm.color;
+            context.fill();
+            context.stroke();
+        }
+    }
+    </script>
+</head>
+<body>
+    <canvas id="can" width=800 height=600></canvas>
+</body>
+</html>

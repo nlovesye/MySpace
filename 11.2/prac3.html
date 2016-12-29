@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac3</title>
+    <link rel="stylesheet" href="../../Font-Awesome-3.2.1/css/font-awesome.min.css">
+    <script src="../jquery-2.1.4.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .d1{
+        width: 600px;
+        height: 400px;
+        border: 4px solid orange;
+        margin: 50px auto;
+        background: url(images/7.jpg) no-repeat left top,url(images/p1.jpg) no-repeat;
+        /* background-origin: border-box; */
+        background-size: auto,cover;
+    }
+    .bar{
+        height: 5000px;
+    }
+    .top{
+        position: fixed;
+        right: 10px;
+        bottom: 30px;
+        width: 50px;
+        height: 50px;
+        background: purple;
+        text-align: center;
+        display: none;
+        border-radius: 8px;
+        /*opacity: 0;*/
+        /*filter: alpha(opacity:50);*/
+    }
+    .top i{
+        line-height: 50px;
+        font-size: 22px;
+        color: orange;
+        cursor: pointer;
+        display: none;
+    }
+    </style>
+    <script>
+    // $(function()
+    // {
+    //     $(window).scroll(function(){
+    //         if($(document).scrollTop()>=1000){
+    //             $(".top").stop().fadeIn(500);
+    //         }else{
+    //             $(".top").stop().fadeOut(500);
+    //         }
+    //         // console.log($(document).scrollTop())
+    //     });
+    //     $(".top").hover(function(){
+    //         $(this).children().stop().fadeIn(500);
+    //     },function(){
+    //         $(this).children().stop().fadeOut(500);
+    //     });
+    //     $("i").click(function(){
+    //         $("body").stop().animate({
+    //             scrollTop:0
+    //         });
+    //     });
+    // })
+    
+
+    window.onload=function()
+    {
+        var block = document.getElementsByTagName("div")[2];
+        var ib = block.getElementsByTagName("i")[0];
+        window.onscroll=function(){
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if(scrollTop >= document.documentElement.clientHeight){
+                block.style.display="block";
+            }else{
+                block.style.display="none";
+            }
+        }
+
+        block.onmouseover=function(){
+            ib.style.display="block";
+        }
+        block.onmouseout=function(){
+            ib.style.display="none";
+        }
+
+        ib.onclick=function(){
+            toTop();
+        }
+        function toTop(){
+            var t = null;
+            clearInterval(t);
+            t = setInterval(function(){
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var speed = Math.ceil(scrollTop/20);
+                if(scrollTop == 0){
+                    clearInterval(t);
+                }else{
+                    document.body.scrollTop -= speed;
+                }
+            },10);
+        }
+
+        function opchange(obj){
+            var timer = null;
+            var speed = 0.2;
+            timer = setInterval(function(obj){
+                if(parseInt(obj.style.opacity) == 1){
+                    clearInterval(timer);
+                }else{
+                    obj.style.opacity = parseInt(obj.style.opacity)+speed+"px";
+                }
+            },100);
+        }
+
+        function getStyle(obj,styleName){
+            if(obj.currentStyle){
+                return obj.currentStyle[styleName];
+            }else{
+                return getComputedStyle(obj,null)[styleName];
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="d1"></div>
+    <div class="bar"></div>
+    <div class="top"><i class="icon-arrow-up"></i></div>
+</body>
+</html>

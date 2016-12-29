@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>间断滚动</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #content
+    {
+        width: 1300px;
+        height: 400px;
+        margin: 60px auto;
+        border: 5px solid orange;
+        overflow: hidden;
+    }
+    #box
+    {
+        width: 2600px;
+        height: 400px;
+    }
+    #box div
+    {
+        width: 1300px;
+        height: 400px;
+        float: left;
+    }
+    img
+    {
+        width: 260px;
+        float: left;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var content = document.getElementById("content");
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+        var speed = 1;
+        var t = null;
+        var T = null;
+
+// ---------------------------滚动函数-----------------------------------
+        function move()
+        {
+            content.scrollLeft += speed;
+            if(content.scrollLeft >= d1.clientWidth)
+            {
+                content.scrollLeft = 0;
+            }
+            if(content.scrollLeft % 260 == 0)    //当speed设成某些数字时该判断存在bug
+            {
+                clearInterval(t);
+                timer2();
+            }
+        }
+
+// -----------------------------滚动定时器-----------------------------
+        function timer()
+        {
+            clearInterval(t);
+            t = setInterval(function(){
+                move();
+            },1);
+        }
+        timer();
+
+// ----------------------------间隔定时器--------------------------------------
+        function timer2()
+        {
+            clearInterval(T);
+            T = setInterval(function(){
+                timer();
+                move();
+            },3000);
+        }
+        // timer2();
+        
+// -----------------------------鼠标移入移出------------------------------------
+        content.onmouseover = function()
+        {
+            clearInterval(t);
+            clearInterval(T);
+        }
+        content.onmouseout = function()
+        {
+            timer();
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <div id="box">
+            <div id="d1">
+                <img src="images/1.jpg" alt="">
+                <img src="images/2.jpg" alt="">
+                <img src="images/3.jpg" alt="">
+                <img src="images/4.jpg" alt="">
+                <img src="images/5.jpg" alt="">
+            </div>
+            <div id="d2">
+                <img src="images/1.jpg" alt="">
+                <img src="images/2.jpg" alt="">
+                <img src="images/3.jpg" alt="">
+                <img src="images/4.jpg" alt="">
+                <img src="images/5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+window.onload =function(){
+    var btn = document.getElementById("btn");
+    var ul = document.getElementsByTagName("ul")[0];
+    btn.onclick = function()
+    {
+           //ul.innerHTML = "<li>文本4</li>" + ul.innerHTML;   //第一种方式
+           
+           // var newli = document.createElement("li");
+           // var txt = document.createTextNode("文本4");
+           // newli.appendChild(txt);
+           // ul.appendChild(newli);     //第二种方法
+
+           // var newli = document.createElement("li");
+           // newli.innerHTML = "文本4";
+           // ul.appendChild(newli);           //第三种方法
+           // 
+           var oldLi = document.getElementsByTagName("li")[2];
+           var newLi = document.createElement("li");
+           var txt = document.createTextNode("文本4");
+           newLi.appendChild(txt);
+           //ul.insertBefore(newLi,oldLi);  //添加到指定的节点前
+           //ul.replaceChild(newLi,oldLi);
+           ul.removeChild(oldLi);
+    }
+}
+</script>
+<body>
+    <ul>
+        <li>文本1</li>
+        <li>文本2</li>
+        <li>文本3</li>
+    </ul>
+    <input id="btn" type="button" value="创建元素">
+</body>
+</html>

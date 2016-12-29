@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+    //--------------------第一种写法------------------------
+       var str = "AB";
+       //var patt = /^aeb$/;
+       var patt = /^sdser$/;
+       var patt = /^ab{2}c$/; //大括号是限定符，限定它前面的字符出现的次数
+       var patt = /^e[abc]t$/;  //方括号代表范围, 只能在abc当中取一个
+       var patt = /^[0123456789]{3}$/; //在0~9之间任意取一个数三次
+       var patt = /^[0-9]{3}$/;  //等价于上面
+       var patt = /^\d{3}$/;    //等价于上面
+       var patt = /^ab$/i;    //i是忽略大小写
+       // var result = patt.test(str);
+       // var str ="John is my name John";
+       //  var result = str.replace(/John/g,"Mike"); //g是全局匹配
+       //  alert(result);
+
+    //------------------第二种写法-------------------
+       var str1="a.c";
+       var pattern=new RegExp("^a\\.c$"); //检索以“abc”开始和结尾的字符串
+       var result=pattern.test(str1);
+       alert(result);
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

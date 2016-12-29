@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .d1{
+        width: 100px;
+        height: 100px;
+        background: pink;
+        transition:all 2s;
+        margin: 100px auto;
+        animation: move2 5s;
+    }
+    .d2{
+        width: 100px;
+        height: 100px;
+        background: purple;
+        margin-top: 20px;
+    }
+    .d1:hover{
+        transform:scale(1.5);
+    }
+    .d2:hover{
+        animation: move 7s;
+    }
+    @keyframes move{
+        from{transform:translate(0,0);}
+        25%{transform:translateX(200px);}
+        50%{transform:translate(200px,200px);}
+        75%{transform:translateY(200px);}
+        to{transform:translate(0,0);}
+    }
+    @keyframes move2{
+        from{transform:translate(0,0);}
+        20%{transform:translateX(200px);
+            background: yellow;
+            border-radius: 20%;
+        }
+        40%{transform:translate(200px,200px);
+            background: green;
+            border-radius: 40%;
+        }
+        60%{transform:translate(100px,300px);
+            background: purple;
+            border-radius: 60%;
+        }
+        80%{transform:translateY(200px);
+            background: orange;
+            border-radius: 80%;
+        }
+        to{transform:translate(0,0);}
+    }
+    </style>
+</head>
+<body>
+    <div class="d1"></div>
+    <div class="d2"></div>
+</body>
+</html>

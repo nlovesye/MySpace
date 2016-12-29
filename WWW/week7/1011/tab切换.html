@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #box
+    {
+        width: 800px;
+        height: 600px;
+        margin: 70px auto;
+        border: 2px solid orange;
+    }
+    #btn
+    {
+        width: 800px;
+        height: 50px;
+    }
+    #btn li
+    {
+        width: 200px;
+        float: left;
+        line-height: 50px;
+        text-align: center;
+        font-weight: 700;
+        color: orange;
+        cursor: pointer;
+    }
+    #show
+    {
+        width: 800px;
+        height: 550px;
+        border: 1px solid orange;
+        position: relative;
+    }
+    #show li 
+    {
+        width: 800px;
+        height: 550px;
+        position: absolute;
+        display: none;
+    }
+    #show li div h3
+    {
+        color: blue;
+        text-align: center;
+        line-height: 50px;
+    }
+    #show li div p
+    {
+        color: green;
+        text-align: left;
+        text-indent: 36px;
+        font-family: "楷体";
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 36px;
+    }
+    #show .selected
+    {
+        display: block;
+    }
+    #btn .selected
+    {
+        background: rgba(255,6,0,0.4);
+        color: #fff;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var u1 = document.getElementById("btn");
+        var show = document.getElementById("show");
+        var btn = u1.getElementsByTagName("li");
+        var selected = show.getElementsByTagName("li");
+
+        // for(var i=0;i<btn.length;i++)
+        // {
+        //     btn[i].onclick = (function(x)
+        //     {
+        //         return function()
+        //         {
+        //             for(var j=0;j<btn.length;j++)
+        //             {
+        //                 selected[j].className = "";
+        //             }
+        //             selected[x].className = "selected";
+        //         }
+        //     })(i);
+        // }
+        
+        
+        function change(x)
+        {
+            return function()
+            {
+                for(var j=0;j<btn.length;j++)
+                {
+                    selected[j].className = "";
+                    btn[j].className = "";
+                }
+                selected[x].className = "selected";
+                btn[x].className = "selected";
+            }
+        }
+        for(var i=0;i<btn.length;i++)
+        {
+            btn[i].onmouseover = change(i);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul id="btn">
+            <li class="selected">少林</li>
+            <li>武当</li>
+            <li>君子堂</li>
+        </ul>
+        <ul id="show">
+            <li class="selected">
+                <div class="show">
+                    <h3>少林</h3>
+                    <p style="color:yellow">正派</p>
+                    <p>门派定位：近战</p>
+                    <p>门派武器：徒手/长棍</p>
+                    <p>门派武学：太祖长拳 | 达摩棍法 | 韦陀棍法</p>
+                    <p>武学特色：群体晕眩</p>
+                    <p>镇派武学：龙爪手</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h3>武当</h3>
+                    <p style="color:yellow">正派</p>
+                    <p>门派定位：近战</p>
+                    <p>门派武器：单剑/双剑</p>
+                    <p>门派武学：两仪剑法 | 太极剑法 | 清风剑法</p>
+                    <p>武学特色：持久群攻</p>
+                    <p>镇派武学：太极拳</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h3>君子堂</h3>
+                    <p style="color:orange">中立</p>
+                    <p>门派定位：中程</p>
+                    <p>门派武器：双剑/单剑/腿法</p>
+                    <p>门派武学：逍遥腿法 | 无涯剑法 | 落英飞花剑</p>
+                    <p>武学特色：华丽连招</p>
+                    <p>镇派武学：玉箫剑法</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

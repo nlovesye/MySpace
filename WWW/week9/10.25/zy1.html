@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy1</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "楷体";
+    }
+    .box
+    {
+        width: 1000px;
+        height: 600px;
+        margin: 70px auto;
+        border: 2px solid green;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    .box ul li
+    {
+        list-style: none;
+    }
+    .box ul{
+        position: absolute;
+    }
+    .box .tag
+    {
+        left: 0;
+    }
+    .box .tag li
+    {
+        width: 198px;
+        height: 150px;
+        background: rgba(0,0,0,0.1);
+        border-radius: 8px 0 0 8px;
+        text-align: center;
+        line-height: 150px;
+        cursor: pointer;
+        color: orange;
+        font-size: 22px;
+        border-right: 2px solid orange;
+    }
+    .box .tag li.select
+    {
+        background: rgba(0,0,0,0.2);
+        color: red;
+    }
+    .box .show
+    {
+        right: 0;
+    }
+    .box .show li img
+    {
+        width: 800px;
+        height: 600px;
+        float: left;
+        border-radius: 0 8px 8px 0;
+    }
+    .box .show li.select
+    {
+    }
+    </style>
+    <script src="../jquery-2.1.4.js"></script>
+    <script>
+    $(function()
+    {
+        $(".tag li").mouseenter(function()
+            {
+                $(this).siblings().removeClass("select");
+                $(this).addClass("select").parent().next().stop().animate({
+                    top: -600 * $(this).index()
+                },1000);
+                $(this).parent().next().children().eq($(this).index()).addClass("select").siblings().removeClass("select");
+            });
+    })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul class="tag">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <ul class="show">
+            <li class="select"><img src="images/b1.jpg" alt=""></li>
+            <li><img src="images/b2.jpg" alt=""></li>
+            <li><img src="images/b3.jpg" alt=""></li>
+            <li><img src="images/b4.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

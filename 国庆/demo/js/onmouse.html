@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+              var div = document.getElementsByTagName("div")[0];
+               var n=0; 
+              div.onmouseenter = function()  //onmouseout    onmouseleave
+              {
+                   n++;
+                   console.log(n);
+              }
+
+        }
+    </script>
+</head>
+<body>
+   <div>
+       <img src="images/bg.png" alt="">
+   </div> 
+</body>
+</html>

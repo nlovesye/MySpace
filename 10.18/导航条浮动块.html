@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航条浮动块</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #nav
+    {
+        width: 800px;
+        height: 50px;
+        margin: 20px auto;
+        position: relative;
+    }
+    #show
+    {
+        position: absolute;
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        margin: 10px 10px;
+        background: rgba(150,0,50,0.1);
+    }
+    ul
+    {
+        border: 1px solid orange;
+        height: 50px;
+        width: 800px;
+    }
+    ul li
+    {
+        float: left;
+        width: 100px;
+        line-height: 50px;
+        text-align: center;
+        color: rgb(10,10,255);
+        cursor: pointer;
+    }
+    </style>
+    <script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+        {
+            $("li").hover(function()
+                {
+                    $("#show").stop(true).animate({left:$(this).index() * 100},400);
+                });
+        });
+    </script>
+</head>
+<body>
+    <div id="nav">
+        <div id="show"></div>
+        <ul>
+            <li>少林</li>
+            <li>君子堂</li>
+            <li>锦衣卫</li>
+            <li>武当</li>
+            <li>极乐谷</li>
+            <li>峨眉</li>
+            <li>唐门</li>
+            <li>丐帮</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉搜索菜单</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+    }
+    .search
+    {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background: rgba(20,20,20,0.2);
+        display: none;
+    }
+    .box
+    {
+        position: absolute;
+        width: 640px;
+        height: 40px;
+        top: 70px;
+        left: 50%;
+        margin-left: -320px;
+        display: none;
+    }
+    .search input
+    {
+        width: 530px;
+        height: 38px;
+        font-size: 18px;
+        float: left;
+        border: 1px solid gray;
+        border-right: none;
+        text-indent: 6px;
+    }
+    .search .btn
+    {
+        width: 105px;
+        height: 40px;
+        float: right;
+        margin-right: 4px;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        cursor: pointer;
+        background: rgba(10,60,250,0.9);
+    }
+    .sld
+    {
+        width: 40px;
+        height: 40px;
+        background: rgba(100,200,100,0.2);
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0 0 8px 8px;
+        position: absolute;
+        right: 10px;
+        color: red;
+        font-size: 26px;
+    }
+    .sld:hover
+    {
+        background: orange;
+        color: #fff;
+    }
+    </style>
+    <script src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        var b = 0;
+        $(".sld").click(function()
+            {
+                if(b == 0)
+                {
+                    $(this).prev().slideDown(function()
+                        {
+                            b = 1;
+                            $(".box").fadeIn();
+                            $(".sld").html("×");
+                        });
+                    $(".sld").animate({top:200})
+                }
+                else
+                {
+                    $(".box").fadeOut();
+                    $(this).prev().slideUp(function()
+                        {
+                            b = 0;
+                            $(".sld").html("↓");
+                        });
+                    $(".sld").animate({top:0});
+                }
+            });
+    })
+    </script>
+</head>
+<body>
+    <div class="search">
+        <div class="box">
+            <input type="text"><div class="btn">百度一下</div>
+        </div>
+    </div>
+    <div class="sld">↓</div>
+</body>
+</html>

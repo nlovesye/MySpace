@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字缩进效果</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    a
+    {
+        text-decoration: none;
+    }
+    #box
+    {
+        width: 1000px;
+        height: 600px;
+        margin: 70px auto;
+        border: 1px solid rgb(255,0,0);
+    }
+    ul
+    {
+        width: 100%;
+        height: 50px;
+    }
+    ul li
+    {
+        float: left;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    ul li a
+    {
+        line-height: 50px;
+        font-family: "楷体";
+        font-size: 22px;
+    }
+    </style>
+    <script src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        $("ul li a").hover(function()
+            {
+                $(this).parent().css("background","rgba(200,0,200,0.1)").stop(true).animate({textIndent:"28px"},300);
+            },function()
+            {
+                $(this).parent().css("background","none").stop(true).animate({textIndent:"0px"},300);
+            });
+    })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul class="u1">
+            <li><a href="">产品1</a></li>
+            <li><a href="">产品2</a></li>
+            <li><a href="">产品3</a></li>
+            <li><a href="">产品4</a></li>
+            <li><a href="">产品5</a></li>
+            <li><a href="">产品6</a></li>
+        </ul>
+        <ul class="u2">
+            <li><a href="">职业1</a></li>
+            <li><a href="">职业2</a></li>
+            <li><a href="">职业3</a></li>
+            <li><a href="">职业4</a></li>
+            <li><a href="">职业5</a></li>
+        </ul>
+        <ul class="u3">
+            <li><a href="">门派1</a></li>
+            <li><a href="">门派2</a></li>
+            <li><a href="">门派3</a></li>
+            <li><a href="">门派4</a></li>
+            <li><a href="">门派5</a></li>
+            <li><a href="">门派6</a></li>
+            <li><a href="">门派7</a></li>
+            <li><a href="">门派8</a></li>
+        </ul>
+    </div>
+</body>
+</html>

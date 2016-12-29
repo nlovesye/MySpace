@@ -1,0 +1,4 @@
+1.jquery选择器,对dom操作
+作业：
+1.之前的tab切换用jquery实现（遍历siblings）
+2.把之前的作业能用jquery实现（只实现选择器和dom操作部分）

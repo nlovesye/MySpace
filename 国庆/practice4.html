@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice4</title>
+    <style>
+    #d1
+    {
+        width: 300px;
+        height: 300px;
+        background: yellow;
+        margin: 20px auto;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var d1 = document.getElementById("d1");
+        d1.onmouseover = function(){
+            change();
+        }
+        d1.onmouseout = function(){
+            change();
+        }
+        function change(){
+            var speed = 5;
+            var end = 100;
+            function sport(startValue){
+                if(startValue > 30){
+                    startValue -= speed;
+                    if(startValue <= 30){
+                        clearInterval(t);
+                    }
+                    d1.style["opacity"] = startValue/end;
+                }
+                else{
+                    startValue += speed;
+                    if(startValue >= 100){
+                        clearInterval(t);
+                    }
+                    d1.style["opacity"] = startValue/end;
+                }
+            }
+            var t = setInterval(function(){
+            sport(100);
+            },100);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

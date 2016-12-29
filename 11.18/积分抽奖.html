@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+    <title>积分抽奖</title>
+    <link rel="stylesheet" type="text/css" href="css/mobile-reset.css">
+    <link rel="stylesheet" type="text/css" href="css/jifenchoujiang.css">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script>
+    $(function()
+    {
+        var bt = true;
+
+        function start(){
+            var t1 = null;     //递归定时器
+            var speed = 7;      //定时器时间
+            var i = 0;          //奖品项数量
+            var j = 0;          //停止数值
+            var num = Math.ceil(Math.random()*36+18);    //中奖号码
+
+            run();
+            function run(){ 
+                bt = false; 
+                $(".cj .box .contain ul li").eq(i).addClass("select").siblings().removeClass("select");
+                speed += 5;
+                i++;
+                j++;
+                if(i == 8){
+                    i = 0;
+                }
+                if(j == num){
+                    clearTimeout(t1);
+                    bt = true;
+                    number = 0;
+                    j = 0;
+                    speed = 7;
+                    return;
+                }           
+                t1 = setTimeout(function(){
+                    run();
+                },speed);
+            }
+        }
+
+        $(".cj .box .contain .btn").click(function(){
+            if(bt){
+                if(parseInt($(".info .score").html()) >= 50){
+                    start();  
+                    $(".info .score").html(parseInt($(".info .score").html())-50); 
+                }else{
+                    $(".noscore").stop().fadeIn();
+                }                                 
+            }
+        });
+        $(".noscore .btn").click(function(){
+            $(this).parent().stop().fadeOut();
+        });
+
+        var t2 = null;
+        clearInterval(t2);
+        t2 = setInterval(function(){
+            $(".winner p").eq(0).stop().animate({"margin-top":"-0.83rem"},2000,function(){
+                var inf = $("<p><span>"+$(this).children("span").eq(0).html()+"</span><span>"+$(this).children("span").eq(1).html()+"</span><span>"+$(this).children("span").eq(2).html()+"</span></p>");
+                $(this).parent().append(inf);
+                $(".winner p").eq(0).remove();
+            });
+        },3000);
+    })
+    </script>
+</head>
+<body>
+    <div class="ddd"></div>
+    <div class="info">
+        <a href="" class="user"></a>
+        <p>可用积分 <span class="score">155</span></p>
+        <a href="" class="btn1">积分记录</a><a href="" class="btn2">赚积分</a>
+    </div>
+    <div class="noscore">
+        <p>你的积分不够50分，不能参加抽奖！</p>
+        <div class="btn">确定</div>
+    </div>
+    <div class="banner"></div>
+    <div class="cj">
+        <div class="box">
+            <h2>小积分撞大运</h2><a href="">抽奖规则＞＞</a>
+            <div class="contain">
+                <ul>
+                    <li class="select">
+                        <div>108元</div>
+                        <p>108元现金券</p>
+                    </li>
+                    <li>
+                        <div>8元</div>
+                        <p>8元现金券</p>
+                    </li>
+                    <li>
+                        <div>58元</div>
+                        <p>58元现金券</p>
+                    </li>
+                    <li>
+                        <div>18元</div>
+                        <p>18元现金券</p>
+                    </li>
+                    <li>
+                        <div>38元</div>
+                        <p>38元现金券</p>
+                    </li>
+                    <li>
+                        <h3>50积分</h3>
+                    </li>
+                    <li>
+                        <div>68元</div>
+                        <p>68元现金券</p>
+                    </li>
+                    <li>
+                        <div>2元</div>
+                        <p>2元现金券</p>
+                    </li>
+                </ul>
+                <div class="btn"><h3>立即抽奖</h3><p>(50积分/次)</p></div>
+            </div>
+        </div>
+        <div class="winner">
+            <p><span>D*****S1</span><span>获得</span><span>50积分</span></p>
+            <p><span>D*****S2</span><span>获得</span><span>50积分</span></p>
+            <p><span>D*****S3</span><span>获得</span><span>50积分</span></p>
+            <p><span>D*****S4</span><span>获得</span><span>50积分</span></p>
+            <p><span>D*****S5</span><span>获得</span><span>50积分</span></p>
+            <p><span>D*****S6</span><span>获得</span><span>50积分</span></p>
+            <p><span>D*****S7</span><span>获得</span><span>50积分</span></p>
+        </div>
+    </div>
+    <div class="foot">
+        <ul>
+            <li>
+                <div class="num">12</div><p>元</p><p>投资红包</p><p class="clearfix">30积分</p>
+                <h3>投资金额≥1800元可用</h3>
+                <div class="btn">立即兑换</div>
+            </li>
+            <li>
+                <div class="num">12</div><p>元</p><p>投资红包</p><p class="clearfix">30积分</p>
+                <h3>投资金额≥1800元可用</h3>
+                <div class="btn">立即兑换</div>
+            </li>
+            <li>
+                <div class="num">12</div><p>元</p><p>投资红包</p><p class="clearfix">30积分</p>
+                <h3>投资金额≥1800元可用</h3>
+                <div class="btn">立即兑换</div>
+            </li>
+            <li>
+                <div class="num">12</div><p>元</p><p>投资红包</p><p class="clearfix">30积分</p>
+                <h3>投资金额≥1800元可用</h3>
+                <div class="btn">立即兑换</div>
+            </li>
+            <li>
+                <div class="num">12</div><p>元</p><p>投资红包</p><p class="clearfix">30积分</p>
+                <h3>投资金额≥1800元可用</h3>
+                <div class="btn">立即兑换</div>
+            </li>
+            <li>
+                <div class="num">12</div><p>元</p><p>投资红包</p><p class="clearfix">30积分</p>
+                <h3>投资金额≥1800元可用</h3>
+                <div class="btn">立即兑换</div>
+            </li>
+        </ul>
+    </div>
+    <script src="js/base.js"></script>
+</body>
+</html>

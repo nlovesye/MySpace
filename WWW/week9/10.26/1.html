@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+    .d1{
+        width: 200px;
+        height: 200px;
+        background: rgba(20,20,20,0.3);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    </style>
+    <script type="text/javascript" src="../jquery-2.1.4.js"></script>
+</head>
+<body>
+    <div class="d1">
+        css实现超出部分显示省略号div{width:200px;display:block;overflow:hidden;text-overflow:ellipsis(css3属性);white-space:nowrap(强制不换行);}
+    </div>
+    <script>
+    $(document).mousemove(function(e)
+        {
+            if($("div").length < 1000)
+            {
+                var e = e || event;
+                var disX = e.clientX;
+                var disY = e.clientY;
+                var nDiv = document.createElement("div");
+                $(nDiv).css(
+                    {
+                        "position" : "absolute",
+                        "left" : disX + "px",
+                        "top" : disY + "px",
+                        "border" : "1px solid #f60",
+                        "border-radius" : "50%"
+                    });
+                $(nDiv).animate({
+                    "width" : "100px",
+                    "height" : "100px",
+                    "left" : disX -50 + "px",
+                    "top" : disY -50 + "px"
+                },6000,function(){
+                    $(this).remove();
+                });
+                $(document.body).append(nDiv);
+            }
+        });
+    </script>
+</body>
+</html>

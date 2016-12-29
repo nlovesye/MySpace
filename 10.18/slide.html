@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide</title>
+    <script src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        $("#box").hover(function()
+            {
+                $("#box>div.txt").stop().animate({"top":"50px"});
+            },function()
+            {
+                $("#box>div.txt").stop().animate({"top":"100px"});
+            });
+    })
+    </script>
+    <style>
+    *
+    {
+        font-family: "微软雅黑";
+    }
+    #box
+    {
+        width: 230px;
+        height: 150px;
+        background: red;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid orange;
+        cursor: pointer;
+    }
+    #box:hover
+    {
+        box-shadow: 0px 2px 6px;
+    }
+    #box .txt
+    {
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        top: 100px;
+        background: rgba(255,255,255,0.9);
+    }
+    #box .txt h3
+    {
+        text-align: center;
+        font-size: 16px;
+    }
+    #box .txt p
+    {
+        font-size: 12px;
+        margin: 0 4px;
+        line-height: 22px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="images/202.jpg" width="230" height="150" alt="">
+        <div class="txt">
+            <h3>HTML5 移动Web App阅读器</h3>
+            <p>用HTML5、ES6、Ajax异步、Touch事件等技术，开发商业Web APP</p>
+        </div>
+    </div>
+<!--     <div class="price"><span class="left">￥228.00</span><span class="right">207人在学</span></div> -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="new">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+           var news = document.getElementById("new").getElementsByTagName("li");
+           var nums = [];
+           // for(var i=0;i<100;i++)
+           // {
+           //     nums[i] = "第"+[i+1]+"新闻";
+           // }
+
+           var a =[];
+           for(var j=0;j<5;j++)
+           {
+                 a[j] = Math.round(Math.random()*99);
+                 if(j>0)
+                 {
+                     for(var m=0;m<j;m++)
+                     {
+                         if(a[j] == a[m])
+                         {
+                            console.log("找到相同的值了");
+                            j--;   //本次作废，再重新做一次循环
+                            break;
+                         }
+                     }
+                 }
+                 console.log(a[j]);
+           }
+
+           for(var k=0;k<5;k++)
+           {
+               //news[k].innerHTML = nums[a[k]];
+               news[k].innerHTML = "第"+a[k]+"条新闻";
+           }
+    </script>
+</body>
+</html>

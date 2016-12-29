@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax访问txt内容并返回</title>
+    <script>
+    window.onload = function()
+    {
+        var btn = document.getElementById("btn");
+        var txt = document.getElementById("txt");
+        btn.onclick = function()
+        {
+            var xml;
+            if(window.XMLHttpRequest)
+            {
+                xml = new XMLHttpRequest();
+            }
+            else
+            {
+                xml = new ActiveXObject("Microsoft XMLHTTP");
+            }
+            xml.open("get","doc1.txt",true);
+            xml.send();
+            xml.onreadystatechange = function()
+            {
+                if(xml.readyState == 4 && xml.status == 200)
+                {
+                    txt.innerHTML = xml.responseText;
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <p id="txt">观察变化</p>
+</body>
+</html>

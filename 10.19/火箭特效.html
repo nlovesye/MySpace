@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>火箭特效</title>
+    <style>
+    .len
+    {
+        height: 5000px;
+        width: 1px;
+    }
+    .fly
+    {
+        position: fixed;
+        right: 20px;
+        top: 600px;
+        width: 149px;
+        height: 249px;
+        background: url(images/rocket.png) no-repeat;
+        cursor: pointer;
+        display: none;
+    }
+    </style>
+    <script src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        var t = null;
+        var i = 0;
+        var but = 0;
+        $(window).scroll(function()
+            {
+                if($("body").scrollTop() > 600)
+                {
+                    $(".fly").fadeIn();
+                }
+                else if(but == 0)
+                {
+                    $(".fly").fadeOut();
+                }
+            });
+
+        $(".fly").hover(function()
+            {
+                $(this).css("background","url(images/rocket.png) -149px 0 no-repeat");
+            },function()
+            {
+                $(this).css("background","url(images/rocket.png) 0 0 no-repeat");
+            });
+
+        $(".fly").click(function()
+            {
+                but = 1;
+                clearInterval(t);
+                t = setInterval(function()
+                {
+                    i++;
+                    $(".fly").css("background","url(images/rocket.png) " + (-149 * i)+"px 0 no-repeat")
+                    if(i == 5)
+                    {
+                        i = 0;
+                    }
+                },10)
+                $("body").stop(true,true).animate({scrollTop:0},800,function()
+                    {
+                        $(".fly").css("background","url(images/rocket.png) -149px 0 no-repeat").animate({top:-260},function()
+                        {
+                            clearInterval(t);
+                            $(".fly").css({"background":"url(images/rocket.png) 0 0 no-repeat","top":"600px","display":"none"});
+                            but = 0;
+                        });
+                    });
+            });
+    })
+    </script>
+</head>
+<body>
+    <div class="len"></div>
+    <div class="fly"></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq</title>
+    <style>
+    #d2
+    {
+        width: 200px;
+        height: 200px;
+        background: rgba(100,200,10,0.6);
+    }
+    .red
+    {
+        color: red;
+    }
+    </style>
+    <script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(document).ready(function()
+    {
+        // $("#btn").click(function()
+        // {
+        //     $("h2").css("color","red");
+        // });
+        // $("button").click(function()
+        // {
+        //     $("h2").eq(1).css({"color":"blue","font-size":"32px","font-weight":"normal"});
+        // });
+        $("button").eq(1).click(function(){
+            t = setInterval(function()
+        {
+            var speed = Math.abs(Math.ceil((600 - parseInt($("#d2").css("width"))) / 10))
+            var add = parseInt($("#d2").css("width")) + speed;
+            if(add > 600)
+            {
+                clearInterval(t);
+            }
+            else
+            {
+                $("#d2").css("width",add+"px");
+            }
+        },30)});
+        $("#btn").click(function()
+        {
+            $("h2").addClass("red");
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <h2 class="first">这是一个h2标签</h2>
+        <h2>这是一个h2标签</h2>
+        <h2>这是一个h2标签</h2>
+    </div>
+    <button id="btn">按钮</button>
+    <div id="d2"></div>
+    <button>按钮2</button>
+</body>
+</html>

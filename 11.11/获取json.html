@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取json</title>
+    <link rel="stylesheet" type="text/css" href="css/style-blue.css">
+    <script src="js/jquery-2.1.4.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .change{
+        width: 30px;
+        height: 145px;
+        position: relative;
+        top: 100px;
+        left: 50px;
+    }
+    .change p{
+        font-size: 14px;
+    }
+    .change div{
+        width: 100%;
+        height: 30px;
+        margin: 5px 0;
+        border: 1px solid black;
+    }
+    .change div:nth-of-type(1){
+        background: yellow;
+    }
+    .change div:nth-of-type(2){
+        background: blue;
+    }
+    .change div:nth-of-type(3){
+        background: orange;
+    }
+    .change div:nth-of-type(4){
+        background: green;
+    }
+    .box{
+        width: 80%;
+        height: 500px;
+        margin: 30px auto;
+    }
+    .box .pic-box{
+        width: 30%;
+        height: 100%;
+        float: left;
+        margin-right: 5%;
+        padding: 12px;
+        text-align: center;
+    }
+    .box .pic-box:last-child{
+        margin-right: 0;
+    }
+    .box .pic-box .ribbon{
+        width: 30%;
+        height: 8%;
+        margin-left: -15%;
+        transform: rotate(-45deg);
+    }
+    .box .pic-box h1{
+        font-size: 20px;
+    }
+    .box .pic-box a div img{
+        width: 60%;
+        height: 40%;
+        margin: 6px 0;
+    }
+    .box .pic-box p{
+        font-size: 12px;
+    }
+    </style>
+    <script>
+    $(function()
+    {
+        $.ajax({
+            type: "Get",
+            url: "data.json",
+            dataType: "json",
+            success: function(data){
+                var div;
+                for(var i=0;i<data.length;i++){
+                    div = $(".pic-box").eq(i);
+                    div.children("h1").html(data[i].title);
+                    div.children("a").children("div").append($('<img src="'+data[i].url+'"/>'));
+                    div.children("p").html(data[i].inf);
+                }
+                var t = null;
+                var k = 0;
+                var i = 3;
+                clearInterval(t);
+                t = setInterval(function(){
+                    var dv = $(".pic-box").eq(k);
+                    dv.children("h1").fadeOut(1000).html("<h1>"+data[i].title+"</h1>").fadeIn(1000);
+                    dv.find("img").fadeOut(1000).append($("<img src='"+data[i].url+"' />")).fadeIn(1000);
+                    dv.children("p").fadeOut(1000).html("<p>"+data[i].inf+"</p>").fadeIn(1000);
+                    k++;
+                    i++;
+                    if(k == 3){
+                        k = 0;
+                    }
+                    if(i == data.length){
+                        i = 0;
+                    }
+                },8000);
+            }
+        });
+
+    })
+    </script>
+</head>
+<body>
+    <div class="change">
+        <p>换肤</p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="box">
+        <div class="pic-box">
+            <h1></h1>
+            <a><div></div></a>
+            <p></p>
+            <div class="ribbon"></div>
+        </div>
+        <div class="pic-box">
+            <h1></h1>
+            <a><div></div></a>
+            <p></p>
+            <div class="ribbon"></div>
+        </div>
+        <div class="pic-box">
+            <h1></h1>
+            <a><div></div></a>
+            <p></p>
+            <div class="ribbon"></div>
+        </div>
+    </div>
+</body>
+</html>

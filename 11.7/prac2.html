@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac2</title>
+    <style>
+    .box{
+        width: 100px;
+        height: 100px;
+        margin: 50px auto;
+        perspective: 700px;
+    }
+    .box>div:first-child{
+        width: 100px;
+        height: 100px;
+        background: rgba(0,0,0,0.5);
+        perspective: 700px;
+        overflow: hidden;
+    }
+    .box>div:first-child div{
+        width: 100px;
+        height: 100px;
+        background: rgba(0,200,0,0.6);
+        transform-origin: 100px 0 0;
+        transform: rotate3d(0,1,0,-95deg);
+        transition: all 500ms;
+    }
+    .box>div:hover .fuck{
+        transform: rotate3d(0,1,0,0deg);
+    }
+    .door{
+        width: 200px;
+        height: 300px;
+        border: 4px solid orange;
+        margin: 30px auto;
+        position: relative;
+        transition: all 2s;
+        transform-origin: 0 0 0;
+    }
+    .door .rock{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        top: 40%;
+        border: 2px solid green;
+        border-radius: 50%;
+        transform-style:preserve-3d;
+    }
+    .door:hover{
+        transform: rotateY(180deg);
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <div class="fuck"></div>
+        </div>
+    </div>
+    <div class="door">
+        <div class="rock"></div>
+    </div>
+</body>
+</html>

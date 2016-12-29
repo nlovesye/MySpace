@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac1</title>
+    <script src="../jquery-2.1.4.js"></script>
+    <style>
+    .d1{
+        width: 100px;
+        height: 150px;
+        position: absolute;
+        background: pink;
+        right: 10px;
+        top: 700px;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var d1=document.getElementsByTagName("div")[0];
+        var t = null;
+
+        window.onscroll=function(){   
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;         
+            clearInterval(t);
+            t = setInterval(function(){ 
+                var add = (scrollTop+700-d1.offsetTop)/10;
+                add = add>0?Math.ceil(add):Math.floor(add);
+                if(d1.offsetTop == scrollTop+700){
+                    clearInterval(t);
+                }else{
+                    d1.style.top=d1.offsetTop+add+"px";
+                }
+            },1);
+        }
+    }
+    </script>
+    <script>
+    // $(function()
+    // {
+    //     $(window).scroll(function(){
+    //         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    //         $(".d1").stop().animate({
+    //             top:scrollTop+700+"px"
+    //         },2);
+    //     });
+    // })
+    </script>
+</head>
+<body style="height:7000px">
+    <div class="d1"></div>
+</body>
+</html>

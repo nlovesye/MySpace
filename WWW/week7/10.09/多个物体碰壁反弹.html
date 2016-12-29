@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多物体碰壁反弹</title>
+    <style>
+    #box
+    {
+        width: 1000px;
+        height: 700px;
+        border: 1px solid red;
+        margin: 50px auto;
+        position: relative;
+    }
+    #box div
+    {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: #f60;
+        border-radius: 50%;
+    }
+    </style>
+    <script>
+    window.onload = function()
+{
+    function Show(boxId,ballId){
+        var _this = this;
+        this.box = document.getElementById(boxId);
+        this.ball = document.getElementById(ballId);
+        this.maxw = 950;
+        this.maxh = 650;
+        this.blf = parseInt(Math.random()*this.maxw);
+        this.btp = parseInt(Math.random()*this.maxh);
+        this.bor = this.ball.style["borderRadius"];
+        this.speed1 = 1;
+        this.speed2 = 1;
+        this.t = setInterval(function(){
+            _this.action();
+        },1);
+    }
+    Show.prototype.action = function(){
+        var _this = this;
+        this.blf += this.speed1;
+        this.btp += this.speed2;
+        if(this.blf <= 0){
+            this.speed1 = 1;
+            this.ball.style["background"] = "green";
+            this.ball.style["borderRadius"] = "50%";
+        }
+        if(this.blf >= this.maxw){
+            this.speed1 = -1;
+            this.ball.style["background"] = "yellow";
+            this.ball.style["borderRadius"] = 0;
+        }
+        if(this.btp <= 0){
+            this.speed2 = 1;
+            this.ball.style["background"] = "gray";
+            this.ball.style["borderRadius"] = "50%";
+        }
+        if(this.btp >= this.maxh){
+            this.speed2 = -1;
+            this.ball.style["background"] = "rgba(0,0,0,0.1)";
+            this.ball.style["borderRadius"] = 0;
+        }
+        this.ball.style["left"] = this.blf + "px";
+        this.ball.style["top"] = this.btp + "px";
+    }
+
+    var b1 = new Show("box","b1");
+    var b2 = new Show("box","b2");
+    var b3 = new Show("box","b3");
+    var b4 = new Show("box","b4");
+    var b5 = new Show("box","b5");
+    var b6 = new Show("box","b6");
+    var b7 = new Show("box","b7");
+    var b8 = new Show("box","b8");
+    var b9 = new Show("box","b9");
+    var b10 = new Show("box","b10");
+}
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="b1"></div>
+        <div id="b2"></div>
+        <div id="b3"></div>
+        <div id="b4"></div>
+        <div id="b5"></div>
+        <div id="b6"></div>
+        <div id="b7"></div>
+        <div id="b8"></div>
+        <div id="b9"></div>
+        <div id="b10"></div>
+    </div>
+</body>
+</html>

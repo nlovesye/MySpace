@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #box
+    {
+        width: 600px;
+        height: 400px;
+        margin: 70px auto;
+        position: relative;
+    }
+    #lbtn
+    {
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        width: 50px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        background: rgba(200,10,10,0.2);
+    }
+    #rbtn
+    {
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        right: 0;
+        width: 50px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        background: rgba(200,10,10,0.2);
+    }
+    #lbtn:hover,#rbtn:hover
+    {
+        background: orange;
+    }
+    #pic
+    {
+        width: 500px;
+        height: 350px;
+        margin: 0 auto;
+        border: 4px solid orange;
+        overflow: hidden;
+        position: relative;
+    }
+    #pic ul
+    {
+        width: 2500px;
+        height: 350px;
+        position: absolute;
+        left: 0px;
+    }
+    #pic ul li
+    {
+        float: left;
+    }
+    #pic ul li img
+    {
+        width: 500px;
+        height: 350px;
+    }
+    #btn
+    {
+        width: 220px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    #btn li
+    {
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        background: rgba(200,10,6,0.2);
+        cursor: pointer;
+        margin: 2px;
+    }
+/*    #btn li:hover
+    {
+        background: orange;
+    }*/
+    #btn .selected
+    {
+        background: orange;
+        color: green;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var banner = document.getElementById("box");
+        var picbox = document.getElementById("pic");
+        var u1 = picbox.getElementsByTagName("ul")[0];
+        var u2 = document.getElementById("btn");
+        var t = null;
+        var T = null;
+        var btn = u2.getElementsByTagName("li");
+        var lf = document.getElementById("lbtn");
+        var rt = document.getElementById("rbtn");
+        var num = 0;
+        
+// ------------------------动画定时器函数------------------------------
+        function timer(y)
+        {
+            clearInterval(t);
+            t = setInterval(function(){
+                jump(y);
+            },10);
+        }
+
+// --------------------------间隔定时器函数-------------------------------
+        function start()
+        {
+            clearInterval(T);
+            T = setInterval(function(){
+                num++;
+                if(num > 4)
+                {
+                    num = 0;
+                }
+                timer(num);
+            },4000);
+        }
+        start();
+
+// ----------------------------运动函数------------------------------------
+        function jump(x)
+        {
+            var startValue = u1.offsetLeft;
+            var end = x * (-500);
+            var speed = Math.ceil(Math.abs((end - startValue) / 20));
+            if(startValue > end)
+            {
+                startValue -= speed;
+                u1.style.left = startValue + "px";
+            }
+            else if(startValue < end)
+            {
+                startValue += speed;
+                u1.style.left = startValue + "px";
+            }
+            else
+            {
+                clearInterval(t);
+                for(var j=0;j<btn.length;j++)
+                {
+                    btn[j].className = "";
+                }
+                btn[num].className = "selected";
+            }
+        }
+
+// -------------------------------跳转按钮------------------------------
+        for(var i=0;i<btn.length;i++)
+        {
+            btn[i].index = i;
+            btn[i].onmouseover = function(x)
+            {
+                return function()
+                {
+                    timer(x);
+                    num = x;
+                }
+            }(i);
+        }
+
+// ---------------------------------向上/下切换一张------------------------------
+        lf.onclick = function()
+        {
+            num++;
+            if(num > 4)
+            {
+                num = 0;
+            }
+            timer(num);
+        }
+        rt.onclick = function()
+        {
+            num--;
+            if(num < 0)
+            {
+                num = 4;
+            }
+            timer(num);
+        }
+
+        banner.onmouseover = function()
+        {
+            clearInterval(T);
+        }
+        banner.onmouseout = function()
+        {
+            start();
+        }
+
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="lbtn">＜</div>
+        <div id="pic">
+            <ul>
+                <li><img src="images/1.jpg" alt=""></li>
+                <li><img src="images/2.jpg" alt=""></li>
+                <li><img src="images/3.jpg" alt=""></li>
+                <li><img src="images/4.jpg" alt=""></li>
+                <li><img src="images/5.jpg" alt=""></li>
+            </ul>
+        </div>
+        <ul id="btn">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div id="rbtn">＞</div>
+    </div>
+</body>
+</html>

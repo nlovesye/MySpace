@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .score
+      {
+         font-size:30px;
+         font-weight: bold;
+      }
+    </style>
+    <script>
+         var str = "的平均成绩是<span class='score'>";
+         var str1 = "</span>";
+         function score(student,chi,math,eng)
+         {
+                var avg = (chi+math+eng)/3;
+                document.write(student+str+avg+str1+"总成绩是:"+(chi+math+eng));
+         }
+        score("小明",67,89,90);
+        score("张三",96,82,86);
+
+         // document.write("小明平均成绩是"+(67+89+90)/3+"小明的总成绩是:"+67+89+90);
+         // document.write("张三平均成绩是"+(96+82+86)/3);
+         // document.write("张三平均成绩是"+(96+82+86)/3);
+         // document.write("张三的平均成绩是"+(96+82+86)/3);
+         // document.write("张三的平均成绩是"+(96+82+86)/3);
+         // document.write("张三的平均成绩是"+(96+82+86)/3);
+         // document.write("张三的平均成绩是"+(96+82+86)/3);
+         // document.write("张三的平均成绩是"+(96+82+86)/3);
+         // document.write("张三的平均成绩是"+(96+82+86)/3);
+         // document.write("张三的平均成绩是"+(96+82+86)/3);
+         // function show()
+         // {
+         //     document.write("hello");
+         // }
+         // show();
+          function show(user){
+               document.write("hello"+user);
+          }
+         show(2); //调用函数
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

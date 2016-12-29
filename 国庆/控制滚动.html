@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制滚动</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .btnbox
+    {
+        position: relative;
+        width: 1400px;
+        margin: 60px auto;
+    }
+    #content
+    {
+        width: 1300px;
+        height: 400px;
+        margin: 60px auto;
+        border: 5px solid orange;
+        overflow: hidden;
+    }
+    #box
+    {
+        width: 2600px;
+        height: 400px;
+    }
+    #box div
+    {
+        width: 1300px;
+        height: 400px;
+        float: left;
+    }
+    img
+    {
+        width: 260px;
+        float: left;
+    }
+    button
+    {
+        position: absolute;
+        font-size: 16px;
+        width: 50px;
+        height: 30px;
+        top: 50%;
+        margin-top: -15px;
+    }
+    #lbtn
+    {
+        left: -10px;
+    }
+    #rbtn
+    {
+        right: -10px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var content = document.getElementById("content");
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+        var lbtn = document.getElementById("lbtn");
+        var rbtn = document.getElementById("rbtn");
+        var speed = 1;
+        var t = null;
+        var T = null;
+
+// ---------------------------滚动函数-----------------------------------
+        function move()
+        {
+            content.scrollLeft += speed;
+            if(content.scrollLeft >= d1.clientWidth && speed > 0)
+            {
+                content.scrollLeft = 0;
+            }
+            if(content.scrollLeft % 260 == 0)    //当speed设成某些数字时该判断存在bug
+            {
+                clearInterval(t);
+                timer2();
+            }
+            if(content.scrollLeft <= 0 && speed < 0)
+            {
+                content.scrollLeft = d1.clientWidth;
+            }
+        }
+
+// -----------------------------滚动定时器-----------------------------
+        function timer()
+        {
+            clearInterval(t);
+            t = setInterval(function(){
+                move();
+            },1);
+        }
+        timer();
+
+// ----------------------------间隔定时器--------------------------------------
+        function timer2()
+        {
+            clearInterval(T);
+            T = setInterval(function(){
+                timer();
+                move();
+            },3000);
+        }
+        // timer2();
+
+// ------------------------------left按钮---------------------------------
+        lbtn.onclick = function()
+        {
+            speed = 1;       //改变方向
+            timer();           //点击启动滚动定时器不用等间隔
+        }
+// -----------------------------right按钮----------------------------------
+        rbtn.onclick = function()
+        {
+            speed = -1;             
+            timer();
+        }
+
+// -----------------------------鼠标移入移出------------------------------------
+        content.onmouseover = function()
+        {
+            clearInterval(t);
+            clearInterval(T);
+        }
+        content.onmouseout = function()
+        {
+            timer();
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="btnbox">
+        <button id="lbtn">left</button>
+        <div id="content">
+            <div id="box">
+                <div id="d1">
+                    <img src="images/1.jpg" alt="">
+                    <img src="images/2.jpg" alt="">
+                    <img src="images/3.jpg" alt="">
+                    <img src="images/4.jpg" alt="">
+                    <img src="images/5.jpg" alt="">
+                </div>
+                <div id="d2">
+                    <img src="images/1.jpg" alt="">
+                    <img src="images/2.jpg" alt="">
+                    <img src="images/3.jpg" alt="">
+                    <img src="images/4.jpg" alt="">
+                    <img src="images/5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <button id="rbtn">right</button>
+    </div>
+</body>
+</html>

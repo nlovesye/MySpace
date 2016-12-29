@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice1</title>
+    <script>
+    // ----------------------------------原型链继承-------------------------------
+    // function Parent(){
+    //     this.name = "大咪";
+    //     this.age = 22;
+    // }
+    // Parent.prototype.say = function(){
+    //     alert(this.name);
+    // }
+    // function Son(){
+    //     this.name = "狗娃";
+    //     this.age = 14;
+    // }
+    // Son.prototype = new Parent();
+    // var s1 = new Son();
+    // s1.age = 20;
+    // alert(s1.age);
+    // alert(s1.name);
+    // s1.say();
+    // var s2 = new Son();
+    // alert(s2.age);
+
+    // ----------------------------------构造模式继承------------------------------
+    // function Parent(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // Parent.prototype.say = function(){
+    //     alert(this.name);
+    // }
+    // function Son(name,age){
+    //     Parent.call(this,name,age);
+    // }
+    // var s1 = new Son("大狗",23);
+    // alert(s1.name);
+    // s1.say();
+
+    // ------------------------------------组合继承-----------------------------------
+    function Parent(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Parent.prototype.say = function(){
+        alert(this.name);
+    }
+    function Son(name,age){
+        Parent.call(this,name,age);
+    }
+    Son.prototype = new Parent();
+
+    var s1 = new Son("猫儿",22);
+    alert(s1.name);
+    s1.say();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

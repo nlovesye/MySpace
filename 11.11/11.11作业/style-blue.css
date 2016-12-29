@@ -1,0 +1,19 @@
+body{
+	background:#e5e5ff;
+}
+.pic-box{
+	background:-webkit-radial-gradient(50% 50%,circle,rgba(175,208,238,1) 0%,rgba(224,225,255,1) 100%);
+}
+.pic-box:before{
+	background:-webkit-linear-gradient(top,rgba(215,220,255,0.8) 0%,rgba(153,182,226,0.6) 100%);
+}
+.pic-box:after{
+	background:-webkit-linear-gradient(top,rgba(215,220,255,0.8) 0%,rgba(195,225,255,0.6) 100%);
+}
+.pic-box .ribbon{
+	background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(220, 215, 255, 0.1)), to(rgba(220, 215, 255, 0.0)), color-stop(.1,rgba(0, 0, 0, 0.2)));
+}
+.pic-box h1{
+	color:cornflowerblue;/*菊兰色*/
+	text-shadow:1px 1px 0px rgba(72,61,139,0.8);/*暗灰蓝色*/
+}

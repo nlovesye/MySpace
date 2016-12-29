@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分享效果</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #box
+    {
+        width: 250px;
+        height: 300px;
+        position: relative;
+        top: 70px;
+        left: -200px;
+    }
+    #box .content
+    {
+        width: 200px;
+        height: 300px;
+        background: orange;
+        position: absolute;
+        left: 0;
+    }
+    #box span
+    {
+        width: 50px;
+        height: 100px;
+        background: green;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 30%;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var sp = document.getElementById("sp");
+        var box = document.getElementById("box");
+        var t = null;
+
+        box.onmouseover = function()
+        {
+            move(0);
+        }
+        box.onmouseout = function()
+        {
+            move(-200);
+        }
+        function move(end)
+        {
+            clearInterval(t);
+            t = setInterval(function(){
+                var speed = Math.ceil(Math.abs((end - box.offsetLeft) / 10));
+                if(end > box.offsetLeft)
+                {
+                    speed = speed;
+                }
+                if(end < box.offsetLeft)
+                {
+                    speed = -speed;
+                }    
+                box.style.left = box.offsetLeft + speed + "px";
+                // if(box.offsetLeft == end)
+                // {
+                //     clearInterval(t);
+                // }
+            },20);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div class="content"></div>
+        <span id="sp">分享到</span>
+    </div>
+</body>
+</html>

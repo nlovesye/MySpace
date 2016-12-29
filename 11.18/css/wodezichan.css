@@ -1,0 +1,255 @@
+*{margin: 0;padding: 0;box-sizing:border-box;font-family: "苹方";}
+body{
+    background: #1a83d1;
+}
+.topbar{
+    width: 100%;
+    height: 0.88rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.topbar a.iconfont{
+    position: absolute;
+    display: block;
+    font-size: 0.56rem;
+    line-height: 0.9rem;
+    color: #fff;
+    margin-left: 0.26rem;
+}
+.topbar h2{
+    text-align: center;
+    font-size: 0.32rem;
+    color: #fff;
+    line-height: 0.9rem;
+    margin: 0;
+}
+.point{
+    position: fixed;
+    width: 100%;
+    margin-top: 0.5rem;
+    bottom: 1.2rem
+}
+.point ul{
+    text-align: center;
+}
+.point ul li{
+    display: inline-block;
+    margin: 0 0.2rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 50%;
+    border: 0.01rem solid #fff;
+}
+.point ul li.select{
+    background: #fff;
+}
+
+.show{
+    width: 100%;
+}
+
+.zonge{
+    width: 100%;
+    display: block;
+}
+.zonge .d1{
+    width: 100%;
+    height: 4.07rem;
+    margin-top: 2.47rem;
+    overflow: hidden;
+}
+.zonge .d1 .outc{
+    width: 6.6rem;
+    height: 6.6rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 0.02rem solid #fff;
+    position: relative;
+}
+.zonge .d1 .innerc{
+    width: 5.9rem;
+    height: 5.9rem;
+    margin: 0.35rem auto 0;
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    text-align: center;
+    color: #fff;
+}
+.zonge .d1 .innerc h2{
+    margin-top: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.46rem;
+}
+.zonge .d1 .innerc p{
+    font-size: 0.4rem;
+}
+.zonge .d1 .dd{
+    position: absolute;
+    top: 3.15rem;
+    left: -0.1rem;
+    width: 0.2rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-transform-origin: 3.4rem 50%;
+            transform-origin: 3.4rem 50%;
+    -webkit-transform: rotate(-11deg);
+            transform: rotate(-11deg);
+    -webkit-animation: run 7s linear forwards;
+            animation: run 7s linear forwards;
+}
+@-webkit-keyframes run{
+    0%{-webkit-transform: rotate(-11deg);transform: rotate(-11deg)}
+    100%{-webkit-transform: rotate(191deg);transform: rotate(191deg)}
+}
+@keyframes run{
+    0%{-webkit-transform: rotate(-11deg);transform: rotate(-11deg)}
+    100%{-webkit-transform: rotate(191deg);transform: rotate(191deg)}
+}
+.zonge .d2{
+    margin: 1.5rem auto 0;
+    width: 4rem;
+}
+.zonge .d2 p{
+    width: 100%;
+    font-size: 0.28rem;
+    line-height: 0.28rem;
+    margin-bottom: 0.36rem;
+    color: #fff;
+    position: relative;
+}
+.zonge .d2 p span{
+    position: absolute;
+    right: 0;
+}
+
+
+.yue{
+    width: 100%;
+    position: absolute;
+    top: 0.88rem;
+    display: none;
+}
+.yue .d1{
+    width: 100%;
+    height: 4.07rem;
+    margin-top: 1.47rem;
+    overflow: hidden;
+    text-align: center;
+}
+.yue .d1 .outc{
+    width: 6.6rem;
+    height: 6.6rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 0.02rem solid #fff;
+}
+.yue .d1 .innerc{
+    width: 5.9rem;
+    height: 5.9rem;
+    margin: 0.35rem auto 0;
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    text-align: center;
+    color: #fff;
+}
+.yue .d1 .innerc h2{
+    margin-top: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.46rem;
+}
+.yue .d1 .innerc p{
+    font-size: 0.4rem;
+}
+.yue .d2{
+    margin-top: 2.5rem;
+    width: 7.5rem;
+    text-align: center;
+    position: relative;
+}
+.yue .d2 a:first-child{
+    width: 100%;
+    font-size: 0.32rem;
+    line-height: 0.32rem;
+    margin-bottom: 0.36rem;
+    color: #fff;
+}
+.yue .d2 a:nth-child(2),.yue .d2 a:nth-child(3){
+    display: block;
+    width: 2.8rem;
+    height: 0.9rem;
+    border-radius: 0.12rem;
+    border: 0.01rem solid #fff;
+    text-align: center;
+    line-height: 0.9rem;
+    font-size: 0.36rem;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 1rem;
+}
+.yue .d2 a:nth-child(2){
+    left: 8%;
+}
+.yue .d2 a:nth-child(3){
+    right: 8%;
+}
+
+.shouyi{
+    width: 100%;
+    position: absolute;
+    top: 0.88rem;
+    display: none;
+}
+.shouyi .d1{
+    width: 100%;
+    height: 4.07rem;
+    margin-top: 1.47rem;
+    overflow: hidden;
+}
+.shouyi .d1 .outc{
+    width: 6.6rem;
+    height: 6.6rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 0.02rem solid #fff;
+}
+.shouyi .d1 .innerc{
+    width: 5.9rem;
+    height: 5.9rem;
+    margin: 0.35rem auto 0;
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    text-align: center;
+    color: #fff;
+}
+.shouyi .d1 .innerc h2{
+    margin-top: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.46rem;
+}
+.shouyi .d1 .innerc p{
+    font-size: 0.4rem;
+}
+.shouyi .d2{
+    margin: 1.5rem auto 0;
+    width: 4rem;
+}
+.shouyi .d2 p{
+    width: 100%;
+    font-size: 0.28rem;
+    line-height: 0.28rem;
+    margin-bottom: 0.36rem;
+    color: #fff;
+    position: relative;
+}
+.shouyi .d2 p span{
+    position: absolute;
+    right: 0;
+}
+
+
+
+

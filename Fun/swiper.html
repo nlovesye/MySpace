@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swiper</title>
+    <link rel="stylesheet" type="text/css" href="swiper.min.css">
+    <style>
+    .swiper-container{
+        width: 80%;
+        height: 600px;
+        border: 2px solid orange;
+    }
+    </style>
+    <script src="jquery-2.1.4.js"></script>
+    <script src="swiper.jquery.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">slider1</div>
+        <div class="swiper-slide">slider2</div>
+        <div class="swiper-slide">slider3</div>
+      </div>
+    </div>
+    <script> 
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 5000,//可选选项，自动滑动
+    })
+    </script>
+</body>
+</html>

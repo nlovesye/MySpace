@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+             window.onload = function()
+             {
+                    var submit = document.getElementsByName("submit")[0];
+                    var user = document.getElementsByName("user")[0];
+                    submit.onclick = function()
+                    {
+                        alert(user.value);
+                    }
+             }
+    </script>
+</head>
+<body>
+    <form action="1.php">
+        用户名:<input type="text" name="user"><br>
+        密码:<input type="password" name="pw"><br>
+        <input type="submit" value="提交" name="submit">
+    </form>
+</body>
+</html>

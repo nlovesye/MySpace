@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制滚动</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #box
+    {
+        width: 780px;
+        height: 240px;
+        margin: 30px auto;
+        border: 1px solid #f66;
+        overflow: hidden;
+    }
+    #d1
+    {
+        width: 1560px;
+        position: relative;
+    }
+    a
+    {
+        width: 50px;
+        height: 30px;
+        text-decoration: none;
+        color: green;
+    }
+    #lbtn
+    {
+        left: 220px;
+    }
+    #rbtn
+    {
+        right: 220px;
+    }
+    #d1
+    {
+        width: 1560px;
+    }
+    #u1
+    {
+        position: absolute;
+        left: 0px;
+    }
+    #u2
+    {
+        position: absolute;
+        left: 780px;
+    }
+    ul li
+    {
+        float: left;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("box");
+        var d1 = document.getElementById("d1");
+        var u1 = document.getElementById("u1");
+        var u2 = document.getElementById("u2");
+        var lf1 = parseInt(getstyle(u1,"left"));
+        var lf2 = parseInt(getstyle(u2,"left"));
+        var lbtn = document.getElementById("lbtn");
+        var rbtn = document.getElementById("rbtn");
+        var t = null;
+        var i = 0;
+        var j = 0;
+        lbtn.onclick = function(){
+            i++;
+            if(i > 5){i = 1};
+            if(t){
+                clearInterval(t);
+            }
+            t=setInterval(function(){
+                mov(-1);
+            },5);
+        }
+        rbtn.onclick = function(){
+            j++;
+            if(j > 5){j = 1};
+            if(t){
+                clearInterval(t);
+            }
+            t=setInterval(function(){
+                mov(1);
+            },5);
+        }
+        function mov(x){
+            var l = 156;
+            var speed = 1;
+            lf1 += x*speed;
+            lf2 += x*speed;
+            if(lf1 == x*i*l || lf2 == x*j*l){
+                clearInterval(t);
+            }
+            u1.style["left"] = lf1 + "px";
+            u2.style["left"] = lf2 + "px";
+            if(lf1 == -780 && lf2 == 0){
+                lf1 = 0;
+                lf2 = 780;
+                u1.style["left"] = lf1 + "px";
+                u2.style["left"] = lf2 + "px";
+            }
+            if(lf1 == 156 && lf2 == 936){
+                lf1 = -624;
+                lf2 = 156;
+                u1.style["left"] = lf1 + "px";
+                u2.style["left"] = lf2 + "px";
+            }
+        }
+        function getstyle(element,property){
+            var l;
+            if(!document.defaultView){
+                l = element.currentStyle[property];
+            }
+            else{
+                l = document.defaultView.getComputedStyle(element)[property];
+            }
+            return l;
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="d1">
+            <ul id="u1">
+                <li><img src="images/1.jpg" width="156" height="240"></li>
+                <li><img src="images/2.jpg" width="156" height="240"></li>
+                <li><img src="images/3.jpg" width="156" height="240"></li>
+                <li><img src="images/4.jpg" width="156" height="240"></li>
+                <li><img src="images/5.jpg" width="156" height="240"></li>
+            </ul>
+            <ul id="u2">
+                <li><img src="images/1.jpg" width="156" height="240"></li>
+                <li><img src="images/2.jpg" width="156" height="240"></li>
+                <li><img src="images/3.jpg" width="156" height="240"></li>
+                <li><img src="images/4.jpg" width="156" height="240"></li>
+                <li><img src="images/5.jpg" width="156" height="240"></li>
+            </ul>
+        </div>
+    </div>
+    <a href="javascript:" id="lbtn">left</a>
+    <a href="javascript:" id="rbtn">right</a>
+</body>
+</html>

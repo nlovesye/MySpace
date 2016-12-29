@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac2</title>
+    <style>
+    .box{
+        width: 1000px;background: green;margin: 20px auto;
+    }
+    @media(max-width: 1200px){
+        .box{width: 800px;background: pink;margin: 20px auto;}
+    }
+    @media(max-width: 960px){
+        .box{width: 600px;background: blue;margin: 20px auto;}
+    }
+    canvas{
+        border: 1px solid orange;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.arc(500,400,300,0,Math.PI*2,false); 
+        context.strokeStyle="orange";
+        context.lineWidth=5;
+        context.stroke();
+        context.closePath();
+
+        context.save();
+        context.lineWidth=6;
+        context.strokeStyle="green";
+        context.translate(500,400); 
+        for(var i=0;i<12;i++){
+            context.rotate(30*Math.PI/180);
+            context.beginPath();
+            context.moveTo(0,-296);
+            context.lineTo(0,-260);
+            context.stroke();
+        }     
+        context.restore();
+        context.closePath();
+
+        context.save();
+        context.lineWidth=5;
+        context.strokeStyle="green";
+        context.translate(500,400); 
+        for(var i=0;i<60;i++){
+            context.rotate(6*Math.PI/180);
+            context.beginPath();
+            context.moveTo(0,-296);
+            context.lineTo(0,-276);
+            context.stroke();
+        }
+        context.restore();
+        context.closePath();
+
+        context.lineWidth=5;
+        context.strokeStyle="purple";
+        context.translate(500,400);
+        context.save();
+        context.rotate(30*Math.PI/180)
+        context.beginPath();
+        context.moveTo(0,6);
+        context.lineTo(0,-200);
+        context.stroke();
+        context.restore();
+        context.closePath();
+
+        context.lineWidth=6;
+        context.strokeStyle="red";
+        context.save();
+        context.rotate(150*Math.PI/180)
+        context.beginPath();
+        context.moveTo(0,4);
+        context.lineTo(0,-140);
+        context.stroke();
+        context.restore();
+        context.closePath();
+
+        context.lineWidth=3;
+        context.strokeStyle="pink";
+        // var t = setInterval(function(){
+            // context.clearRect(0,0,1000,800)
+            context.rotate(60*Math.PI/180);
+            context.beginPath();
+            context.moveTo(0,10);
+            context.lineTo(0,-260);
+            context.stroke();
+            context.closePath();
+        // },1000);
+    }
+    </script>
+</head>
+<body>
+<!--     <div class="box">
+        哦
+    </div> -->
+    <canvas id="canvas" width=1000 height=800></canvas>
+</body>
+</html>

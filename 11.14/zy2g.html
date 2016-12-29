@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy2</title>
+    <style>
+    canvas{
+        border: 1px solid orange;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 50px auto;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var color=["orange","green","yellow","red","pink","purple","blue","gray"];
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        function draw(){
+            var x = Math.ceil(Math.random()*800);
+            var y = Math.ceil(Math.random()*600);
+            var ra = Math.ceil(Math.random()*10+10);
+            var col = color[Math.round(Math.random()*7)];
+            var speed1 = 1;
+            var speed2 = 1;
+            context.beginPath();
+            context.fillStyle=col;
+            context.arc(x,y,ra,0,2*Math.PI*180,false);
+            context.fill();
+            context.closePath();
+        }
+
+            // var t = setInterval(function(){
+                context.clearRect(0,0,800,600);
+                context.beginPath();
+                x += speed1;
+                y += speed2;
+                if(x<=ra){
+                    speed1 = 1;
+                }
+                if(x>=800-ra){
+                    speed1 = -1;
+                }
+                if(y<=ra){
+                    speed2 = 1;
+                }
+                if(y>=600-ra){
+                    speed2 = -1;
+                }
+                context.arc(x,y,ra,0,Math.PI*2,false);
+                context.fill();
+                context.closePath();
+                // window.requestAnimationFrame(draw);
+            // },10);
+        
+
+        draw();
+        // draw();
+    }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width=800 height=600></canvas>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>碰壁反弹</title>
+    <style>
+    #box{
+        width:800px;
+        height:500px;
+        border:1px solid #659685;
+        margin:0 auto;
+        position:relative;
+    }
+    #rebound{
+        width:50px;
+        height:50px;
+        background:gold;
+        position:absolute;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="rebound">前辈</div>
+    </div>
+    <script>
+    var box=document.getElementById('box');
+    var rebound=document.getElementById('rebound');
+    var speedX=1,speedY=1;
+    var runX=Math.floor(Math.random()*751),runY=Math.floor(Math.random()*451);
+    setInterval(function(){
+        runX+=speedX;
+        runY+=speedY;
+        if(rebound.offsetLeft<=0){
+            rebound.style.left=0+'px';
+            speedX=1;
+        }else if(rebound.offsetLeft>=(box.offsetWidth-rebound.offsetWidth)){
+            rebound.style.left=(box.offsetWidth-rebound.offsetWidth)+'px';
+            speedX=-1;
+        }
+        if(rebound.offsetTop<=0){
+             rebound.style.top=0+'px';
+            speedY=1;
+        }else if(rebound.offsetTop>=(box.offsetHeight-rebound.offsetHeight)){
+            rebound.style.top=(box.offsetHeight-rebound.offsetHeight)+'px';
+            speedY=-1;
+        }
+        rebound.style.top=runY+'px';
+        rebound.style.left=runX+'px';
+    },1)
+    </script>
+</body>
+</html>

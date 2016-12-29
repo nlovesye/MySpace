@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+/*    *{
+        box-sizing: border-box;
+    }*/
+    #d1{
+        background: rgba(0,0,0,0.1);
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        // var d1 = document.getElementById("d1");
+        // var context = d1.getContext("2d");
+        // context.beginPath();
+        // context.moveTo(150,100);
+        // context.arc(100,100,50,0,Math.PI*3/2,false);
+        // context.closePath();
+        // context.fillStyle="orange";
+        // context.fill();
+        // context.strokeStyle="green";
+        // context.stroke();
+
+        // context.fillStyle="green";
+        // context.fillRect(300,100,200,200);
+        // context.strokeStyle="red";
+        // context.strokeRect(300,100,200,200);
+
+        function draw(col,num,ra){
+            var ra = ra || 300;
+            var d1 = document.getElementById("d1");
+            var context = d1.getContext("2d");
+            context.beginPath();
+            context.moveTo(400,400);
+            context.arc(400,400,ra,Math.PI*3/2,Math.PI*(2*(num/100)+3/2),false);
+            context.fillStyle = col;
+            context.fill();
+            context.closePath();
+        }
+
+        function show(num,col){
+            draw("pink",100);
+            draw("orange",num);
+            draw("yellow",100,200);
+            var d1 = document.getElementById("d1");
+            var context = d1.getContext("2d");
+            context.font = "80px '黑体'";
+            context.fillStyle = col;
+            context.fillText(num+"%",330,430,400);
+        }
+        // show(10.4,"green");
+
+        var d1 = document.getElementById("d1");
+        var context = d1.getContext("2d");
+        var t;
+        var i=0;
+        t = setInterval(function(){
+            i+=1;
+            context.clearRect(0,0,1200,800);
+            show(i,"green");
+            if(i >= 100){
+                clearInterval(t);
+                context.font = "40px '黑体'";
+                context.fillStyle = "blue";
+                context.fillText("完成",360,500);
+            }
+        },150);
+
+    }
+    </script>
+</head>
+<body>
+    <canvas id="d1" width="1200" height="800"></canvas>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+              var mywin;
+               function openWin()
+               {
+                    // alert(screen.width);
+                    // alert(screen.height);
+                    // alert(screen.availWidth);
+                    // alert(screen.availHeight);
+                     var width = (screen.width-400)/2;
+                     var height = (screen.height-400)/2;
+                     mywin = window.open("location.html","newwindow","height=400,width=400,top="+height+",left="+width+",toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
+               }
+               function closeWin()
+               {
+                      mywin.close();
+               }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="openWin()" value="打开窗口">
+    <input type="button" onclick="closeWin()" value="关闭窗口">
+</body>
+</html>

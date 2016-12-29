@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac2</title>
+    <style>
+    .box{
+        width: 300px;
+        height: 200px;
+        margin: 200px auto;
+        border: 2px solid orange;
+        position: relative;
+        perspective: 500px;        
+    }
+    .box .pic{
+        /*transition: all 2s;*/
+        transform-origin: 0px 0px 0px;
+        transform-style: preserve-3d;
+        animation:change 3s linear infinite;
+    }
+    .box .pic img{
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;        
+    }
+    .p1{
+        z-index: 3;
+        backface-visibility: hidden;
+    }
+    .p2{
+        z-index: 2;
+        /*transform: rotate3d(1,0,0,180deg);*/
+    }
+/*    .box:hover .pic{
+        transform: rotate3d(1,0,0,180deg);
+    }*/
+    @keyframes change{
+        100%{transform:rotate3d(0,1,0,-360deg);}
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="pic">
+            <img src="images/p1.jpg" alt="" class="p1">
+            <img src="images/p2.jpg" alt="" class="p2">
+        </div>
+    </div>
+</body>
+</html>

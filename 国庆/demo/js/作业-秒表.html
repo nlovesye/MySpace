@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .showTime {
+            width: 300px;
+            height: 100px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="showTime" class="showTime">00 : 00 : 00</div>
+    <input id="start" type="button" name="" value="开始计时">
+    <input id="stop" type="button" name="" value="停止计时">
+    <input id="reset" type="button" name="" value="重置">
+    <script type="text/javascript">
+    var showTime = document.getElementById("showTime"),
+        start = document.getElementById("start"),
+        stop = document.getElementById("stop"),
+        reset = document.getElementById("reset");
+
+      var second = 0;
+      var minute = 0;
+      var milliSecond = 0;
+      var timer = null;
+      var mark = true;
+        function toDou(n)
+        {
+             if(n<10)
+             {
+                return "0"+n;
+             }
+             return ""+n;
+        }
+     
+
+      start.onclick = function()
+      {
+        if(mark)
+        {
+            // if(timer)
+            // {
+            //     clearInterval(timer);
+            // }
+            timer = setInterval(change,10);
+             function change()
+             {
+                   milliSecond++;
+                   if(milliSecond>99)
+                   {
+                        milliSecond = 0;
+                        second++;
+                        if(second>59)
+                        {
+                            second=0;
+                            minute++;
+                        }
+                   }
+                showTime.innerHTML = toDou(minute)+":"+toDou(second)+":"+toDou(milliSecond);
+             }
+         }
+         mark = false;
+
+      }
+
+      stop.onclick = function()
+      {
+          mark = true;
+          clearInterval(timer);
+      }
+
+      reset.onclick = function()
+      {
+           mark = true;
+           clearInterval(timer);
+           second = 0;
+           minute = 0;
+           milliSecond = 0;
+           showTime.innerHTML = "00 : 00 : 00";
+      }
+    </script>
+</body>
+</html>

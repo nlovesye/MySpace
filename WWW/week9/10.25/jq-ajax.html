@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq-ajax</title>
+    <script src="../jquery-2.1.4.js"></script>
+    <script>
+    $(function()
+    {
+        $(":submit").click(function()
+            {
+                $.ajax(
+                {
+                    type: "Get",
+                    url: "../../server_3.php",
+                    data:"",
+                    dataType:"json",
+                    success:function(data)
+                    {
+                        var a = JSON.stringify(data);
+                        console.log(a);
+                        $("#name").val(data.name);
+                        $("#pass").val(data.pass);
+                    }
+                });
+            });
+    })
+    </script>
+</head>
+<body>
+    用户名：<input type="text" id="name"><br>
+    密码: <input type="password" id="pass"><br>
+    <input type="submit" value="获取数据">
+</body>
+</html>

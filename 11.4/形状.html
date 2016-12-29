@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>形状</title>
+    <style>
+    *{margin: 0;padding: 0;box-sizing:border-box;}
+    div{
+        width: 50px;
+        height: 50px;
+        background: rgba(0,0,0,0.6);
+        margin: 10px auto;
+    }
+    .d1{
+        border-radius: 12px;
+    }
+    .d2{
+        border-radius: 50%;
+    }
+    .d3{
+        border-radius: 50% 0 50% 0;
+    }
+    .d4{
+        border-radius: 50% 0 50% 50%;
+    }
+    .d5{
+        border-radius: 0 0 0 50%;
+    }
+    .d6{
+        width: 100px;
+        border-radius: 50%;
+    }
+    .d7{
+        border-radius: 50%;
+        border-width:25px 25px 25px 0;
+        border-style:solid;
+        border-color:transparent #fff transparent transparent;
+    }
+    .d8{
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 25px;
+        border-color: red #fff yellow #fff;
+    }
+    </style>
+</head>
+<body>
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4"></div>
+    <div class="d5"></div>
+    <div class="d6"></div>
+    <div class="d7"></div>
+    <div class="d8"></div>
+</body>
+</html>

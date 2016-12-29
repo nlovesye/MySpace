@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body{
+        margin:0; 
+        padding:0;
+    }
+    #run
+    {
+        width:100px; 
+        height:100px; 
+        background:#06c;
+        border:1px solid #000;
+        opacity:0.3; 
+    }
+    </style>
+
+</head>
+<body>
+    <div id="run"></div>
+    <script>
+            var alpha = 30;
+           // var speed = 0.01;
+            var timer = null;
+            var run = document.getElementById("run");
+            run.onmouseover = function()
+            {
+                  startRun(100);
+            }
+            run.onmouseout = function()
+            {
+                  startRun(30);
+
+            }
+            function startRun(target)
+            {
+                  if(timer)
+                  {
+                     clearInterval(timer);
+                  }
+                  timer = setInterval(function()
+                    {
+                        opacityChange(target)    
+                    },50);
+            }
+
+            function opacityChange(target)
+            {
+                   console.log(alpha);
+                   if(target>alpha)
+                   {
+                       speed = 1;
+                   }
+                   else
+                   {
+                       speed = -1;
+                   }
+                   if(target == alpha)
+                   {
+                       clearInterval(timer);
+                   }
+                   else
+                   {
+                       alpha += speed; 
+                       //alert(typeof(run.style.opacity));
+                       run.style.opacity = alpha/100;
+                    }
+            }
+
+    </script>
+</body>
+</html>

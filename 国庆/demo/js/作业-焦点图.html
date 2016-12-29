@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+  <style>
+            ul,li
+            {
+                list-style: none;
+            }
+            #big 
+            {
+                width:368px; 
+                height:368px; 
+                border:1px solid black;
+                padding: 10px; 
+                margin: 0 auto;
+            }
+            #small ul 
+            {
+                text-align: center;
+            }
+            #small ul li 
+            {
+                display: inline-block;
+                border:1px solid black; 
+                padding: 5px; margin: 10px;
+            }
+            #small ul li img 
+            {
+                width:100px;
+                height:auto;
+            }
+            .bk 
+            {
+                border:1px solid red!important;
+            }
+        </style>
+        <script>
+                window.onload=function()
+                {
+                       var big = document.getElementById("big");
+                       var small = document.getElementById("small");
+                       var oImg = big.getElementsByTagName("img")[0];
+                       var li = small.getElementsByTagName("li");
+
+                       for(var i=0;i<li.length;i++)
+                       {
+                            li[i].index = i;
+                            li[i].onmouseover = function()
+                            {
+                                 for(var j=0;j<li.length;j++)
+                                 {
+                                      li[j].className = li[j].className.replace("bk","");
+                                 }
+                                 // alert(li[i]);
+                                 // alert(i);
+                                 this.className = "bk";
+                                 oImg.src = "images/f"+this.index+".jpg";
+                            }
+                       }
+                }
+        </script>
+<body>
+      <div id="big"><img src="images/f0.jpg" alt="" /></div>
+        <div id="small">
+            <ul>
+                <li class="bk"><a href="#"><img src="images/f0.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/f1.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/f2.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/f3.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/f4.jpg" alt="" /></a></li>
+            </ul>
+        </div>
+</body>
+</html>

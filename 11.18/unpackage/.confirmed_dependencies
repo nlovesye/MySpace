@@ -1,0 +1,20 @@
+{
+	"index.html": {
+		"resources": [
+			"js/base.js",
+			"js/jquery-2.1.4.js",
+			"css/mobile-reset.css",
+			"font/iconfont.woff",
+			"css/iconfont.css",
+			"js/bootstrap.js",
+			"css/mystyle.css",
+			"css/bootstrap.min.css",
+			"积分管理.html",
+			"我的资产.html"
+		],
+		"refer": [
+			"积分管理.html",
+			"我的资产.html"
+		]
+	}
+}

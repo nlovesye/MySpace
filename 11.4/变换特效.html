@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变换特效</title>
+    <style>
+    li{
+        list-style: none;
+    }
+    .box{
+        width: 50%;
+        height: 600px;
+        margin: 30px auto;
+        position: relative;
+        perspective: 700px;
+    }
+    .box ul{
+        position: absolute;        
+    }
+    .box ul li{
+        width: 300px;
+        height: 50px;
+        margin: 5px 0;         
+        /*transition: all 2s;*/
+        position: relative;
+        transform-style: preserve-3d;
+        animation: change 10s linear infinite;
+        /*animation-delay:5s;*/
+    }
+    .box ul li div{
+        position: absolute;
+        left: 0;right: 0;top: 0;bottom: 0;margin: auto;
+        text-align: center;
+        line-height: 50px;
+        background: pink;
+        border-radius: 30px 0 30px 0;  
+    }
+    .box ul li div:nth-child(1){
+        z-index: 3;
+        backface-visibility: hidden;
+    }
+    .box ul li div:nth-child(2){
+        z-index: 2;
+        border-radius: 0 30px 0 30px;  
+        transform: rotate3d(1,0,0,180deg);
+    }
+/*    .box ul li:hover{
+        transform: rotate3d(1,0,0,180deg);
+    }*/
+    @keyframes change{
+        20%{transform: rotate3d(1,0,0,0deg);}
+        30%{transform: rotate3d(1,0,0,180deg);}
+        70%{transform: rotate3d(1,0,0,180deg);}
+        80%{transform: rotate3d(1,0,0,0deg);}
+        100%{}
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <div>这是列表项1</div>
+                <div>这是列表8</div>
+            </li>
+            <li>
+                <div>这是列表项2</div>
+                <div>这是列表9</div>
+            </li>
+            <li>
+                <div>这是列表项3</div>
+                <div>这是列表10</div>
+            </li>
+            <li>
+                <div>这是列表项4</div>
+                <div>这是列表11</div>
+            </li>
+            <li>
+                <div>这是列表项5</div>
+                <div>这是列表12</div>
+            </li>
+            <li>
+                <div>这是列表项6</div>
+                <div>这是列表13</div>
+            </li>
+            <li>
+                <div>这是列表项7</div>
+                <div>这是列表14</div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

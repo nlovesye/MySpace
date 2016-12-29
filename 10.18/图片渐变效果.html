@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片渐变效果</title>
+    <style>
+    #box
+    {
+        width: 600px;
+        height: 400px;
+        margin: 60px auto;
+        position: relative;
+    }
+    img
+    {
+        position: absolute;
+        width: 600px;
+        height: 400px;
+        /*display: none;*/
+    }
+    </style>
+    <script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        // function change(time,time2)
+        // {
+        // var i = 0;
+        // $("img").eq(i).fadeIn(time);
+        // var t = setInterval(function()
+        // {
+        //     $("img").eq(i).fadeOut(time).next().fadeIn(time);
+        //     i++;
+        //     if(i == 5)
+        //     {
+        //         i=0;
+        //         $("img").eq(i).fadeIn(time);
+        //     }
+        // },time2)
+        // }
+        // change(4000,6000);
+
+        var i = 4;
+        function change2(time)
+        {
+            i--;
+            $("#box img").eq(i).fadeIn(time).siblings().fadeOut(time);
+            if(i == 0)
+            {
+                i = 5;
+            }
+        }
+        var t = setInterval(function()
+        {
+            change2(3000);
+        },5000);
+        
+    })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="images/5.jpg" alt="">
+        <img src="images/4.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/1.jpg" alt="">
+    </div>
+</body>
+</html>

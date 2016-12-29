@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" innitial-scale=1.0 user-scalable=no maximum-scale=1.0 minimum-scale=1.0>
+    <title>Document</title>
+    <script>
+    window.onload=function()
+    {
+        (function(){
+            function w(){
+                var r = document.documentElement;
+                var a = r.getBoundingClientRect().width;
+                if(a > 750){
+                    a=750;
+                }
+                rem = a/7.5;
+                r.style.fontSize = rem + "px";
+            }
+            var t;
+            w();
+            window.addEventListener("resize",function(){
+                clearTimeout(t);
+                t=setTimeout(w,300)
+            },false);
+        })();
+    }
+    </script>
+    <style>
+    .pic{
+
+    }
+    .pic img{
+        width: 3.5rem;
+        height: 5rem;
+        margin: 0.3rem 0.6rem;
+    }
+    </style>
+</head>
+<body>
+    <div class="pic">
+        <img src="images/p1.jpg" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+BAIDU_SSP_define({"queryid" : "aedc796731897453","tuid" : "u1522781_0","placement" : {"basic" : {"cname":"89080089_cpr","conBackEnv":1,"flowType":1,"mediumType":1,"rspFormat":1,"sellType":2,"sspId":1,"tuId":9223372032561331293,"userId":6777248}
+,"container" : {"anchoredType":1,"floated":{"trigger":8},"height":250,"sizeType":1,"slide":{},"width":300}
+,"fillstyle" : {"backgroundColor":"#FFFFFF","cloudTheme":{},"elements":[0,1,2,4],"flush":0,"layout":[1,2],"lu":{},"search":{},"styleType":2,"txt":{"cbackground":"#FFFFFF","cborder":"#FFFFFF","cdesc":"#444444","cflush":"#e10900","ctitle":"#0000FF","curl":"#008000","number":4},"video":{}}
+,"userdefine" : "|cpro_template=text_default_300_250","complement_type" : 2,"update" : "1445318070_1458039159"},"extends" : {"ssph":250,"sspw":300}
+,"pdb_deliv" : {"deliv_id" : "0","deliv_des" : {},"brandad" : 0},"order_deliv" : {"deliv_id" : "0","demand_id" : "0"},"rtb_deliv" : {"deliv_id" : "0","demand_id" : "1522781"}});

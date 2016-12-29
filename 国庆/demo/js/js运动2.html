@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 300px;
+            height: 300px;
+            background: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="box"></div>
+    <script type="text/javascript">
+            var box = document.getElementById("box");
+            var speed = 40;
+            var targetVal = 600;
+            var timer = null;
+            var startVal = parseInt(getStyle(box,"width")); 
+          
+            box.onclick = function()        //利用计时器有停止的运动
+            {
+                     if(timer)
+                     {
+                         clearInterval(timer);
+                     }
+                    timer = setInterval(sport,50);
+
+                    function sport()
+                    {
+                        startVal += speed;
+                        box.style.width = startVal +"px";
+
+                           if(startVal>=targetVal)
+                           {
+                                  clearInterval(timer);
+                           }
+                    }
+            }
+
+
+
+            /*
+                功能:获取渲染后标签的样式,element是标签的对象,property是标签的属性名，返回属性值
+                参数:element是元素对象，property是样式属性
+                document.defaultView属性返回当前document对象所关联的window对象.如果没有返回undefined,IE9以下不支持
+             */
+            function getStyle(element,property)
+            {
+                  var proValue = null;
+                  if(!document.defaultView)  //IE8
+                  {
+                     proValue = element.currentStyle[property];
+                  }
+                  else //标准
+                  {
+                     proValue = document.defaultView.getComputedStyle(element)[property];
+                  }
+                  return proValue;
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zy2</title>
+    <style>
+    canvas{
+        border: 1px solid orange;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 50px auto;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var color=["orange","green","yellow","red","pink","purple","blue","gray"];
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        function Draw(){
+            var _this = this;
+            this.speed1 = 1;
+            this.speed2 = 1;
+            this.x = Math.ceil(Math.random()*800);
+            this.y = Math.ceil(Math.random()*600);
+            this.ra = Math.ceil(Math.random()*10+10);
+            this.color = color[Math.round(Math.random()*7)];
+            this.t = setInterval(function(){
+                _this.move();
+            },10);
+        }
+        Draw.prototype.move = function(){
+            context.clearRect(0,0,800,600);
+            context.beginPath();
+            this.x += this.speed1;
+            this.y += this.speed2;
+            if(this.x<=this.ra){
+                this.speed1 = 1;
+            }
+            if(this.x>=800-this.ra){
+                this.speed1 = -1;
+            }
+            if(this.y<=this.ra){
+                this.speed2 = 1;
+            }
+            if(this.y>=600-this.ra){
+                this.speed2 = -1;
+            }
+            context.arc(this.x,this.y,this.ra,0,Math.PI*2,false);
+  
+            context.closePath();
+            context.fillStyle=this.color;
+            context.fill();
+        }
+
+        var b1 = new Draw();
+        var b2 = new Draw();
+        var b3 = new Draw();
+        var b4 = new Draw();
+        var b5 = new Draw();
+        var b6 = new Draw();
+    }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width=800 height=600></canvas>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <script>
+       var today = new Date();
+        var weekday = today.getDay();
+        var str="";
+        switch(weekday)
+        {
+            case 0:
+            str="天";
+            break;
+            case 1:
+            str="一";
+            break;
+            case 2:
+            str="二";
+            break;
+            case 3:
+            str="三";
+            case 4:
+            break;
+            str="四";
+            break;
+            case 5:
+            str="五";
+            break;
+            default:
+             str="六";
+        }
+        document.write("今天星期"+str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

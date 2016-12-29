@@ -1,0 +1,319 @@
+@charset "UTF-8";
+.nav{
+    width: 100%;
+    height: 0.8rem;
+}
+.nav .logo{
+    margin-top: 0.2rem;
+    margin-left: 0.3rem;
+    width: 1.06rem;
+    height: 0.4rem;
+}
+.nav .search{
+    width: 2rem;
+    height: 0.4rem;
+    margin-top: 0.2rem;
+    margin-right: 0.3rem;
+}
+.nav .search img{
+    width: 0.42rem;
+    height: 0.39rem;
+    margin-right: 0.12rem;
+}
+.nav .search .me{
+    width: 0.36rem;
+    height: 0.39rem;
+    margin-top:-0.4rem;   
+}
+.nav .search .li_1{
+    width: 0.1rem;
+    height: 0.39rem;
+    border-right: 0.02rem solid #7f7f7f;
+    margin-left: 1.14rem;
+} 
+/*bannar*/
+.bannar{
+    width: 100%;
+    height: 2.3rem;
+    position: relative;
+
+}
+.bannar img{
+    width: 100%;
+    height: 2.3rem;
+}
+.bannar .point{
+    position: absolute;
+    left:3.4rem;
+    top:2rem;
+    width: 0.62rem;
+    height: 0.2rem;
+}
+.bannar .point i{
+    display:inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #fff;
+    border-radius: 0.06rem;
+    margin:0.05rem 0.04rem;
+    opacity:0.5;
+}
+.bannar .point .bai{
+        opacity:1;
+}
+/*content1*/
+.content1{
+    width: 6.9rem;
+    height: 2.7rem;
+    margin-left: 0.3rem;
+}
+.content1 .left{
+    width: 5.1rem;
+    height: 2.7rem; 
+}
+.content1 .left ul li img{
+    float: left;
+    margin-right: 0.1rem;
+}
+.content1 .left ul .tu1,.content1 .left ul .tu4{
+    width: 2.8rem;
+    height: 1.3rem;
+}
+.content1 .left ul .tu2,.content1 .left ul .tu3{
+    width: 2.2rem;
+    height: 1.3rem;
+}
+.content1 .left ul .tu2,.content1 .left ul .tu4{
+    margin-right: 0rem;
+}
+.content1 .left ul .tu3,.content1 .left ul .tu4{
+    margin-top: 0.1rem;
+}
+.content1 .right img{
+    width: 1.7rem;
+    height: 2.7rem;
+    background: #000;
+}
+/*promotion*/
+.pro1{
+    width: 6.9rem;
+    height: 2.8rem;
+    position: relative;
+    margin-bottom: 0.2rem;
+}
+.pro1 .pro_1{
+    width: 6.9rem;
+    height: 2.8rem;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
+}
+.pro1 p{
+    font-size: 0.28rem;
+    color:#fff;
+    position: absolute;
+    top:2.5rem;
+    left:0.7rem;
+}
+.pro1 .pro_2{
+    width: 2rem;
+    height: 2.4rem;
+    position: absolute;
+    top:0.5rem;
+    left:2.3rem;
+}
+.pro1 .pro_3{
+    width: 2.4rem;
+    height: 2.6rem;
+    position: absolute;
+    top:0.5rem;
+    left:4.6rem;
+}
+.pro1 .pro_3 .shang{
+    width: 2.2rem;
+    height: 0.4rem;
+    background: #4b4756;
+    color: #fff;
+    font-size: 0.24rem;
+    line-height: 0.4rem;
+    padding-left: 0.2rem;
+}
+.pro1 .pro_3 .shang .jiantou{
+    width: 0.11rem;
+    height: 0.2rem;
+    padding-top:0.1rem;
+    margin-right:0.12rem;
+}
+.pro1 .pro_3 .xia{
+    width: 2.4rem;
+    height: 0.96rem;
+    margin-top: 0.15rem;
+}
+.pro1 .pro_3 .xia .xia_1{
+    width: 1.35rem;
+    height: 0.4rem;
+    border:0.02rem solid #fff;
+    border-radius: 0.08rem;
+    text-align: center;
+    line-height: 0.4rem;
+}
+.pro1 .pro_3 .xia .xia_1 img{
+    width: 0.63rem;
+    height: 0.23rem;
+}
+.pro1 .pro_3 .xia .xia_2{
+    width: 0.94rem;
+    height: 0.4rem;
+    border:0.02rem solid #fff;
+    border-radius: 0.08rem;
+    text-align: center;
+    line-height: 0.4rem;
+}
+.pro1 .pro_3 .xia .xia_2 img{
+    width: 0.41rem;
+    height: 0.28rem;
+}
+.pro1 .pro_3 .xia .xia_0{
+    margin-top: 0.1rem;
+}
+
+.pro1 .pro1_1{
+    width: 7.2rem;
+    height: 2.8rem;
+    margin-left:0rem;
+    margin-top: 0.3rem;
+}
+.pro1 .pro_3 .shang_1{
+    width: 2.2rem;
+    height: 0.4rem;
+    background:#915f78;
+    color: #fff;
+    font-size: 0.24rem;
+    line-height: 0.4rem;
+    padding-left: 0.2rem;
+} 
+.pro1 .pro_3 .shang_1 .jiantou{
+    width: 0.11rem;
+    height: 0.2rem;
+    padding-top:0.1rem;
+    margin-right:0.12rem;
+}
+  
+/*热卖爆款*/
+.hot{
+    width: 6.9rem;
+    height:5.2rem;
+    background:#f4f4f4; 
+    margin-top:0.5rem;
+    margin-left: 0.3rem;
+}
+.hot .hot_0{
+    width: 1.57rem;
+    height: 0.53rem;
+    background: green;
+    background: url(../images/hot.png) no-repeat;
+    background-size: 1.57rem 0.53rem;
+    margin-left: 2.5rem;
+}
+.hot .hot_1{
+    width: 6.5rem;
+    height: 0.5rem;
+    margin-left: 0.2rem;
+}
+.hot .hot_1 ul{
+    margin-top: 0.3rem;
+/*    margin-left: 0.1rem;*/
+}
+.hot .hot_1 ul li{
+    font-size: 0.24rem;
+    width: 1.3rem;
+    height: 0.5rem;
+    float: left;
+    color:#6a6a6a;
+    line-height: 0.5rem;
+    text-align: center;
+    background: #fff;
+}
+.hot .hot_1 ul .li_2{
+    background: #e87800;
+    color: #fff;
+}
+.hot .hot_2{
+    width: 6.5rem;
+    height: 3rem;
+    background: #fff;
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+}
+.hot .hot_2 .zuo1{
+    width: 2.4rem;
+    height: 2.68rem;
+    margin-top: 0.2rem;
+    margin-left: 0.2rem;
+}
+.hot .hot_2 .you{
+    width: 3.40rem;
+    height: 2.85rem;
+/*    background: red;*/
+}
+.hot .hot_2 .you h2{
+    font-size: 0.3rem;
+    margin-top: 0.18rem;
+}
+.hot .hot_2 .you .you_1{
+    font-size: 0.18rem;
+    }
+.hot hr{
+    margin-top: 0.2rem;
+}
+/*    .hot .hot_2 .you {
+        background:url(../images/jiantou2.png) no-repeat;
+        background-size: 0.17rem 0.28rem;
+    }*/
+.hot .hot_2 .you .you_2 span{
+    font-size: 0.3rem;
+    color:#e87800;
+}
+.hot .hot_2 .you .you_2 del{
+    font-size: 0.24rem;
+    color:#aaa;
+    margin-left: 0.2rem;
+ }
+.hot .hot_2 .you .you_2 i{
+    background:url(../images/jiantou2.png) no-repeat;
+    background-size: 0.17rem 0.28rem;     
+}
+.hot .hot_2 .you .p1{
+    font-size: 0.28rem;
+}
+.hot .hot_2 .you .p1 span{
+    color:#e87800;
+    font-size: 0.28rem; 
+}
+.hot .hot_2 .you .you_3 img{
+    width: 0.78rem;
+    height: 0.78rem;
+    margin-top: 0.1rem;
+    margin-right: 0.07rem;
+}
+/*footer*/
+.footer{
+    width: 100%;
+    height: 0.98rem;
+    background:#ededed;
+}
+.footer ul li img{
+    width: 0.5rem;
+    height: 0.78rem;
+    margin-right: 1.1rem;
+    margin-top: 0rem;
+}
+.footer ul li .footer_5{
+    margin-right: 0;
+    width: 0.83rem;
+    height: 0.78rem;
+}
+.footer ul li{
+font-size: 0.2rem;
+/*color: #fff;*/
+}
+

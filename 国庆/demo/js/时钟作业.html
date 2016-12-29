@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+     function toDouble(m)
+     {
+             if(m<10)
+             {
+                 m = "0" + m; 
+             }
+             else
+             {
+                m = "" + m;
+             }
+            return m;
+     }
+
+    window.onload = function()
+    {
+            setInterval(function(){
+                 var date = new Date();
+                 var str = toDouble(date.getHours()) + toDouble(date.getMinutes()) + toDouble(date.getSeconds());
+                 var aImg = document.getElementsByTagName("img");
+                 for(var i=0;i<aImg.length;i++)
+                 {
+                    aImg[i].src = "images/"+str.charAt(i)+".png";
+                 }
+            },1000);
+               
+    }
+    </script>
+</head>
+<body style="background:black;color:white;font-size:40px">
+    <img src="images/0.png">
+    <img src="images/0.png">
+    :
+    <img src="images/0.png">
+    <img src="images/0.png">
+ 
+    <img src="images/0.png">
+    <img src="images/0.png">
+</body>
+</html>

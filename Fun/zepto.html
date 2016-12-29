@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>zepto</title>
+    <style>
+    *{margin: 0;padding: 0;box-sizing:border-box;}
+    ul li{
+        list-style: none;
+    }
+    .show{
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        overflow: hidden;
+    }
+    .big{
+        width: 400%;
+        height: 100%;
+        transition: all 1s;
+    }
+    .big div{
+        float: left;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 50px;
+    }
+    .big div:nth-child(1){
+        background: green;
+    }
+    .big div:nth-child(2){
+        background: orange;
+    }
+    .big div:nth-child(3){
+        background: blue;
+    }
+    .big div:nth-child(4){
+        background: pink;
+    }
+    .nav{
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        bottom: 0;
+    }
+    .nav ul{
+        width: 100%;
+        height: 100%;
+    }
+    .nav ul li{
+        float: left;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        font-size: 32px;
+        color: purple;
+    }
+    .nav ul li:nth-child(1).select{
+        background: green;
+    }
+    .nav ul li:nth-child(2).select{
+        background: orange;
+    }
+    .nav ul li:nth-child(3).select{
+        background: blue;
+    }
+    .nav ul li:nth-child(4).select{
+        background: pink;
+    }
+    </style>
+    <script src="zepto.min.js"></script>
+    <script src="touch.js"></script>
+    <script>
+    $(function()
+    {
+        var i = 0;
+        $(".show").on("swipeLeft",function(){
+            i++;
+            if(i > 3){
+                i = 0;
+            }
+            $(".big").css({"transform":"translate(-"+i*25+"%)"});
+            $(".nav ul li").eq(i).addClass("select").siblings().removeClass("select");
+        });
+        $(".show").on("swipeRight",function(){
+            i--;
+            if(i < 0){
+                i = 3;
+            }
+            $(".big").css({"transform":"translate(-"+i*25+"%)"});
+            $(".nav ul li").eq(i).addClass("select").siblings().removeClass("select");
+        });
+        $(".nav ul li").on("tap",function(){
+            i = $(this).index();
+            $(".big").css({"transform":"translate(-"+i*25+"%)"});
+            $(".nav ul li").eq(i).addClass("select").siblings().removeClass("select");
+        });
+    })
+    </script>
+</head>
+<body>
+    <div class="show">
+        <div class="big">
+            <div class="d1">1</div>
+            <div class="d2">2</div>
+            <div class="d3">3</div>
+            <div class="d4">4</div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+</html>

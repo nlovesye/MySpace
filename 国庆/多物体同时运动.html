@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多物体同时运动</title>
+    <style>
+    #box1{
+        width:200px;
+        height:200px;
+        background:wheat;
+    }
+     #box2{
+        width:200px;
+        height:200px;
+        background:pink;
+        position:absolute;
+        top:200px;
+        left:0;
+    }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <script>
+    var box1=document.getElementById('box1'),
+    box2=document.getElementById('box2');
+    function getStyle(obj,attr){
+        if(obj.currentStyle){
+            return obj.currentStyle[attr];
+        }else{
+            return getComputedStyle(obj,false)[attr];
+        }
+    }
+    function move(obj,attr,target){
+       clearInterval(obj.timer);
+       obj.timer=setInterval(function(){
+           var cur=parseInt(getStyle(obj,attr));
+           var speed=(target-cur)/10;
+           speed=speed>0?Math.ceil(speed):Math.floor(speed);
+           cur+=speed;
+           obj.style[attr]=cur+'px';
+       },30)
+    }
+    box1.onclick=function(){
+        move(this,'width',700);
+    }
+    box2.onclick=function(){
+        move(this,'left',800);
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #box
+    {
+        width: 800px;
+        height: 500px;
+        border: 1px solid #f56;
+    }
+    #d1
+    {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    #d2
+    {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: red;
+        left: 200px;
+        top: 100px;
+    }
+    #d3
+    {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        left: 500px;
+        top: 100px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        function Drag(d)
+        {
+            var _this = this;
+            this.d = document.getElementById(d);
+            this.dx = null;
+            this.dy = null;
+            this.maxw = 701;
+            this.maxh = 401;
+            // this.d.onmousedown = function(e){
+            //     _this.start(e);
+            // }
+            this.down();           //
+        }
+        Drag.prototype.down = function(e){
+            var self = this;
+            this.d.onmousedown = function(e){
+                self.start(e);
+            }
+        }
+        Drag.prototype.start = function(e)
+        {   
+            var self2 = this
+            var e = e || window.event;
+            this.dx = e.clientX - this.d.offsetLeft;
+            this.dy = e.clientY - this.d.offsetTop;
+            document.onmousemove = function(e){
+                self2.move(e);
+            }
+            document.onmouseup = function(){
+                self2.end();
+            }
+            e.preventDefault();
+        }
+        Drag.prototype.move = function(e){
+            var e = e || window.event;
+            this.d.style.left = e.clientX - this.dx + "px";
+            this.d.style.top = e.clientY - this.dy + "px";
+            e.preventDefault();
+        }
+        Drag.prototype.end = function(){
+            document.onmousemove = null;
+        }
+
+        // var a = new Drag("d1");
+        // var a2 = new Drag("d2");
+        
+        function Drag2(d)
+        {
+            Drag.call(this,d);
+        }
+        Drag2.prototype = new Drag("d1");             //
+        Drag2.prototype.move = function(e){
+            var e = e || window.event;
+            this.d.style.left = e.clientX - this.dx + "px";
+            this.d.style.top = e.clientY - this.dy + "px";
+            if(parseInt(this.d.style.left) <= 0){
+                this.d.style.left = 0 + "px";
+            }
+            if(parseInt(this.d.style.left) >= this.maxw){
+                this.d.style.left = this.maxw + "px";
+            }
+            if(parseInt(this.d.style.top) <= 0){
+                this.d.style.top = 0 + "px";
+            }
+            if(parseInt(this.d.style.top) >= this.maxh){
+                this.d.style.top = this.maxh + "px";
+            }
+            e.preventDefault();
+        }
+
+        var d1 = new Drag("d1");
+        // var a2 = new Drag("d2"); 
+        // var d1 = new Drag2("d1");
+        var d2 = new Drag2("d2");
+        var d3 = new Drag2("d3");
+        
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="d1">d1</div>
+        <div id="d2">d2</div>
+        <div id="d3">d3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制间接滚动</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul{
+        list-style: none;
+    }
+    #box{
+        width:1300px;
+        height:400px;
+        padding:5px 0;
+        border:1px solid #865968;
+        margin:30px auto;
+        overflow: hidden;
+        position: relative;
+    }
+    #img{
+        position: relative;
+    }
+    .btn{
+        font-size:60px;
+        position:absolute;
+        top:185px;
+        border:1px solid orange;
+        cursor: pointer;
+    }
+    #lBtn{
+        left:270px;
+    }
+    #rBtn{
+        right:270px;
+    }
+    #img ul{
+        position: absolute;
+        left:0;
+    }
+    #img ul li{
+        float: left;
+    }
+    #img ul li img{
+        width:260px;
+        height:400px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="img">
+            <ul>
+                <li><img src="images/(1).jpg" alt=""></li>
+                <li><img src="images/(2).jpg" alt=""></li>
+                <li><img src="images/(3).jpg" alt=""></li>
+                <li><img src="images/(4).jpg" alt=""></li>
+                <li><img src="images/(5).jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn" id="lBtn">&lt;</div>
+    <div class="btn" id="rBtn">&gt;</div>
+    <script>
+    var oDiv=document.getElementById('img');
+    var oUl=oDiv.getElementsByTagName('ul')[0];
+    var aImg=oUl.getElementsByTagName('li');
+    var target=0;
+    oUl.innerHTML+=oUl.innerHTML;
+    oDiv.style.width=aImg[0].offsetWidth*aImg.length+'px';
+    function turn(){
+        next();
+        timer=setTimeout(turn,1000);
+    }
+    turn();
+    lBtn.onclick=function(){
+        turn=null;
+        turn=function(){
+            prev();
+            setTimeout(turn,1000);
+        };
+    }
+    rBtn.onclick=function(){
+        turn=null;
+        turn=function(){
+            next();
+            setTimeout(turn,1000);
+        };
+    }
+    function getStyle(obj,attr){
+        if(obj.currentStyle){
+            return obj.currentStyle[attr];
+        }else{
+            return getComputedStyle(obj,false)[attr];
+        }
+    }
+    function move(obj,attr,target){
+       clearInterval(obj.timer);
+       obj.timer=setInterval(function(){
+           var cur=parseInt(getStyle(obj,attr));
+           var speed=(target-cur)/10;
+           speed=speed>0?Math.ceil(speed):Math.floor(speed);
+           cur+=speed;
+           obj.style[attr]=cur+'px';
+       },20)
+    }
+    function prev(){
+        target+=-260;
+        move(oUl,'left',target);
+        if(oUl.offsetLeft<(-oDiv.offsetWidth/2+260)){
+            oUl.style.left=0;
+            target=-260;
+            move(oUl,'left',target);
+        }    
+    }
+    function next(){
+        target+=260;
+        move(oUl,'left',target);
+        if(oUl.offsetLeft>-260){
+            oUl.style.left=-oDiv.offsetWidth/2+'px';
+            target=-oDiv.offsetWidth/2+260;
+            move(oUl,'left',target);
+        }   
+    }
+    </script>
+</body>
+</html>

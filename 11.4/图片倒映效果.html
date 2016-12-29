@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片倒映</title>
+    <script src="../jquery-2.1.4.js"></script>
+    <style>
+    *{margin: 0;padding: 0;box-sizing:border-box;}
+    body{
+        background: url(images/bac.jpg) no-repeat;
+    }
+    li{
+        list-style: none;
+    }
+    .box{
+        width: 90%;
+        height: 600px;
+        margin: 0 auto;
+        background: rgba(255,255,255,0.4);
+    }
+    .bord{
+        position: relative;
+        margin: 0 3%;
+        height: 96%;
+        border-radius: 0 0 20px 20px;
+        border: 4px solid rgba(255,255,255,1);
+        border-top: none;
+        padding: 2%;
+/*        overflow: hidden;*/
+    }
+    .logo{
+        width: 350px;
+        height: 110px;
+        background: url(images/logo.png) no-repeat;
+    }
+    .scan{
+        width: 350px;
+    }
+    .scan ul{
+        width: 100px;
+        float: left;
+    }
+    .scan ul:nth-child(2){
+        margin: 0 25px;
+    }
+    .scan ul li{
+        width: 100px;
+        height: 100px;
+        border: 1px solid rgba(255,255,255,1);
+        border-radius: 4px;
+        margin-top: 6px;
+        cursor: pointer;
+    }
+    .scan ul li:hover{
+        border: 1px solid rgba(20,200,20,0.6);
+    }
+    .scan ul li img{
+        width: 98px;
+        height: 98px;
+        border-radius: 4px;
+    }
+    .scan ul:nth-child(1) li:nth-child(1),.scan ul:nth-child(3) li:nth-child(1){
+        transform: rotate(-3deg);
+    }
+    .scan ul:nth-child(1) li:nth-child(2),.scan ul:nth-child(3) li:nth-child(2){
+        transform: rotate(2deg);
+    }
+    .scan ul:nth-child(1) li:nth-child(3),.scan ul:nth-child(3) li:nth-child(3){
+        transform: rotate(-3deg);
+    }
+    .scan ul:nth-child(1) li:nth-child(4),.scan ul:nth-child(3) li:nth-child(4){
+        transform: rotate(2deg);
+    }
+    .scan ul:nth-child(2) li:nth-child(1){
+        transform: rotate(2deg);
+    }
+    .scan ul:nth-child(2) li:nth-child(2){
+        transform: rotate(-3deg);
+    }
+    .scan ul:nth-child(2) li:nth-child(3){
+        transform: rotate(2deg);
+    }
+    .scan ul:nth-child(2) li:nth-child(4){
+        transform: rotate(-3deg);
+    }
+    
+    .pic{
+        position: absolute;
+        right: 6%;
+        top: 90px;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 16px 6px rgba(200,200,250,1);
+        transform: rotate(-3deg);
+        background: url("images/imgdata1.jpg") no-repeat;
+        background-size: 100% 100%;
+        /*-webkit-box-reflect:below 0px linear-gradient(to bottom, transparent 20%,rgba(250,250,250,0.8) 100%);*/
+    }
+    .under{
+        position: absolute;
+        right: 6%;
+        top: 350px;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 16px 6px rgba(200,200,250,1);
+        transform: rotate(3deg);
+        background-size: 100% 100%;
+        opacity: 0.8;
+    }
+    .pic2{ 
+        position: absolute;
+        top: -260px;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        background-size: 100% 100%;
+        opacity: 0.8;
+        background: linear-gradient(to bottom, rgba(250,250,250,0.8), transparent),url("images/imgdata1.jpg") no-repeat;
+        transform-origin: 0 230px 0;
+        transform: rotateX(180deg);
+    }
+    </style>
+    <script>
+    $(function()
+    {
+        $("#scan li").click(function(){
+            var urlstr = $(this).children().attr("src").replace(/item/,"images")
+            $(".pic").css({
+                "background":"url("+urlstr+") no-repeat"
+            }).next().children().css({
+                "background":"linear-gradient(to bottom, rgba(250,250,250,0.8) 20%, transparent 100%),url("+urlstr+") no-repeat"
+            });
+            // console.log($(this).children().attr("src").replace(/item/,"images"));
+        });
+    })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="bord">
+            <div class="logo"></div>
+            <div class="scan" id="scan">
+                <ul>
+                    <li><img src="item/imgdata1.jpg" alt=""></li>
+                    <li><img src="item/imgdata2.jpg" alt=""></li>
+                    <li><img src="item/imgdata3.jpg" alt=""></li>
+                    <li><img src="item/imgdata4.jpg" alt=""></li>
+                </ul>
+                <ul>
+                    <li><img src="item/imgdata5.jpg" alt=""></li>
+                    <li><img src="item/imgdata6.jpg" alt=""></li>
+                    <li><img src="item/imgdata7.jpg" alt=""></li>
+                    <li><img src="item/imgdata8.jpg" alt=""></li>
+                </ul>
+                <ul>
+                    <li><img src="item/imgdata9.jpg" alt=""></li>
+                    <li><img src="item/imgdata10.jpg" alt=""></li>
+                    <li><img src="item/imgdata11.jpg" alt=""></li>
+                    <li><img src="item/imgdata12.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="pic"></div>
+            <div class="under">
+                <div class="pic2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

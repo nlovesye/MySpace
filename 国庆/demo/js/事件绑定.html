@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+      <input id="btn" type="button" value="显示">
+      <script>
+             var btn = document.getElementById("btn");
+             // btn.onclick = function()
+             // {
+             //     alert("a");
+             // }
+             // btn.onclick = function()
+             // {
+             //     alert("b");
+             // }
+               btn.addEventListener("click",function(){
+                         alert("a");
+               },false);
+                 btn.addEventListener("click",function(){
+                         alert("b");
+               },false);
+      </script>
+</body>
+</html>

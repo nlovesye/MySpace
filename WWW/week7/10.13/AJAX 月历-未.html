@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>HTML5 - AJAX 月历</title>
+<!-- <link rel="stylesheet" href="../../common/reset.css"> -->
+<style>
+	#wrapper{
+		width: 300px;
+		height: 550px;
+		margin: 20px auto;
+	}
+	#wrapper table{
+		width: 300px;
+		height: 400px;
+		background: #cfc;
+	}
+	#wrapper table td:hover{
+		background: #dfd;
+	}
+	#wrapper table td{
+		background: #efe;
+		text-align: center;
+		font: 14px;
+		font-weight: bold;
+		color: #aaa;
+		cursor: hand;
+		cursor: pointer;
+	}
+	#wrapper .select{
+		background: white;
+		color: #333;
+	}
+	#wrapper .show{
+		width: 300px;
+		margin: 10px 0;
+		padding: 10px 0;
+		background: #cfc;
+	}
+	/*#wrapper .show p{
+		height: 30px;
+		margin: 10px 0;
+		line-height: 30px;
+		background: rgb(243,213,230);
+		font: 14px;
+		font-weight: bold;
+		color: red;
+	}*/
+	/*#wrapper .show span{
+		float: left;
+		width: 300px;
+		height: 30px;
+		line-height: 30px;
+		background: rgb(243,213,230);
+		font: 14px;
+		font-weight: bold;
+		color: red;
+	}*/
+	.show h2{
+		text-align: center;
+		line-height: 30px;
+	}
+	.show p{
+		padding: 5px 10px;
+		line-height: 24px;
+		font-size: 14px;
+		text-indent: 32px;
+	}
+</style>
+<script type="text/javascript" src="../ajax.js"></script>
+<script>
+window.onload = function()
+{
+	var btn = document.getElementsByTagName("td");
+	var show = document.getElementById("con");
+
+	for(var i=0;i<btn.length;i++)
+	{
+		btn[i].index = i;
+		btn[i].onclick = function()
+		{
+			var self = this;
+			for(var j=0;j<btn.length;j++)
+			{
+				btn[j].className = "";
+			}
+			btn[this.index].className = "select";
+			ajax("AJAX calendar.json",function(x){
+				var data = JSON.parse(x);
+				show.innerHTML = "";
+				show.innerHTML += "<h2>" + data[self.index].moon + "</h2><p>" + data[self.index].content + "</p>";
+			},function(y){
+				show.innerHTML = "错误信息:" + y;
+			})
+		}
+	}
+}
+</script>
+</head>
+<body>
+	<div id='wrapper'>
+		<table cellspacing = 5>
+			<tbody>
+				<tr>
+					<td class='select' id='tit'>1<br>JAN</td>
+					<td>2<br>FEB</td>
+					<td>3<br>MAR</td>
+				</tr>
+				<tr>
+					<td>4<br>APR</td>
+					<td>5<br>MAY</td>
+					<td>6<br>JUN</td>
+				</tr>
+				<tr>
+					<td>7<br>JUL</td>
+					<td>8<br>AUG</td>
+					<td>9<br>SEP</td>
+				</tr>
+				<tr>
+					<td>10<br>OCT</td>
+					<td>11<br>NOV</td>
+					<td>12<br>DEC</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class='show' id='con'></div>
+	</div>		
+</body>
+<script>
+
+</script>
+</html>

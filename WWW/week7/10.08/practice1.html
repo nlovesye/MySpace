@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice1</title>
+    <script>
+    // -------------------------------创建对象-----------------------------
+    // var p1 = new Object();
+    // p1.name = "三毛";
+    // p1.age = 22;
+    // p1.say = function(){
+    //     if(p1.age < 20){
+    //             p1.info = "儿童";
+    //         }
+    //         else if(p1.age < 40){
+    //             p1.info = "中年";
+    //         }
+    //         else{
+    //             p1.info = "老年";
+    //         }
+    //         return p1.info;
+    // }
+    // alert(p1.say());
+    // -----------------------工厂模式-----------------------------------
+    // function person(pname,page){
+    //     var p = new Object();
+    //     p.name = pname;
+    //     p.age = page;
+    //     p.say = function(){
+    //         if(p.age < 20){
+    //             p.info = "儿童";
+    //         }
+    //         else if(p.age < 40){
+    //             p.info = "中年";
+    //         }
+    //         else{
+    //             p.info = "老年";
+    //         }
+    //         return p.info;
+    //     }
+    //     return p;
+    // }
+    // var p1 = person("猫儿",25);
+    // var p2 = person("狗剩",45);
+    // alert(p1.say());
+    // alert(p2.say());
+
+    // -----------------------------------------构造模式----------------------------------
+    // function Person(pname,page){
+    //     this.name = pname;
+    //     this.age = page;
+    //     this.say = function(){
+    //         if(this.age < 20){
+    //             this.info = "儿童";
+    //         }
+    //         else if(this.age < 40){
+    //             this.info = "中年";
+    //         }
+    //         else{
+    //             this.info = "老年";
+    //         }
+    //         return this.info;
+    //     }
+    // }
+    // var p1 = new Person("狗子",65);
+    // var p2 = new Person("老马",15);
+    // alert(p2.say());
+    // alert(p1.say());
+
+    // ------------------------------------原型模式--------------------------------------
+    // function Person(){
+
+    // }
+    // Person.prototype.name = "大狗";
+    // Person.prototype.age = 26;
+    // Person.prototype.friens = ["猫咪","细猴"];
+    // Person.prototype.say = function(){
+    //     var txt = Person.prototype.name + Person.prototype.age;
+    //     return txt;
+    // }
+    // var p1 = new Person();
+    // p1.friens.push("三毛");
+    // var p2 = new Person();
+    // // alert(p1.say());
+    // // alert(p1.say == p2.say);
+    // alert(p1.friens);
+    // alert(p2.friens);
+
+    // -------------------------------------混合模式-------------------------------------
+    function Person(pname,page){
+        this.name = pname;
+        this.age = page;
+        this.friens = ["猫咪","细猴"];
+    }
+    Person.prototype.say = function(){
+        var txt = this.name + this.age + "岁";
+        return txt;
+    }
+    var p1 = new Person("大狗",26);
+    p1.friens.push("三毛");
+    var p2 = new Person("小花",23);
+    alert(p1.say());
+    alert(p1.say == p2.say);
+    alert(p1.say() == p2.say());
+    alert(p1.friens);
+    alert(p2.friens);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>混合模式</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #box
+    {
+        width: 600px;
+        height: 500px;
+        margin: 30px auto;
+        border:1px solid red;
+        position: relative;
+    }
+    ul li
+    {
+        float: left;
+        width: 198px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: 1px solid red;
+        background: rgba(22,22,22,0.2);
+        color: #f66;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    ul li:hover
+    {
+        background: #f66;
+        color: #fff;
+    }
+    ul li div
+    {
+        width: 600px;
+        height: 450px;
+        position: absolute;
+        left: 0;
+        display: none;
+        cursor: default;
+    }
+    ul li div h3
+    {
+        color: blue;
+    }
+    ul li div p
+    {
+        color: green;
+        text-align: left;
+        text-indent: 36px;
+        font-family: "楷体";
+        font-weight: 400;
+        font-size: 22px;
+    }
+    ul li .show
+    {
+        display: block;
+        background: rgba(0,0,0,0.1);
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        // function Show(){
+        //     var box = document.getElementById("box");
+        //     this.bn = box.getElementsByTagName("li");
+        //     this.content = box.getElementsByTagName("div");
+        // }
+        // Show.prototype.ck = function(x){
+        //     for(var i=0;i<this.content.length;i++){
+        //         this.content[i].className = "";
+        //         if(i == x){
+        //             this.content[i].className = "show";
+        //         }
+        //     }
+        // }
+
+        // var btn = new Show;
+        // btn.bn[0].onclick = function(){
+        //     btn.ck(0);
+        // }
+        // btn.bn[1].onclick = function(){
+        //     btn.ck(1);
+        // }
+        // btn.bn[2].onclick = function(){
+        //     btn.ck(2);
+        // }
+
+        function Show(){
+            var self = this;
+            var box = document.getElementById("box");
+            this.bn = box.getElementsByTagName("li");
+            this.content = box.getElementsByTagName("div");
+            for(var i=0;i<this.bn.length;i++){
+                this.bn[i].index = i;
+                this.bn[i].onclick = function(){
+                    self.add(this);
+                }
+            }
+        }
+        Show.prototype.add = function(x){
+            for(var i=0;i<this.bn.length;i++){
+                this.content[i].className = "";
+            }
+            this.content[x.index].className = "show";
+        }
+        var a = new Show();
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>少林
+                <div class="show">
+                    <h3>少林</h3>
+                    <p style="color:yellow">正派</p>
+                    <p>门派定位：近战</p>
+                    <p>门派武器：徒手/长棍</p>
+                    <p>门派武学：太祖长拳 | 达摩棍法 | 韦陀棍法</p>
+                    <p>武学特色：群体晕眩</p>
+                    <p>镇派武学：龙爪手</p>
+                </div>
+            </li>
+            <li>武当
+                <div>
+                    <h3>武当</h3>
+                    <p style="color:yellow">正派</p>
+                    <p>门派定位：近战</p>
+                    <p>门派武器：单剑/双剑</p>
+                    <p>门派武学：两仪剑法 | 太极剑法 | 清风剑法</p>
+                    <p>武学特色：持久群攻</p>
+                    <p>镇派武学：太极拳</p>
+                </div>
+            </li>
+            <li>君子堂
+                <div>
+                    <h3>君子堂</h3>
+                    <p style="color:orange">中立</p>
+                    <p>门派定位：中程</p>
+                    <p>门派武器：双剑/单剑/腿法</p>
+                    <p>门派武学：逍遥腿法 | 无涯剑法 | 落英飞花剑</p>
+                    <p>武学特色：华丽连招</p>
+                    <p>镇派武学：玉箫剑法</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

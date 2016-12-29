@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <script src="../jquery-2.1.4.js"></script>
+    <style>
+    .box{
+        width: 400px;
+        height: 400px;
+        margin: 100px auto;
+        background: url(images/clock.png) no-repeat;
+        position: relative;
+    }
+    .box .s{
+        width: 4px;
+        height: 170px;
+        background: rgba(207,49,110,0.7);
+        position: absolute;
+        left: 50%;
+        margin-left: -2px;
+        top: 50px;
+        border-radius: 2px 2px 0 0;
+        transform-origin:2px 150px;
+        z-index: 3;
+    }
+    .box .m{
+        width: 6px;
+        height: 130px;
+        background: rgba(47,193,0,0.7);
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        top: 90px;
+        border-radius: 3px 3px 0 0;
+        transform-origin:3px 110px;
+        z-index: 2;
+    }
+    .box .h{
+        width: 8px;
+        height: 110px;
+        background: rgba(38,26,28,0.7);
+        position: absolute;
+        left: 50%;
+        margin-left: -4px;
+        top: 110px;
+        border-radius: 4px 4px 0 0;
+        transform-origin:4px 90px;
+        z-index: 1;
+    }
+
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var box = document.getElementById("box");
+        var s = box.getElementsByTagName("div")[0];
+        var m = box.getElementsByTagName("div")[1];
+        var h = box.getElementsByTagName("div")[2];
+        // var d=new Date();
+        // var hnum = d.getHours();      //获取小时数
+        // var mnum = d.getMinutes();    //获取分钟数
+        // var snum = d.getSeconds();    //获取秒钟数
+        // var hd = hnum*30+mnum*0.5+snum*(1/120);
+        // var md = mnum*6+snum*0.1;
+        // var sd = snum*6;
+
+        // h.style.transform="rotate("+hd+"deg)";
+        // m.style.transform="rotate("+md+"deg)";
+        // s.style.transform="rotate("+sd+"deg)";
+
+        function time()
+        {
+            setInterval(function(){
+                var d=new Date();
+                var hnum = d.getHours();      //获取小时数
+                var mnum = d.getMinutes();    //获取分钟数
+                var snum = d.getSeconds();    //获取秒钟数
+                var hd = hnum*30+mnum*0.5+snum*(1/120);
+                var md = mnum*6+snum*0.1;
+                var sd = snum*6;
+
+                s.style.transform="rotate("+sd+"deg)";
+                m.style.transform="rotate("+md+"deg)";
+                h.style.transform="rotate("+hd+"deg)";
+
+                // console.log(hd);
+            },50);
+            
+        }
+        time();
+
+    }
+    </script>
+
+    <script>
+    // $(function()
+    // {
+    //     setInterval(function()
+    //     {
+    //         var d = new Date();
+    //         var hnum = d.getHours();      //获取小时数
+    //         var mnum = d.getMinutes();    //获取分钟数
+    //         var snum = d.getSeconds();    //获取秒钟数
+            
+    //         // $(".s").css({
+    //         //     transform:"rotate("+(snum*6)+"deg)"
+    //         // });
+    //         // $(".m").css({
+    //         //     transform:"rotate("+(mnum*6+snum*0.1)+"deg)"
+    //         // });
+    //         // $(".h").css({
+    //         //     transform:"rotate("+(hnum*30+mnum*0.5)+"deg)"
+    //         // });
+
+    //         $(".s").css({
+    //             transform:"rotate("+(snum*6)+"deg)"
+    //         }).next().css({
+    //             transform:"rotate("+(mnum*6+snum*0.1)+"deg)"
+    //         }).next().css({
+    //             transform:"rotate("+(hnum*30+mnum*0.5)+"deg)"
+    //         });
+    //         // console.log(hnum*30+mnum*0.5);
+    //         // console.log(mnum*6+snum*0.1);
+    //     },20);
+
+    // })
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="s"></div>
+        <div class="m"></div>
+        <div class="h"></div>
+    </div>
+</body>
+</html>

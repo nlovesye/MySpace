@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物体自动贴合</title>
+    <style>
+    #box{
+        width:200px;
+        height:200px;
+        background:gold;
+        position:absolute;
+    }
+    .line{
+            width:200px;
+            height:200px;
+            border-left: 5px solid red;
+            margin-left: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div class="line"></div>
+    <script>
+    function getStyle(obj,attr){
+        if(obj.currentStyle){
+            return obj.currentStyle[attr];
+        }else{
+            return getComputedStyle(obj,null)[attr];
+        }
+    }
+    var box=document.getElementById('box');
+    var speed=0;
+    var target=800;
+    var timer;
+    var boxWidth=parseInt(getStyle(box,'width'));
+    box.onclick=function(){
+        if(timer){
+            clearInterval(timer);
+        }
+        timer=setInterval(function(){
+            speed=Math.floor(Math.abs((target-boxWidth)/20));
+            boxWidth+=speed;
+            console.log(speed);
+            box.style.width=boxWidth+'px';
+            if(speed<1){
+                box.style.width=target+'px';
+                clearInterval(timer);
+            } 
+            },50)
+    }
+    </script>
+</body>
+</html>

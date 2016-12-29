@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prac2</title>
+    <style>
+    .box{
+        width: 600px;
+        height: 600px;
+        border: 1px solid orange;
+        margin: 60px auto;
+        position: relative;
+        /*perspective: 1000px;*/
+        /*transition: all 3s;*/
+        /*animation: change2 12s infinite;*/
+        animation: change3 300ms linear infinite;
+        /*transform: rotate3d(0,1,0,90deg);*/
+        /*perspective-origin: 0 0;*/
+    }
+/*    .box:hover{
+        transform: rotateY(360deg);
+    }*/
+    .box .d1{
+        width: 400px;
+        height: 400px;
+        background: pink;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        /*transition: all 2s;  */
+        transform-style: preserve-3d;
+        /*animation: change1 6s infinite;*/
+    }
+/*    .box:hover .d1{
+        transform: rotateX(360deg);
+    }*/
+    .box .d1 .pic{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        /*transition: all 3s;  */
+        /*animation: change1 3s infinite;   */
+    }
+    .box .d1 .pic img{
+        width: 300px;
+        height: 300px;
+    }
+/*    .box:hover .pic{
+        transform: rotateX(360deg);
+    }*/
+
+    @keyframes change1{
+        from{transform: rotateZ(0deg)}
+        20%{transform: rotateY(120deg)}
+        40%{transform: rotate3d(1,1,1,240deg)}
+        60%{transform: rotateX(360deg)}
+        80%{transform: rotateY(180deg)}
+        to{transform: rotateZ(0deg)}
+    }
+    @keyframes change2{
+        from{transform: rotateY(0deg )}
+        20%{transform: rotateZ(120deg)}
+        40%{transform: rotateX(240deg)}
+        60%{transform: rotateY(360deg)}
+        80%{transform: rotateZ(180deg)}
+        to{transform: rotateY(0deg)}
+    }
+    @keyframes change3{
+        from{transform: rotate3d(0,1,0,0deg);}
+        /*25%{transform: rotate3d(0,0,1,180deg);}*/
+        50%{transform: rotate3d(0,1,0,180deg);}
+        /*75%{transform: rotate3d(0,0,1,180deg);}*/
+        to{transform: rotate3d(0,1,0,360deg);}
+    }
+    </style>
+</head>
+<body style="perspective:3000px">
+    <div class="box">
+        <dov class="d1">
+            <div class="pic">
+                <img src="images/p1.jpg" alt="">
+            </div>
+        </dov>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax访问对方文件</title>
+    <script type="text/javascript" src="../ajax.js"></script>
+    <script>
+    window.onload = function()
+    {
+        var btn = document.getElementsByTagName("input")[0];
+        var d1 = document.getElementById("d1");
+        // btn.onclick = function()
+        // {
+        //     var xml;
+        //     if(window.XMLHttpRequest)
+        //     {
+        //         xml = new XMLHttpRequest();
+        //     }
+        //     else
+        //     {
+        //         xml = new ActiveXObject("Microsoft XMLHTTP");
+        //     }
+        //     xml.open("get","172.16.3.3/01.txt",true);
+        //     xml.send();
+        //     xml.onreadystatechange = function()
+        //     {
+        //         if(xml.readyState == 4 && xml.status == 200)
+        //         {
+        //             d1.innerHTML = xml.responseText;
+        //         }
+        //     }
+        // }
+        
+
+        btn.onclick = function()
+        {
+            ajax("doc1.txt",function(x){
+                d1.innerHTML = x;
+            },function(y){
+                d1.innerHTML = y;
+            })
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮">
+    <div id="d1"></div>
+</body>
+</html>

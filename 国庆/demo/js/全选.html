@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    请选择您的兴趣：<input type="checkbox"  name="all"/>全选
+              <input type="checkbox" value="游泳" name="hobby" />游泳
+              <input type="checkbox" value="阅读" name="hobby"/>阅读
+              <input type="checkbox" value="运动" name="hobby"/>运动
+              <input type="checkbox" value="旅游" name="hobby"/>旅游
+              <input type="checkbox" value="音乐" name="hobby"/>音乐 
+                <script>
+                    var all = document.getElementsByName("all")[0];
+                    var hobby = document.getElementsByName("hobby");
+                    var mark = true;
+                    all.onclick = function()
+                    {
+                        // if(mark)
+                        // {
+                        //      for(var i=0;i<hobby.length;i++)
+                        //      {
+                        //         hobby[i].checked = true;
+                        //      }
+                        //      mark = false;
+                        // }
+                        // else
+                        // {
+                        //     for(var i=0;i<hobby.length;i++)
+                        //     {
+                        //        hobby[i].checked = false;
+                        //     }
+                        //     mark = true;
+                        // }
+                        // 
+                       //----------------------------第二种方式--------------------
+                      //  this.checked == true?mark=true:mark = false;
+                      
+                        // for(var i=0;i<hobby.length;i++)
+                        // {
+                        //      hobby[i].checked = mark;
+                        // }
+                        //------------------------------第三种方式--------------------
+                        for(var i=0;i<hobby.length;i++)
+                         {
+                              hobby[i].checked = this.checked;
+                         }
+                    }
+               </script>
+</body>
+</html>

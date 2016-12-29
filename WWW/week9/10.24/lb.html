@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lb</title>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+    <style>
+    *
+    {
+        font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    }
+    .swiper-container
+    {
+        width: 1226px;
+        height: 460px;
+        margin: 30px auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .swiper-container .swiper-wrapper
+    {
+        width: 6130px;
+    }
+    .swiper-container .swiper-wrapper .swiper-slide
+    {
+        float: left;
+    }
+    .swiper-container .swiper-button-prev,.swiper-container .swiper-button-next
+    {
+        width: 40px;
+        height: 70px;
+        color: #b0b0b0;
+        position: absolute;
+        top: 50%;
+        margin-top: -35px;
+        font-size: 36px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+/*    .swiper-container .swiper-button-prev:hover,.swiper-container .swiper-button-next:hover
+    {
+        background: #b0b0b0;
+        color: #fff;
+    }*/
+    .swiper-container .swiper-button-prev
+    {
+        left: 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .swiper-container .swiper-button-next
+    {
+        right: 0;
+        border-radius: 4px 0 0 4px;
+    }
+    .swiper-container .swiper-pagination
+    {
+        
+    }
+    .swiper-container .swiper-pagination span
+    {
+        width: 6px;
+        height: 6px;
+        background: gray;
+        border: 2px solid #b0b0b0;
+        text-align: right;
+    }
+    .swiper-container .swiper-pagination span:hover
+    {
+        background: #fff;
+        border: 2px solid #b0b0b0;
+    }
+    </style>
+    <script src="../jquery-2.1.4.js"></script>
+    <script src="../swiper.min.js"></script>
+    <script>
+    $(function()
+    {
+        var myswp = new Swiper(".swiper-container",
+        {
+            autoplay: 3000,
+            speed: 1000,
+
+            pagination : '.swiper-pagination',
+            paginationClickable :true,
+
+            prevButton:'.swiper-button-prev',
+            nextButton:'.swiper-button-next',
+
+            effect: "fade",
+            fade: {
+              crossFade: true,
+            }
+        });
+    })
+    </script>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/l1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/l2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/l3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/l4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/l5.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</body>
+</html>

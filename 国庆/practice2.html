@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice2</title>
+    <style>
+    #d1
+    {
+        width: 200px;
+        height: 200px;
+        background: green;
+        text-align: center;
+        font-family: "楷体";
+        font-size: 28px;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var d1 = document.getElementById("d1");
+        d1.onclick = function(){
+            var l = 50;
+            var add = 10;
+            // var speed = l/add;
+            var w = parseInt(getstyle(d1,"width"));
+            if(w<400){
+            var t = setInterval(function(){
+                w += 1;
+                d1.style.width = w + "px";
+                if(w>=400){
+                    clearInterval(t);
+                }
+            },10);
+        }
+            // else{
+            //     clearInterval(t);
+            // }
+        }
+        function getstyle(element,property){
+            var propertyValue;
+            if(!document.defaultView){
+                propertyValue = element.currentStyle[property];
+            }
+            else{
+                propertyValue = document.defaultView.getComputedStyle(element)[property];
+            }
+            return propertyValue;
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="d1">运动</div>
+</body>
+</html>

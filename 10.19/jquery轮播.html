@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQurry轮播</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #box
+    {
+        width: 600px;
+        height: 400px;
+        margin: 70px auto;
+        position: relative;
+    }
+    #lbtn
+    {
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        left: 50px;
+        width: 30px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        background: rgba(200,10,10,0.2);
+        color: #fff;
+        z-index: 5;
+        border-radius: 8px;
+        display: none;
+    }
+    #rbtn
+    {
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        right: 50px;
+        width: 30px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        background: rgba(200,10,10,0.2);
+        color: #fff;
+        border-radius: 8px;
+        display: none;
+    }
+    #lbtn:hover,#rbtn:hover
+    {
+        background: orange;
+        color: rgba(0,100,0,0.9);
+    }
+    #pic
+    {
+        width: 500px;
+        height: 350px;
+        margin: 0 auto;
+        border: 4px solid orange;
+        overflow: hidden;
+        position: relative;
+    }
+    #pic ul
+    {
+        width: 3500px;
+        height: 350px;
+        position: absolute;
+        left: -500px;
+    }
+    #pic ul li
+    {
+        float: left;
+    }
+/*    #pic ul li div
+    {
+        position: absolute;
+        text-align: center;
+        color: orange;
+        font-size: 26px;
+        width: 200px;
+        height: 50px;
+        background: #fff;
+        z-index: 500;
+    }*/
+    #pic ul li img
+    {
+        width: 500px;
+        height: 350px;
+    }
+    #btn
+    {
+        width: 120px;
+        height: 20px;
+        margin: 0 auto;
+        position: relative;
+        top: -40px;
+        display: none;
+    }
+    #btn li
+    {
+        float: left;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        background: rgba(100,100,200,0.5);
+        cursor: pointer;
+        margin: 2px;
+    }
+/*    #btn li:hover
+    {
+        background: orange;
+    }*/
+    #btn .selected
+    {
+        background: orange;
+    }
+    </style>
+    <script src="../jquery-1.9.1.min.js"></script>
+    <script>
+    $(function()
+    {
+        var t = null;
+        var i = 0;
+
+        function timer()
+        {
+            clearInterval(t);
+            t = setInterval(function()
+            {
+                changeR();
+            },3000)
+        }
+        timer();
+
+        function changeR()
+        {
+            if(parseInt($("#pic ul").css("left")) <= -2200)
+            {
+                $("#pic ul").css("left","0px");
+            }
+            if(!$("#pic ul").is(":animated"))
+            {
+                $("#pic ul").stop().animate({left:"-=500"},function()
+                {
+                    i++;
+                    if(i > 4)
+                    {
+                        i = 0;
+                    }
+                    $("#btn li").eq(i).addClass("selected").siblings().removeClass("selected");
+                });
+            }
+        }
+        function changeL()
+        {
+            if(parseInt($("#pic ul").css("left")) >= -800)
+                {
+                    $("#pic ul").css("left","-3000px");
+                }
+                if(!$("#pic ul").is(":animated"))
+                {
+                    $("#pic ul").stop().animate({left:"+=500"},function()
+                    {
+                        i--;
+                        if(i < 0)
+                        {
+                            i = 4;
+                        }
+                        $("#btn li").eq(i).addClass("selected").siblings().removeClass("selected");
+                    });
+                }
+        }
+
+        $("#lbtn").click(function()
+            {
+                changeL();
+            });
+        $("#rbtn").click(function()
+            {
+                changeR();
+            });
+
+        $("#btn li").mouseenter(function()
+            {
+                var index = $(this).index();
+                $("#pic ul").stop().animate({left: -500 * (index+1)});
+                $("#btn li").eq(index).addClass("selected").siblings().removeClass("selected");
+                i = index;
+            });
+
+        $("#box").hover(function()
+            {
+                clearInterval(t);
+                $("#btn").fadeIn();
+                $("#lbtn,#rbtn").fadeIn();
+            },function()
+            {
+                timer();
+                $("#btn").fadeOut();
+                $("#lbtn,#rbtn").fadeOut();
+            });
+    })
+    </script>
+</head>
+<body>
+    <div id="box" unselectable="on" onselectstart="return false;" style="-moz-user-select:none;">
+        <div id="lbtn">＜</div>
+        <div id="pic">
+            <ul>
+                <li><img src="images/z5.jpg" alt=""></li>
+                <li><img src="images/z1.jpg" alt=""></li>
+                <li><img src="images/z2.jpg" alt=""></li>
+                <li><img src="images/z3.jpg" alt=""></li>
+                <li><img src="images/z4.jpg" alt=""></li>
+                <li><img src="images/z5.jpg" alt=""></li>
+                <li><img src="images/z1.jpg" alt=""></li>
+            </ul>
+        </div>
+        <ul id="btn">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="rbtn">＞</div>
+    </div>
+</body>
+</html>

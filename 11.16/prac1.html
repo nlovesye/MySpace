@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 80%;
+        height: 800px;
+        margin: 20px auto;
+        outline: 1px solid orange;
+    }
+    #d1{
+        width: 100px;
+        height: 100px;
+        background: pink;
+        position: absolute;
+        /*left: 0px;*/
+        /*top: 100px;*/
+    }
+    #d1:hover{
+        cursor: move;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var box = document.getElementById("box");
+        var d1 = document.getElementById("d1");   
+
+        d1.onmousedown=function(e){
+            var e = e || window.event;
+            // console.log(d1.offsetLeft);
+            var x = e.clientX - d1.offsetLeft;
+            var y = e.clientY - d1.offsetTop;
+            d1.style.left = e.clientX - x + "px";
+            d1.style.top = e.clientY - y + "px";
+            document.onmousemove=function(even){
+                var even = even || window.event;
+                d1.style.left = even.clientX - x + "px";
+                d1.style.top = even.clientY - y + "px";
+                document.onmouseup=function(event){
+                    var event = event || window.event;
+                    document.onmousemove = null;
+                    d1.onmouseup = null;
+                }
+            }
+        }     
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="d1">
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #content
+    {
+        width: 1300px;
+        height: 400px;
+        margin: 60px auto;
+        border: 5px solid orange;
+        overflow: hidden;
+    }
+    #box
+    {
+        width: 2600px;
+        height: 400px;
+    }
+    #box div
+    {
+        width: 1300px;
+        height: 400px;
+        float: left;
+    }
+    img
+    {
+        width: 260px;
+        float: left;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var content = document.getElementById("content");   //显示框
+        var d1 = document.getElementById("d1");             //第一组图片div
+        var d2 = document.getElementById("d2");             //第二组图片div
+        var speed = 1;
+        var t = null;
+
+// ---------------------滚动函数----------------------
+        function move()
+        {
+            content.scrollLeft += speed;
+            if(content.scrollLeft >= d1.offsetWidth)
+            {
+                content.scrollLeft = 0;
+            }
+        }
+
+// -------------------滚动定时器------------------------
+        function timer()
+        {
+            clearInterval(t);
+            t = setInterval(function(){
+                move();
+            },1);
+        }
+        timer();
+    }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <div id="box">
+            <div id="d1">
+                <img src="images/1.jpg" alt="">
+                <img src="images/2.jpg" alt="">
+                <img src="images/3.jpg" alt="">
+                <img src="images/4.jpg" alt="">
+                <img src="images/5.jpg" alt="">
+            </div>
+            <div id="d2">
+                <img src="images/1.jpg" alt="">
+                <img src="images/2.jpg" alt="">
+                <img src="images/3.jpg" alt="">
+                <img src="images/4.jpg" alt="">
+                <img src="images/5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

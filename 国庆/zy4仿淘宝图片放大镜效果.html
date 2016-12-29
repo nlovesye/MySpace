@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜效果</title>
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #box
+    {
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+        margin: 50px 50px;
+    }
+    #d1
+    {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #f65;
+        display: none;
+        cursor: move;
+    }
+    #show
+    {
+        width: 450px;
+        height: 450px;
+        border: 1px solid green;
+        position: absolute;
+        top: 50px;
+        left: 352px;
+        display: none;
+    }
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var box = document.getElementById("box");
+        var d1 = document.getElementById("d1");
+        var show = document.getElementById("show");
+        box.onmouseover = function(){
+            d1.style["display"] = "block";
+            show.style["display"] = "block";
+        }
+        box.onmouseout = function(){
+            d1.style["display"] = "none";
+            show.style["display"] = "none";
+        }
+        document.onmousemove = function(e){
+            var event = e || window.event;
+            var maxw = 149,
+            minw = 51;
+            var maxh = 149,
+            minh = 51;
+            d1.style["left"] = event.clientX - 100 + "px";
+            d1.style["top"] = event.clientY - 100 + "px";
+            show.style["background"]= "url(images/phone1.jpg) no-repeat";
+            if(parseInt(d1.style["left"]) < minw){
+                d1.style["left"] = minw + "px";
+            }
+            if(parseInt(d1.style["left"]) > maxw){
+                d1.style["left"] = maxw + "px";
+            }
+            if(parseInt(d1.style["top"]) < minh){
+                d1.style["top"] = minh + "px";
+            }
+            if(parseInt(d1.style["top"]) > maxh){
+                d1.style["top"] = maxh + "px";
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="images/phone1.jpg" alt="" width="300" height="300">
+        <div id="d1"></div>
+    </div>
+    <div id="show"></div>
+</body>
+</html>

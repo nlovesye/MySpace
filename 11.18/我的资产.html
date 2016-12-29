@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>我的资产</title>
+    <link rel="stylesheet" type="text/css" href="css/mobile-reset.css">
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/wodezichan.css">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script>
+    $(function()
+    {
+        
+        var i = 0;
+        $(".point ul li").click(function(){
+            i = $(this).index();
+            $(this).addClass("select").siblings().removeClass("select");
+            $(".show>div").eq(i).fadeIn().siblings().fadeOut();
+        });
+        
+        $(".show").on("swipeLeft",function(){
+            i++;
+            if(i > 2){
+                i = 0;
+            }
+            $(".point ul li").eq(i).addClass("select").siblings().removeClass("select");
+            $(".show>div").eq(i).fadeIn().siblings().fadeOut();
+        });
+        $(".show").on("swipeRight",function(){
+            i--;
+            if(i < 0){
+                i = 2;
+            }
+            $(".point ul li").eq(i).addClass("select").siblings().removeClass("select");
+            $(".show>div").eq(i).fadeIn().siblings().fadeOut();
+        });
+ 
+    })
+    </script>
+</head>
+<body>    
+    <div class="topbar">
+        <a href="javascript:history.go(-1);" class="iconfont icon-back"></a>
+        <h2>我的资产</h2>
+    </div>
+
+    <div class="show">
+            <div class="zonge">
+        <div class="d1">
+            <div class="outc">
+                <div class="innerc">
+                    <h2><span>0</span>.<span>00</span></h2>
+                    <p>资产总额</p>
+                </div>
+                <div class="dd"></div>
+            </div>
+        </div>
+        <div class="d2">
+            <p>可用余额<span>0.00</span></p>
+            <p>冻结金额<span>0.00</span></p>
+            <p>待收本金<span>0.00</span></p>
+            <p>待收利息<span>0.00</span></p>
+            <p>待收笔数<span>0笔</span></p>
+        </div>
+            </div>
+
+            <div class="yue">
+        <div class="d1">
+            <div class="outc">
+                <div class="innerc">
+                    <h2><span>0</span>.<span>00</span></h2>
+                    <p>可用余额</p>
+                </div>
+            </div>
+        </div>
+        <div class="d2">
+            <a href="">充值提现记录＞＞</a>
+            <a href="">充值</a>
+            <a href="">提现</a>
+        </div>
+            </div>
+
+            <div class="shouyi">
+        <div class="d1">
+            <div class="outc">
+                <div class="innerc">
+                    <h2><span>0</span>.<span>00</span></h2>
+                    <p>累计收益</p>
+                </div>
+            </div>
+        </div>
+        <div class="d2">
+            <p>投资利息<span>0.00</span></p>
+            <p>平台奖励<span>0.00</span></p>
+        </div>
+            </div>
+    </div>
+
+    <div class="point">
+        <ul>
+            <li class="select"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+    <script src="js/base.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+                 //location.href = "http://www.163.com";
+                window.onload = function()
+                {
+                       var link = document.getElementById("link");
+                       link.onchange = function()
+                       {
+                             location.href = link.value; 
+                       }
+                       
+                }
+    </script>
+</head>
+<body>
+    <select name="" id="link">
+         <option value="">常用链接</option>    
+         <option value="http://www.baidu.com">百度</option>
+         <option value="http://www.sohu.com">搜狐</option>
+         <option value="http://www.sina.com">新浪</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+     <select name="nation"  >
+               <option >----请选择您的国家-----</option>
+               <option value="中国">中国</option>
+               <option value="美国">美国</option>
+               <option value="韩国">韩国</option>
+            
+           </select> 
+
+           <select name="city"  >
+               <option >----请选择您所在的城市-----</option>           
+           </select> 
+        <script>
+                 var nation = document.getElementsByName("nation")[0];
+                 var city = document.getElementsByName("city")[0];
+                 var na = [];
+                 na[0] = ["北京","上海","深圳"];   //na[0][0]
+                 na[1] = ["纽约","华盛顿","洛杉矶","芝加哥"];//na[0][1]
+                 na[2] = ["首尔","釜山","仁川"];   //na[0][1]
+                 nation.onchange = function()
+                 {
+                      var index = nation.selectedIndex -1; //为什么要减1,因为多了一个option(请选择您的国家)
+                      //alert(na.length);
+                      city.innerHTML = "";  //清空之前的数据
+                      for(var i=0;i<na[index].length;i++)
+                      {
+                          var obj = new Option(na[index][i],na[index][i]);//动态构造数据
+                          city.add(obj,null);
+                      }
+                 }
+        </script>
+</body>
+</html>

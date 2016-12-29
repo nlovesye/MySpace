@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq瀑布流</title>
+    <link rel="stylesheet" type="text/css" href="css/waterfall.css">
+    <script src="../jquery-2.1.4.js"></script>
+    <script>
+    $(function()
+    {
+        add();
+    })
+    $(window).scroll(function()
+        {
+            if(($(document).height() - $(this).height() - $(this).scrollTop()) < 50)
+            {
+                add();
+            }
+        });
+    function add()
+    {
+        $.ajax(
+            {
+                type:"Get",
+                url:"dataWater.php",
+                dataType:"json",
+                success:function(data)
+                {
+                    if(typeof(data) == "object")
+                    {
+                        var datas;
+                        var minh;
+                        var colh;
+                        var nDiv;
+                        var nPos;
+                        for(var i=0;i<data.length;i++)
+                        {
+                            datas = data[i];
+                            minh = -1;
+                            $(".main .column").each(function()
+                            {
+                                colh = Number($(this).height());
+                                if(minh == -1 || colh < minh)
+                                {
+                                    minh = colh;
+                                    nPos = $(this);
+                                }
+                            });
+                            nDiv = $('<div class="con"><div class="pic"><img src="'+ datas.image+'" /><h3>'+datas.title+'</h3><p>'+datas.inf+'</p></div></div>');
+                                nPos.append(nDiv);
+                                nDiv.fadeIn();
+                        }
+                    }
+                }
+            });
+    }
+    </script>
+</head>
+<body>
+    <div id='all' class='all'>
+        <div class='header'></div>
+        <div id="main" class='main'>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+        </div>
+        <div class='footer'></div>
+    </div>
+</body>
+</html>

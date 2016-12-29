@@ -1,0 +1,96 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 - 面向对象 - 拖拽</title>
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.box {
+			position: relative;
+			width: 800px;
+			height: 400px;
+			border: 1px solid #f00;
+		}
+		.block {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background: #f00;
+		}
+		#limitSport {
+			top: 70px;
+			left: 70px;
+			background: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div id="warp" class="box">
+		<div class="block" id="sport"></div>
+		<div class="block" id="limitSport"></div>
+	</div>
+	<script>
+		
+		function Drag(blockId){
+			var _this = this;
+			this.sportX = null;
+			this.sportY = null;
+			this.sport = document.getElementById(blockId);
+			this.sport.onmousedown = function(e){
+				_this.dragStart(e);
+			};
+		}
+		Drag.prototype.dragEnd = function(){
+			document.onmousemove = null;
+		}
+		Drag.prototype.dragStart = function(e){
+			var _this = this;
+			var e = e || window.event;
+			this.sprotX = this.sport.offsetLeft - e.clientX;
+			this.sprotY = this.sport.offsetTop - e.clientY;
+			document.onmousemove = function(e){
+				_this.dragMove(e);
+			};
+			document.onmouseup = this.dragEnd;
+			e.preventDefault();
+		}
+		Drag.prototype.dragMove = function(e){
+			var e = e || window.event;
+			this.sport.style.left = e.clientX + this.sprotX + "px";
+			this.sport.style.top = e.clientY + this.sprotY + "px";
+			e.preventDefault();
+		}
+		new Drag('sport');
+
+
+		function Drag2(blockId){
+			Drag.call(this,blockId);
+		}
+		Drag2.prototype = new Drag("limitSport");
+		Drag2.prototype.dragMove = function(e){
+			var e = e || window.event;
+			var maxw = 750,
+			maxh = 350;
+			this.sport.style.left = e.clientX + this.sprotX + "px";
+			this.sport.style.top = e.clientY + this.sportY + "px";
+			if(parseInt(this.sport.style.left) <= 0){
+				this.sport.style.left = 0 + "px";
+			}
+			if(parseInt(this.sport.style.left) >= maxw){
+				this.sport.style.left = maxw + "px";
+			}
+			if(parseInt(this.sport.style.top) <= 0){
+				this.sport.style.top = 0 + "px";
+			}
+			if(parseInt(this.sport.style.top) >= maxh){
+				this.sport.style.top = maxh + "px";
+			}
+			e.preventDefault();
+		}
+
+		var a = new Drag2("limitSport");
+
+		
+	</script>
+</body>
+</html>
