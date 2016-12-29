@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+	}
+li{
+	list-style:none;
+	}
+p{
+	font-size:22px;
+	font-weight:bold;
+	color:orange;
+	text-align:center;
+	}
+#pic{
+	position:relative;
+	width:690px;
+	height:517px;
+	margin:10px auto;
+	}
+#pic img{
+	position:absolute;
+	top:0;
+	left:0;
+	display:none;
+	}
+#pic img.first{
+	display:block;
+	}
+#pic img:hover{
+	opacity:1;
+	}
+#nav{
+	position:absolute;
+	width:100px;
+	height:20px;
+	top:50px;
+	left:50%;
+	margin-left:-50px;
+	}
+#nav ul li a{
+	float:left;
+	display:block;
+	width:14px;
+	height:14px;
+	border-radius:50%;
+	background:#999;
+	margin:3px 5px;
+	}

@@ -1,0 +1,23 @@
+1.哪些情况下会用到行内元素和块状元素的转换？
+	1:用无序列表制作横向导航栏时可以用display：inline;将块状元素转换成行内元素。
+	2:要给一个行内元素设置宽高属性时可以用display：block;将之转换成块状元素。
+	
+
+2.块状元素有哪些？行内元素有哪些？
+常用块状元素:div,form,h*,hr,dl,ol,ul,li,p,pre,table,td,th,tr,tbody,thead,dd,caption等
+常用行内元素:a,br,input,label,span,strong,textarea,b,i,img,small,big,em,select,sub,sup等
+
+3.img标签是行内还是块状元素？
+行内块状元素
+
+4.display:inline-block存在哪些问题？
+1.存在浏览器兼容问题
+2.元素间存在换行符空格间隙问题导致布局错位
+
+详细页地址：http://www.zhangxinxu.com/wordpress/2010/11/拜拜了浮动布局-基于displayinline-block的列表布局/
+
+5.visibility:hidden;和display:none;的区别是什么？
+答：二者都是隐藏HTML元素，视觉效果上没有区别。
+不同点是：
+display:none;使用后，HTML元素的宽高等各种属性都丢失；
+visibility:hidden;使用后，HTML元素仅仅在视觉上看不见，而它占据的空间位置仍然存在，即仍具有宽高等属性值。

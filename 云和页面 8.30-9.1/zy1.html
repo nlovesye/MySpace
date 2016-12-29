@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简单布局</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+	}
+h1{
+	text-align:center;
+	font-family:"微软雅黑";
+	font-size:40px;
+	font-weight:400;
+	}
+div{
+	border:1px solid #999;
+	}
+#box{
+	margin:0 auto;
+	border:1px solid #999;
+	width:510px;
+	zoom:1;
+	}
+#box:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+	}
+.d1{
+	border:1px solid #F00;
+	width:100px;
+	height:100px;
+	float:left;
+	}
+.d6{
+	width:356px;
+	height:150px;
+	float:left;
+	}
+.d7{
+	width:150px;
+	height:200px;
+	float:right;
+	}
+.d8{
+	width:130px;
+	height:150px;
+	float:left;
+	}
+.d9{
+	width:224px;
+	height:150px;
+	float:left;
+	}
+.d10{
+	width:150px;
+	height:202px;
+	float:right;
+	}
+.d11{
+	width:356px;
+	height:100px;
+	float:left;
+	}
+.d12{
+	width:508px;
+	height:70px;
+	float:right;
+	}
+</style>
+</head>
+
+<body>
+	<div id="box">
+        <div class="d1"><h1>1</h1></div>
+        <div class="d1"><h1>2</h1></div>
+        <div class="d1"><h1>3</h1></div>
+        <div class="d1"><h1>4</h1></div>
+        <div class="d1"><h1>5</h1></div>
+        <div class="d6"><h1>6</h1></div>
+		<div class="d7"><h1>7</h1></div>
+        <div class="d8"><h1>8</h1></div>
+        <div class="d9"><h1>9</h1></div>
+        <div class="d10"><h1>10</h1></div>
+        <div class="d11"><h1>11</h1></div>
+        <div class="d12"><h1>12footer</h1></div>
+    </div>
+</body>
+</html>

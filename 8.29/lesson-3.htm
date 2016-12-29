@@ -1,0 +1,345 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.1
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML入门到精通-HTML标签详解 - By DaKang</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.dark.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>PC端页面重构</h1>
+
+</hgroup><article>
+
+<p>HTML入门到精通-HTML标签详解</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>分类</h2>
+<ol class="rollIn">
+<li>基本标签（结构标签） </li>
+<li>标题标签</li>
+<li>扩展标签</li>
+<li>文本标签</li>
+<li>链接标签</li>
+<li>格式排版标签</li>
+<li>图形标签</li>
+<li>多媒体标签</li>
+<li>表格标签</li>
+<li>表单标签</li>
+</ol>
+
+</article></section></slide>
+<slide class="slide"   data-on-build="Slide.magic" data-on-enter="Slide.magic.init"><section class="slide-wrapper"><div class="magic"><div class="magicItem current pagedown"  data-transition="cover-circle"><article>
+<div class="magic-wrapper">
+<hgroup>
+<h3>基本标签（结构标签）</h3>
+
+</hgroup><article>
+
+<ul>
+<li>常用标签  &lt;html&gt;、 &lt;head&gt;、&lt;body&gt;</li>
+</ul>
+<div class="column1">
+    <img src="./images/html-document.png" width="40%" />
+</div>
+</article>
+</div>
+</article></div>
+<div class="magicItem next pagedown"  data-transition="cover-circle"><article>
+<div class="magic-wrapper">
+<article>
+<ul>
+<li>注意事项：<ul class="rollIn">
+<li>都是双标签</li>
+<li>只能出现1次</li>
+</ul>
+</li>
+</ul>
+
+</article>
+</div>
+</article></div></div></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>标题标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;title&gt;</li>
+<li>注意事项：<ul class="rollIn">
+<li>双标签</li>
+<li>只能出现1次</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>文本标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;pre&gt; 、&lt;h*&gt; 、&lt;b&gt; 、&lt;i&gt; 、&lt;em&gt;、&lt;strong&gt;、&lt;font&gt; </li>
+<li>注意事项：<ul class="rollIn">
+<li>双标签</li>
+<li>pre是创建预格式化文本</li>
+<li>h<em>是块级元素会换行、其余不会，h</em>标签默认有加粗样式</li>
+<li>行内元素标签之间如果有空白的话，只显示一个空格</li>
+<li>b、i对应的是strong、em,后两者对搜索引擎更友好</li>
+<li>h*(1~6)是块级元素，默认有加粗样式。一个页面只能有一个h1标签</li>
+<li>可以出现多次</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>链接标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;a&gt;</li>
+<li>注意事项：<ul class="rollIn">
+<li>双标签</li>
+<li>&lt;a name=&quot;mark&quot;&gt;方式可以定义锚点</li>
+<li>a可以跳转到站内锚点、发送email、qq聊天等</li>
+<li>可以出现多次</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>格式排版</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;p&gt;、&lt;div&gt;、&lt;span&gt;、&lt;dl&gt;、&lt;dt&gt;、&lt;dd&gt;、&lt;ul&gt;、&lt;ol&gt;、&lt;li&gt;、&lt;br&gt;</li>
+<li>注意事项：<ul>
+<li>div,span是<strong>没有语义</strong>的标签</li>
+<li>&lt;br&gt;是单标签，其余都是双标签,p虽然单标签双标签都可以，但大家都拿他作为双标签来用</li>
+<li>dl的子标签只能是dt、dd,ol、ul的字标签只能是li</li>
+<li>如果我们布局的区块是一个整体，并且它既有标题又有内容，很适合用dl+dt+dd布局</li>
+<li>行内标记不要写在块标签的外部，应该写在内部</li>
+<li>可以出现多次</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>图形标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;img&gt;、&lt;hr&gt;</li>
+<li>注意事项：<ul class="rollIn">
+<li>单标签</li>
+<li>img标签中alt属性最好加上</li>
+<li>可以出现多次</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>表格标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;table&gt;、&lt;tbody&gt;、&lt;thead&gt;、&lt;tr&gt;、&lt;th&gt;、&lt;td&gt;</li>
+<li>注意事项：<ul class="rollIn">
+<li>常用的属性<pre><code class="html">&lt;table border=value&gt; 设置围绕表格的边框的宽度
+ &lt;table cellspacing=value&gt;   设置表格格子之间空间的大小
+ &lt;table cellpadding=value&gt;   设置表格格子边框与其内部内容之间空间的大小
+ &lt;table width=value 或 %&gt; 设置表格的宽度－用绝对像素值或文档总宽度的百分比
+ &lt;tr align=……&gt;   设置表格格子的水平对齐（左中右）（left center right）
+ &lt;tr valign=……&gt;  设置表格格子的垂直对齐（上中下）（left center right）
+ &lt;td colspan=value&gt;  设置一个表格格子应跨占的列数（缺省为1）
+ &lt;td rowspan=value&gt;  设置一个表格格子应跨占的行数（缺省为1）
+ &lt;td nowrap&gt; 禁止表格格子内的内容自动断行回卷
+</code></pre>
+</li>
+<li>colspan 合并同一行内的相邻单元格 max:总列数 min:2</li>
+<li>rolspan 合并同一列的相邻单元格 max:总列数 min:2</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>表单标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;form&gt;&lt;select&gt;&lt;input&gt;&lt;option&gt;&lt;textarea&gt;&lt;textarea&gt;&lt;button&gt;&lt;label&gt;</li>
+<li>注意事项：<ul class="rollIn">
+<li>input、button单标签，其余双标签</li>
+<li>method为发送请求的方式，get表示通过地址栏方式，post表示以 HTTP post 事务的形式发送表单数据（form-data）</li>
+<li>常用标签及属性<pre><code class="html">&lt;form&gt;……&lt;/form&gt; 创建所有表单
+ &lt;select multiple name=&quot;NAME&quot; size=value&gt;………&lt;/select&gt;    创建一个滚动菜单，size设置在需要滚动前可以看到的表单项数目
+ &lt;option&gt;    设置每个表单项的内容
+ &lt;select name=&quot;NAME&quot;&gt;……&lt;/select&gt; 创建一个下拉菜单
+ &lt;textarea name=&quot;NAME&quot; cols=value rows=value&gt;……&lt;/textarea&gt;   创建一个文本框区域，列的数目设置宽度，行的数目设置高度
+ &lt;input type=&quot;checkbox&quot; name=&quot;NAME&quot;&gt; 创建一个复选框，文字在标签后面
+ &lt;input type=&quot;radio&quot; name=&quot;NAME&quot; value=&quot;x&quot;&gt;  创建一个单选框，文字在标签后面
+ &lt;input type=text name=&quot;……&quot; size=value&gt;  创建一个单行文本输入区域，size设置以字符计的宽度
+ &lt;input type=&quot;submit&quot; value=&quot;NAME&quot;&gt;  创建一个submit（提交）按钮
+ &lt;input type=&quot;image&quot; border=0 name=&quot;NAME&quot; src=&quot;/name.gif&quot;&gt;   创建一个使用图象的submit（提交）按钮
+ &lt;input type=&quot;reset&quot;&gt;    创建一个reset（重置）按钮
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>多媒体标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;object&gt;、&lt;embed&gt;</li>
+<li>注意事项：<ul class="rollIn">
+<li>双标签</li>
+<li><a target="_blank" href="http://www.cnblogs.com/top5/archive/2009/08/07/1540871.html">OBJECT和EMBED标签</a></li>
+<li>可以出现多次</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>注释标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;!-- --&gt;;</li>
+<li>注意事项：
+ 代码注释的作用是帮助程序员标注代码的用途，过一段时间后再看你所编写的代码，就能很快想起这段代码的用途。代码注释不仅方便程序员自己回忆起以前代码的用途，还可以帮助其他程序员很快的读懂你的程序的功能，方便多人合作开发网页代码。</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h3>扩展属性标签</h3>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>常用标签 &lt;base&gt; 、&lt;link&gt; 、&lt;meta&gt; 、&lt;style&gt; 、&lt;script&gt;</li>
+<li>注意事项：<ul class="rollIn">
+<li>script、style为双标签，其余都为单标签</li>
+<li>base href属性（页面中所有相对链接的基准URL）影响的是有href、src属性的标签，target影响的是有target属性的标签</li>
+<li>link引入外部样式文件，style放置内部样式表，script放置外部和内部Javascript</li>
+<li>meta <pre><code class="html">&lt;meta name=&quot;keywords&quot; content=&quot;HTML标签大全（类型）,日志,Claudine,忘忧屋,网易博客,网易,blog&quot;/&gt;
+ &lt;meta name=&quot;description&quot; content=&quot;HTML标签大全（类型）,Claudine的网易博客,执子之手 与子偕老,咱是淳朴的孩子！！&quot;/&gt;
+ &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+ &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;
+</code></pre>
+</li>
+<li>可以出现多次</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>THANK YOU!</h2>
+
+</hgroup><article>
+
+<p>END</p>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.1</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'slide',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+
+
+<!--placeholder-->
+</body>
+</html>

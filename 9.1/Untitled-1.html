@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>垂直方向和水平方向的margin区别</title>
+<style>
+#d1{
+	width:200px;
+	height:200px;
+	background:#F00;
+	margin-bottom:20px;
+	}
+#d2{
+	width:200px;
+	height:200px;
+	background:#F00;
+	margin-top:20px;
+	}
+#d3{
+	width:200px;
+	height:200px;
+	background:#00F;
+	margin-right:20px;
+	float:left;
+	}
+#d4{
+	width:200px;
+	height:200px;
+	background:#00F;
+	margin-left:20px;
+	float:left;
+	}
+</style>
+</head>
+
+<body>
+<!--垂直方向margin值重叠-->
+ <div id="d1">DIV1</div>
+ <div id="d2">DIV2</div>
+<!--水平方向margin值叠加-->
+ <div id="d3">DIV3</div>
+ <div id="d4">DIV4</div>
+</body>
+</html>

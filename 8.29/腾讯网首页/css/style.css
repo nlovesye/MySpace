@@ -1,0 +1,220 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+	font-family:"微软雅黑";
+	}
+a{text-decoration:none;}
+li{list-style:none;}
+#header{
+	position:relative;
+	width:1000px;
+	height:90px;
+	margin:0 auto 14px;
+	}
+#header .tencentlogo{
+	position:absolute;
+	width:335px;
+	height:90px;
+	top:0;
+	left:0;
+	}
+#header .tencentlogo img{
+	position:absolute;
+	right:35px;
+	top:15px;
+	}
+#header .search .searchbox{
+	position:absolute;
+	width:290px;
+	height:35px;
+	border:1px solid #666;
+	top:28px;
+	left:335px;
+	}
+#header .search .searchbox .bg{
+	position:absolute;
+	width:32px;
+	height:32px;
+	top:2px;
+	right:0;
+	background:url(../images/soso.png) no-repeat;
+	}
+#header .search .searchbox .inp{
+	position:absolute;
+	width:210px;
+	height:35px;
+	border:none;
+	outline:none;
+	top:0;
+	right:32px;}
+#header .search .searchbox .slc{
+	display:block;
+	height:35px;
+	border:none;
+	outline:none;
+	}
+#header .search .btn{
+	position:absolute;
+	width:100px;
+	height:35px;
+	border:1px solid #458fce;
+	top:28px;
+	left:625px;
+	outline:none;
+	border-left:none;
+	}
+#header .search .btn button{
+	width:100px;
+	height:35px;
+	background:#458fce;
+	border:none;
+	outline:none;
+	}
+#header .search .btn button a{
+	font-size:18px;
+	color:#FFF;
+	}
+#header .login{
+	position:absolute;
+	width:275px;
+	height:90px;
+	top:0;
+	right:0;
+	}
+#header .login .int{
+	position:absolute;
+	right:0;
+	top:28px;
+	width:35px;
+	height:35px;
+	background:#CCC;
+	text-align:center;
+	}
+#header .login .int a{
+	line-height:35px;
+	color:#458fce;
+	}
+#header .login .logobox{
+	position:absolute;
+	width:160px;
+	height:35px;
+	right:35px;
+	top:28px;
+	background:#666;
+	}
+
+#cotain .navbeta{
+	positon:absolute;
+	width:1000px;
+	height:65px;
+	margin:0 auto 12px;
+	background:url(../images/navbeta_bg.jpg) no-repeat;
+	}
+#cotain .navbeta .box1{
+	width:140px;
+	height:100%;
+	margin-left:20px;
+	float:left;
+	}
+#cotain .navbeta .box2{
+	width:140px;
+	height:100%;
+	margin-left:8px;
+	float:left;
+	}
+#cotain .navbeta .box3{
+	width:140px;
+	height:100%;
+	margin-left:8px;
+	float:left;
+	}
+#cotain .navbeta .box4{
+	width:140px;
+	height:100%;
+	margin-left:6px;
+	float:left;
+	}
+#cotain .navbeta .box5{
+	width:140px;
+	height:100%;
+	margin-left:4px;
+	float:left;
+	}
+#cotain .navbeta .box6{
+	width:140px;
+	height:100%;
+	margin-left:4px;
+	float:left;
+	}
+#cotain .navbeta .box1 ul li a{
+	display:block;
+	width:42px;
+	height:30px;
+	float:left;
+	text-align:center;
+	color:#FFF;
+	line-height:30px;
+	font-size:14px;
+	margin-top:2px;
+	}
+#cotain .navbeta .box2 ul li a{
+	display:block;
+	width:42px;
+	height:30px;
+	float:left;
+	text-align:center;
+	color:#FFF;
+	line-height:30px;
+	font-size:14px;
+	margin-top:2px;
+	}
+#cotain .navbeta .box3 ul li a{
+	display:block;
+	width:42px;
+	height:30px;
+	float:left;
+	text-align:center;
+	color:#FFF;
+	line-height:30px;
+	font-size:14px;
+	margin-top:2px;
+	}
+#cotain .navbeta .box4 ul li a{
+	display:block;
+	width:42px;
+	height:30px;
+	float:left;
+	text-align:center;
+	color:#FFF;
+	line-height:30px;
+	font-size:14px;
+	margin-top:2px;
+	}
+#cotain .navbeta .box5 ul li a{
+	display:block;
+	width:42px;
+	height:30px;
+	float:left;
+	text-align:center;
+	color:#FFF;
+	line-height:30px;
+	font-size:14px;
+	margin-top:2px;
+	}
+#cotain .navbeta .box6 ul li a{
+	display:block;
+	width:42px;
+	height:30px;
+	float:left;
+	text-align:center;
+	color:#FFF;
+	line-height:30px;
+	font-size:14px;
+	margin-top:2px;
+	}
+#cotain .navbeta .boxal ul li a:hover{
+	background:#fcfcfc;
+	color:#000;
+	}

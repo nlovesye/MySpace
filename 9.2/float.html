@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>浮动</title>
+<style>
+#box{
+	width:500px;
+	height:500px;
+	border:100px solid #F90;
+	margin:10px auto;
+	background-color:#F90;
+	position:relative;
+	}	
+.did{
+	width:200px;
+	height:200px;
+	}
+#d1{
+	background-color:#06F;
+	float:left;
+	}
+#d2{
+	float:right;
+	background-color:#F00;
+	}
+#d3{
+	position:absolute;
+	background-color:#0C3;
+	bottom:0;
+	left:0;
+	}
+#d4{
+	position:absolute;
+	background-color:#CF0;
+	right:0;
+	bottom:0;
+	}	
+</style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="d1" class="did"></div>
+        <div id="d2" class="did"></div>
+        <div id="d3" class="did"></div>
+        <div id="d4" class="did"></div>
+    </div>
+</body>
+</html>

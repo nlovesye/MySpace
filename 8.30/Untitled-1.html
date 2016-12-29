@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>1</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<p>下面是一张风景图<p>
+    <div id="pic">
+    	<img class="first" src="fengjing1.jpg" alt="图片" title="风景图" />
+        <img src="fengjing2.jpg" alt="图片" title="风景图" />
+        <img src="fengjing3.jpg" alt="图片" title="风景图" />
+        <img src="fengjing4.jpg" alt="图片" title="风景图" />
+    </div>
+    <div id="nav">
+    	<ul>
+        	<li><a class="active" href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </div>
+    
+<script>
+var a=document.getElementsByTagName("a");
+var img=document.getElementsByTagName("img");
+for(var i = 0;i<a.length;i++){
+	   a[i].index=i;
+	   this.onclick=function(){
+		   img[this.index].addClass("first").siblings().removeClass("first");
+		}
+}
+
+
+</script>
+</body>
+</html>

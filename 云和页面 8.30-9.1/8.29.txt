@@ -1,0 +1,13 @@
+1.掌握常用标签的用法（ppt里面的注意事项）
+2.掌握表格标签和表单标签，以及他们的常用属性
+3.掌握媒体标签使用（三步法，修改width,height,路径，注意修改两个地方）
+3.掌握meta标签
+4.掌握标签的一般适用场景
+5.掌握tdk（t指title标签，d、k指的是两个meta标签）
+
+实例 1 - 定义文档关键词，用于搜索引擎：
+<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+实例 2 - 定义web页面描述：
+<meta name="description" content="Free Web tutorials on HTML and CSS">
+
+6.新闻网站中标签的使用
