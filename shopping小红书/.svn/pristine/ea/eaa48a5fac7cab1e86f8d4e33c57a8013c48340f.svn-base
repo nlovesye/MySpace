@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>护肤</title>
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="css/hufu.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/hufu.js"></script>
+</head>
+<body>
+    <header>
+        <h3><img src="image/hufu_head.jpg" alt=""></h3>
+        <div class="mask"></div>
+        <h2>护肤</h2>
+        <button><i class="iconfont icon-jiahao"></i>关注</button>
+        <div class="txt">从清洁、保湿到抗老、紧致，十八般武艺小红薯们样样精通。护肤是个精深的学问，瓶瓶罐罐大有讲究，选对合适的护肤品认真糊脸，皮肤会用光滑和细致回报你哦~</div>
+    </header>
+    <section class="list">
+        <ul>
+            <li>科颜氏</li>
+            <li>资生堂</li>
+            <li>Sk-li</li>
+            <li>奥尔滨</li>
+            <li>悦木之源</li>
+            <li>悦诗风吟</li>
+            <li>城野医生</li>
+            <li>雪花秀</li>
+            <li>Haba</li>
+            <li>馥蕾诗</li>
+            <li>海蓝之谜</li>
+        </ul>
+    </section>
+    <section class="nav">
+        <div class="select"><span class="txt">综合排序</span><span class="icon"></span></div>
+        <div class="right">
+            <div class="biji active">笔记</div>
+            <div class="shangpin">商品</div>
+        </div>
+    </section>
+    <div class="navlist clearfix">
+        <ul>
+            <li class="active">综合排序</li>
+            <li>按照时间排序</li>
+            <li>按照热度排序</li>
+        </ul>
+    </div>
+    <section class="notes-list clearfix">
+        <ul class="leftside">
+            <li><a href="#">
+                <img src="image/notes_1.jpg" alt="">
+                <h3>敏感肌美白福利</h3>
+                <div class="info">
+          [害羞R][害羞R]一般来说美白产品是不适用于敏感肌妹纸的捏，但是这款敏感肌妹纸可以放一百个心用！！这个牌子是台湾的医美
+                </div>
+                <div class="author">
+                    <img src="image/notes_touxiang1.jpg" alt="">
+                    <div class="name">凯蒂妹纸</div>
+                    <div class="shoucang"><img src="" alt=""><span>2</span></div>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="image/notes_1.jpg" alt="">
+                <h3>敏感肌美白福利</h3>
+                <div class="info">
+          [害羞R][害羞R]一般来说美白产品是不适用于敏感肌妹纸的捏，但是这款敏感肌妹纸可以放一百个心用！！这个牌子是台湾的医美
+                </div>
+                <div class="author">
+                    <img src="image/notes_touxiang1.jpg" alt="">
+                    <div class="name">凯蒂妹纸</div>
+                    <div class="shoucang"><img src="" alt=""><span>2</span></div>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="image/notes_1.jpg" alt="">
+                <h3>敏感肌美白福利</h3>
+                <div class="info">
+          [害羞R][害羞R]一般来说美白产品是不适用于敏感肌妹纸的捏，但是这款敏感肌妹纸可以放一百个心用！！这个牌子是台湾的医美
+                </div>
+                <div class="author">
+                    <img src="image/notes_touxiang1.jpg" alt="">
+                    <div class="name">凯蒂妹纸</div>
+                    <div class="shoucang"><img src="" alt=""><span>2</span></div>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="image/notes_1.jpg" alt="">
+                <h3>敏感肌美白福利</h3>
+                <div class="info">
+          [害羞R][害羞R]一般来说美白产品是不适用于敏感肌妹纸的捏，但是这款敏感肌妹纸可以放一百个心用！！这个牌子是台湾的医美
+                </div>
+                <div class="author">
+                    <img src="image/notes_touxiang1.jpg" alt="">
+                    <div class="name">凯蒂妹纸</div>
+                    <div class="shoucang"><img src="" alt=""><span>2</span></div>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="image/notes_1.jpg" alt="">
+                <h3>敏感肌美白福利</h3>
+                <div class="info">
+          [害羞R][害羞R]一般来说美白产品是不适用于敏感肌妹纸的捏，但是这款敏感肌妹纸可以放一百个心用！！这个牌子是台湾的医美
+                </div>
+                <div class="author clearfix">
+                    <img src="image/notes_touxiang1.jpg" alt="">
+                    <div class="name">凯蒂妹纸</div>
+                    <div class="shoucang"><img src="" alt=""><span>2</span></div>
+                </div>
+            </a></li>
+        </ul>
+        <ul class="rightside">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+    <script src="js/base.js"></script>
+</body>
+</html>

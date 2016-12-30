@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小红书-目的地-澳洲</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/mobile-reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+
+    <!-- 导航 -->
+<!--     <div class="nav">
+        <div class="title">
+            <span><a href="japan.html">日本</a></span>
+            <span><a href="korean.html">韩国</a></span>
+            <span><a href="hongkong.html">香港</a></span>
+            <span><a href="america.html">美国</a></span>
+            <span><a href="france.html">法国</a></span>
+            <span class="bottom_style"><a href="koel.html">澳洲</a></span>
+            <span><a href="">澳洲</a></span>
+            <span><a href="england.html">英国</a></span>
+            <span><a href="korean.html">泰国</a></span>
+            <span><a href="korean.html">台湾</a></span>
+            <span><a href="korean.html">意大利</a></span>
+            <span><a href="korean.html">德国</a></span>
+            <span><a href="korean.html">更多</a></span>
+        </div>
+    </div> -->
+    <div class="menu">
+        <div class="menu_left">
+            <div class="one">
+                <img src="image/01e.jpg" alt="">
+                <p>lululemon瑜伽服 是现在穿得最多的一个品牌</p>
+                <p>believe me 只要你穿过就会…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/01ee.jpg" alt=""></li>
+                        <li><p>Rachel</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>819</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/03e.jpg" alt="">
+                <p>[botanical belssings]</p>
+                <p>澳洲护肤的一个小众品牌，主打的就是自然护肤，受到…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/03ee.jpg" alt=""></li>
+                        <li><p>Interesting</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>32</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/05e.jpg" alt="">
+                <p>令人回味的味道</p>
+                <p>来到Adelaide镇，必定要来这里广为人知的奔富酒庄，可提早预约到这里参观…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/05ee.jpg" alt=""></li>
+                        <li><p>zhongsumei</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>108</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="menu_right">
+            <div class="one">
+                <img src="image/02e.jpg" alt="">
+                <p>Vera Wang别具一格</p>
+                <p>Vera Wang不仅有发布美美的婚纱，更有婚礼配件销售哦！他们和英皇室…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/02ee.jpg" alt=""></li>
+                        <li><p>点点澳洲小分</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>541</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/04e.jpg" alt="">
+                <p>#坚持完美#</p>
+                <p>SpringFields玫瑰美容精华油/橙花亮彩精华露，澳洲本土品牌，目前好像只在…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/04ee.jpg" alt=""></li>
+                        <li><p>什么酱咖喱酱</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>699</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/06e.jpg" alt="">
+                <p>#Palazzo Versace#</p>
+                <p>九点结合了欧洲和古罗马时代的风格，没见套房都配有V…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/06ee.jpg" alt=""></li>
+                        <li><p>daisyyy0221</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>23</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="js/base.js"></script>
+</body>
+</html>

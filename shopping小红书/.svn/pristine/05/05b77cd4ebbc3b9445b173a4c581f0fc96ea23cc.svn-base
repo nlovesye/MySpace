@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小红书-目的地-泰国</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/mobile-reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+
+    <!-- 导航 -->
+<!--     <div class="nav">
+        <div class="title">
+            <span><a href="japan.html">日本</a></span>
+            <span><a href="korean.html">韩国</a></span>
+            <span><a href="hongkong.html">香港</a></span>
+            <span><a href="america.html">美国</a></span>
+            <span><a href="france.html">法国</a></span>
+            <span><a href="koel.html">澳洲</a></span>
+            <span><a href="koel.html">澳洲</a></span>
+            <span><a href="england.html">英国</a></span>
+            <span class="bottom_style"><a href="korean.html">泰国</a></span>
+            <span><a href="korean.html">台湾</a></span>
+            <span><a href="korean.html">意大利</a></span>
+            <span><a href="korean.html">德国</a></span>
+            <span><a href="korean.html">更多</a></span>
+        </div>
+    </div> -->
+    <div class="menu">
+        <div class="menu_left">
+            <div class="one">
+                <img src="image/01g.jpg" alt="">
+                <p>跳过曼谷Nara餐厅 连续两年被评为泰国最好吃的餐厅</p>
+                <p>听说来泰国必吃的Nara2.13-14倍评为泰国最好吃的餐厅，在四面佛附…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/01gg.jpg" alt=""></li>
+                        <li><p>TOTOANDPIF</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>50</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/03g.jpg" alt="">
+                <p>泰国不得不去的九点 达成萨拉</p>
+                <p>达成萨拉位于曼谷周边的大城府 大城府或许不像曼谷普吉这些地方那样众所周知 但…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/03gg.jpg" alt=""></li>
+                        <li><p>doubleyoulike</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>372</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/05g.jpg" alt="">
+                <p>强烈推荐！泰国甲米兰塔岛碧玛莱度假村</p>
+                <p>甲米在泰国的普吉岛旁边，是个人比较少的安静小镇。碧玛莱度假村位于兰塔岛…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/05gg.jpg" alt=""></li>
+                        <li><p>深夜矫情b</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>118</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="menu_right">
+            <div class="one">
+                <img src="image/02g.jpg" alt="">
+                <p>普吉岛kata岩石度假酒店</p>
+                <p>今年去普吉岛住过的一家酒店 感觉比苏梅岛W好太多 去普吉岛别的地方都可以不去…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/02gg.jpg" alt=""></li>
+                        <li><p>Amzinglongago</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>510</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/04g.jpg" alt="">
+                <p>曼谷美食#The Jam Factory#</p>
+                <p>新派泰来或称重新热 # The Jam Factory #没有果酱的果酱工厂…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/04gg.jpg" alt=""></li>
+                        <li><p>satwhsn</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>185</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/06g.jpg" alt="">
+                <p>远离尘嚣 享受生活</p>
+                <p>这个是在悬崖边的Avista九点 里面很大 像迷宫，房间不太好找，自己走来走去竟然…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/06g.jpg" alt=""></li>
+                        <li><p>大红叔</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>230</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="js/base.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小红书-目的地-美国</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/mobile-reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+
+    <!-- 导航 -->
+<!--     <div class="nav">
+        <div class="title">
+            <span><a href="japan.html">日本</a></span>
+            <span><a href="korean.html">韩国</a></span>
+            <span><a href="hongkong.html">香港</a></span>
+            <span  class="bottom_style"><a href="america.html">美国</a></span>
+            <span><a href="france.html">法国</a></span>
+            <span><a href="koel.html">澳洲</a></span>
+            <span><a href="koel.html">澳洲</a></span>
+            <span><a href="england.html">英国</a></span>
+            <span><a href="korean.html">泰国</a></span>
+            <span><a href="korean.html">台湾</a></span>
+            <span><a href="korean.html">意大利</a></span>
+            <span><a href="korean.html">德国</a></span>
+            <span><a href="korean.html">更多</a></span>
+        </div>
+    </div> -->
+    <div class="menu">
+        <div class="menu_left">
+            <div class="one">
+                <img src="image/01c.jpg" alt="">
+                <p>另肌肤温润的修复面膜</p>
+                <p>质地：轻薄水润，膏体细腻，比起面膜更像面霜。使用感受：1.易抹开…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/01cc.jpg" alt=""></li>
+                        <li><p>hothwa0412</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>5</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/03c.jpg" alt="">
+                <p>日常用化妆刷合集（竹宝堂/Suqqu）</p>
+                <p>一篇关于日常化妆刷的记录，竹宝堂便携散粉刷MK-11，灰鼠毛混山羊毛…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/29.jpg" alt=""></li>
+                        <li><p>Fizzymol</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>32</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/05c.jpg" alt="">
+                <p>#今日穿搭# Chloe包包+Prada松糕鞋</p>
+                <p>出差+下雨也不忘拍照 今天走路带风的穿搭 包包是今年Chloe新出的款…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/04cc.jpg" alt=""></li>
+                        <li><p>筱悠筱悠</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>108</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="menu_right">
+            <div class="one">
+                <img src="image/02c.jpg" alt="">
+                <p>iphone7plus堪比单反的无敌人像拍照效果！</p>
+                <p>在Po上篇笔记预告的Sandro大衣之前，Po主必须先狂赞一下iphone7plus的人像拍照…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/02cc.jpg" alt=""></li>
+                        <li><p>liYdan</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>510</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/04c.jpg" alt="">
+                <p>每日搭配❤多图Gucci珍珠鞋+Cline Box包</p>
+                <p>礼拜一发下今日穿搭 最爱的红金Box 美国买的 当时还等了很久才订到 拿到那一瞬间…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/04cc.jpg" alt=""></li>
+                        <li><p>筱悠筱悠</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>108</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/06c.jpg" alt="">
+                <p>MAC热门口红（附试色）</p>
+                <p>MAC口红是我认为最值得入手的口红之一了，原因如下：颜色非常多…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/06cc.jpg" alt=""></li>
+                        <li><p>daisyyy0221</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>23</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="js/base.js"></script>
+</body>
+</html>

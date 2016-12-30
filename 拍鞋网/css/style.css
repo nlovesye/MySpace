@@ -1,0 +1,385 @@
+html{
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.top{
+    width: 100%;
+    height: 0.8rem;
+    background: #f2f2f2;
+}
+.top .logo{
+    float: left;
+    width: 1.06rem;
+    height: 100%;
+    margin-left:0.3rem;
+    position: relative;
+}
+.top .logo img{
+    display: block;
+    width: 1.06rem;
+    height: 0.35rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    position: absolute;
+}
+.top .right{
+    width: 1.7rem;
+    height: 100%;
+    float: right;
+    margin-right: 0.06rem;
+}
+.top .right a{
+    display: block;
+    width: 0.4rem;
+    height: 0.4rem;
+    float: left;
+    line-height: 0.8rem;
+    color: #7e7e7e;
+    margin-right: 0.12rem
+}
+.top .right a i{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.top .right span{
+    float: left;
+    display: block;
+    width: 0.02rem;
+    height: 0.25rem;
+    background: #7e7e7e;
+    margin-top: 0.3rem;
+    margin-right: 0.12rem;
+}
+.banner{
+    width: 100%;
+    height: 2.8rem;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+.adv{
+    width: 100%;
+    height: 2.7rem;
+    margin: 0.2rem auto;
+}
+.left{
+    width: 5.1rem;
+    height: 2.7rem;
+    float: left;
+    margin-left: 0.3rem;
+}
+.left div{
+    float: left;
+}
+.left div:nth-child(1){
+    width: 2.8rem;
+    height: 1.3rem;
+    margin: 0 0.1rem 0.1rem 0;
+    background: url(../images/lf1.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.left div:nth-child(2){
+    width: 2.2rem;
+    height: 1.3rem;
+    margin-bottom: 0.1rem;
+    background: url(../images/lf2.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.left div:nth-child(3){
+    width: 2.2rem;
+    height: 1.3rem;
+    margin-right: 0.1rem;
+    background: url(../images/lf3.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.left div:nth-child(4){
+    width: 2.8rem;
+    height: 1.3rem;
+    background: url(../images/lf4.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.adv>a{
+    display: block;
+    width: 1.72rem;
+    height: 2.7rem;
+    float: right;
+    margin-right: 0.3rem;
+}
+.adv>a img{
+    width: 1.72rem;
+    height: 2.7rem;
+}
+
+.men,.women{
+    width: 100%;
+    height: 2.8rem;
+    margin: 0.2rem 0;
+    padding: 0 0.3rem;
+    overflow: hidden;
+}
+.men a.more,.women a.more{
+    float: left;
+    display: block;
+    width: 1.98rem;
+    height: 0.22rem;
+    margin-top: 2.3rem;
+    font-size: 0.22rem;
+    line-height: 0.22rem;
+    text-indent:  0.4rem;
+    color: #f5f5f6;
+}
+.men img,.women img{
+    float: left;
+    width: 2rem;
+    height: 2.4rem;
+    margin: 0.2rem 0.27rem 0 0;
+}
+.men a.pinpai,.women a.pinpai{
+    display: block;
+    width: 2.4rem;
+    height: 0.4rem;
+    background: #494455;
+    margin: 0.2rem 0 0.16rem;
+    float: left;
+    font-size: 0.22rem;
+    line-height: 0.4rem;
+    color: #fff;
+    text-indent: 0.26rem;
+    position: relative;
+}
+.men a.pinpai i,.women a.pinpai i{
+    position: absolute;
+    right: 0.14rem;
+    font-size: 0.22rem;
+}
+.men{
+    background: url(../images/menbg.jpg) no-repeat;
+    background-clip: content-box;
+    background-size: 100% 100%;
+}
+.women{
+    background: url(../images/womenbg.jpg) no-repeat;
+    background-clip: content-box;
+    background-size: 100% 100%;
+}
+.men .icon,.women .icon{
+    width: 2.4rem;
+    height: 0.9rem;
+    float: left;
+}
+.men .icon div,.women .icon div{
+    float: left;
+    position: relative;
+}
+.men .icon div:nth-child(2n+1),.women .icon div:nth-child(2n+1){
+    width: 1.36rem;
+    height: 0.4rem;
+    border-radius: 0.04rem;
+    border: 0.01rem solid #b4b2ba;
+    margin-right: 0.1rem;
+}
+.men .icon div:nth-child(2n+1) img,.women .icon div:nth-child(2n+1) img{
+    display: block;
+    width: 0.64rem;
+    height: 0.23rem;
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: 0;margin: auto;
+}
+.men .icon div:nth-child(1),.men .icon div:nth-child(2),.women .icon div:nth-child(1),.women .icon div:nth-child(2){
+    margin-bottom: 0.1rem;
+}
+.men .icon div:nth-child(2n),.women .icon div:nth-child(2n){
+    width: 0.94rem;
+    height: 0.4rem;
+    border-radius: 0.04rem;
+    border: 0.01rem solid #b4b2ba;
+}
+.men .icon div:nth-child(2n) img,.women .icon div:nth-child(2n) img{
+    display: block;
+    width: 0.41rem;
+    height: 0.28rem;
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: 0;margin: auto;
+}
+
+.hot{
+    width: 100%;
+    height: 5.18rem;
+    padding: 0 0.3rem;
+    background: #f4f4f4;
+    background-clip: content-box;
+    margin: 0.2rem 0 1.5rem;
+    overflow: hidden;
+}
+.hot .logo{
+    width: 100%;
+    height: 0.53rem;
+    margin: 0.35rem 0;
+}
+.hot .logo img{
+    display: block;
+    margin: 0 auto;
+    width: 1.58rem;
+    height: 0.53rem;
+}
+.hot .bar{
+    width: 100%;
+    height: 0.5rem;
+    margin: 0.2rem 0;
+}
+.hot .bar ul{
+    width: 6.5rem;
+    height: 100%;
+    margin: 0 auto;
+    background:#fff;
+}
+.hot .bar ul li{
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.hot .bar ul li a.select{
+    background: #e87800;
+    color: #fff;
+}
+.hot .bar ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0.18rem;
+    text-align: center;
+    line-height: 0.5rem;
+    color: #6a6a6a;
+}
+.hot .content{
+    width: 6.5rem;
+    height: 3rem;
+    margin: 0.2rem auto;
+    padding: 0.16rem 0.2rem;
+    background:#fff;
+}
+.hot .content .pic{
+    width: 2.38rem;
+    height: 2.68rem;
+    border: 0.02rem solid #e5e5e5;
+    float: left;
+    margin-right: 0.3rem;
+}
+.hot .content .pic img{
+    width: 2.34rem;
+    height: 2.64rem;
+}
+.hot .content .info{
+    width: 3.4rem;
+    height: 2.68rem;
+    float: left;
+}
+.hot .content .info h2{
+    font-size: 0.28rem;
+    color: #2d2d2d;
+    line-height: 0.3rem;
+}
+.hot .content .info p:nth-of-type(1){
+    font-size: 0.18rem;
+    line-height: 0.2rem;
+    color: #6a6a6a;
+    margin-top: 0.04rem;
+}
+.hot .content .info p:nth-of-type(2){
+    font-size: 0.18rem;
+    line-height: 0.18rem;
+    color: #6a6a6a;
+}
+.hot .content .info p:nth-of-type(2) span:nth-child(1){
+    color: #e87800;
+    font-size: 0.22rem;
+}
+.hot .content .info p:nth-of-type(2) span:nth-child(2){
+    color: #e87800;
+}
+.hot .content .info p:nth-of-type(2) span:nth-child(3){
+    color: #6a6a6a;
+    text-decoration: line-through;
+}
+.hot .content .info p:nth-of-type(2) i{
+    display: block;
+    float: right;
+    color: #6a6a6a;
+    width: 0.28rem;
+    height: 0.28rem;
+}
+.hot .content .info p:nth-of-type(3){
+    font-size: 0.22rem;
+    line-height: 0.22rem;
+    color: #6a6a6a;
+}
+.hot .content .info p:nth-of-type(3) span{
+    color: #e87800;
+}
+.hot .content .info hr:nth-of-type(1){
+    margin: 0.2rem 0 0.14rem;
+}
+.hot .content .info hr:nth-of-type(2){
+    margin: 0.2rem 0 0.2rem;
+}
+.hot .content .smpic{
+    width: 3.4rem;
+    height: 0.78rem;
+    margin-top: 0.18rem;
+}
+.hot .content .smpic div{
+    float: left;
+    width: 0.78rem;
+    height: 0.78rem;
+    border: 0.01rem solid #e5e5e5;
+    margin-right: 0.09rem;
+}
+.hot .content .smpic div img{
+    display: block;
+    width: 0.76rem;
+    height: 0.76rem;
+}
+.hot .content .smpic div:last-child{
+    margin-right: 0;
+}
+
+.nav{
+    width: 100%;
+    height: 1rem;
+    background: #ededed;
+    position: fixed;
+    bottom: 0;
+}
+.nav ul{
+    width: 100%;
+    height: 100%;
+}
+.nav ul li{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+.nav ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0.2rem;
+    text-align: center;
+    color: #7b7b7b;
+}
+.nav ul li a.select{
+    color: #427bd9;
+}
+.nav ul li a i{
+    display: block;
+    width: 0.34rem;
+    height: 0.34rem;
+    margin: 0.2rem auto 0.1rem;
+}

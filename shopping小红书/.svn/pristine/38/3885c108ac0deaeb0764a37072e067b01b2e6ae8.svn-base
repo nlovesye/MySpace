@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小红书-目的地-韩国</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/mobile-reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+
+    <!-- 导航 -->
+<!--     <div class="nav">
+        <div class="title">
+            <span><a href="javascript:;">日本</a></span>
+            <span class="bottom_style"><a href="javascript:;">韩国</a></span>
+            <span><a href="hongkong.html">香港</a></span>
+            <span><a href="america.html">美国</a></span>
+            <span><a href="france.html">法国</a></span>
+            <span><a href="koel.html">澳洲</a></span>
+            <span><a href="koel.html">澳洲</a></span>
+            <span><a href="england.html">英国</a></span>
+            <span><a href="korean.html">泰国</a></span>
+            <span><a href="korean.html">台湾</a></span>
+            <span><a href="korean.html">意大利</a></span>
+            <span><a href="korean.html">德国</a></span>
+            <span><a href="korean.html">更多</a></span>
+        </div>
+    </div> -->
+    <div class="menu">
+        <div class="menu_left">
+            <div class="one">
+                <img src="image/01.jpg" alt="">
+                <p>韩国火鸡面/芝士火鸡面/炸酱面</p>
+                <p>最近炒鸡火的韩国方便面 估计你们都有吃 听说特别辣一直没敢买 我一个人在外面待久了…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/01a.jpg" alt=""></li>
+                        <li><p>醒了去比利时</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>1</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/03.jpg" alt="">
+                <p>韩国吃得最棒的帝王蟹</p>
+                <p>推荐两个在韩国吃帝王蟹的地方。第一个在济州岛女人街，是导游姐姐推荐的…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/03a.jpg" alt=""></li>
+                        <li><p>M是凶手</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>320</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/05.jpg" alt="">
+                <p>EGLIPS 马卡龙蜜粉饼</p>
+                <p>Pony大神种草的蜜粉饼，样子小巧可爱。本来是买来补妆的，但是这个粉扑实在…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/20.jpg" alt=""></li>
+                        <li><p>vakl</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>257</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="menu_right">
+            <div class="one">
+                <img src="image/02.jpg" alt="">
+                <p>终于吃到了超好吃的韩国酱蟹</p>
+                <p>之前在小红书上看到别人分享韩国美食，每每看到韩国酱蟹就想流口水，所以这次来…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/02a.jpg" alt=""></li>
+                        <li><p>大九九</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>22</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/04.jpg" alt="">
+                <p>粉色初恋 系韩国咖啡馆|VANT 36.5 CAFF</p>
+                <p>对于喜欢韩流的美少女们去韩国旅行选择住处的话，弘大一定是置顶推荐…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/5.jpg" alt=""></li>
+                        <li><p>你爱我如风</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>10</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="one">
+                <img src="image/39.jpg" alt="">
+                <p>喂养工具</p>
+                <p>不知道肚子里的妖精喜欢哪种口感买了三个当红的牌子希望她能喜欢其中一个我就放心了…</p>
+                <div class="writer">
+                    <ul>
+                        <li><img src="image/14.jpg" alt=""></li>
+                        <li><p>小萝卜卜卜卜</p></li>
+                        <li><img src="image/like.png" alt=""></li>
+                        <li><p>23</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="js/base.js"></script>
+</body>
+</html>

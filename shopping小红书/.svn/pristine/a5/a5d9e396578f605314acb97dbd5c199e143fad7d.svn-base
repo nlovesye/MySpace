@@ -1,0 +1,379 @@
+html,body {  font-size:14px; height:100%;font-family: "黑体 Helvetica Neue,Helvetica,Arial,sans-serif";background: #f5f8fa;  }
+.hover{ opacity: .8;}
+body{background: #f5f8fa;}
+.flex-wrap{ display: -webkit-box;	display: -webkit-flex;	display: flex; }
+.flex-con{     -webkit-box-flex: 1;     -webkit-flex: 1;    flex: 1;}
+.flex-vertical{ -webkit-box-orient: vertical;-webkit-flex-flow: column;flex-flow: column;}
+
+.clearfix{
+    zoom: 1;
+}
+.clearfix:after{
+    width: 0;
+    height: 0;
+    content: "";
+    clear: both;
+    visibility: hidden;
+    display: block;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+/*.border-t,
+.border-b{ position:relative;  }
+.border-t:before,
+.border-b:after{content: '';  position: absolute;  left: 0;  top:0;  background: #ddd;   right:0;    height: 1px;     -webkit-transform: scaleY(0.5);  transform: scaleY(0.5); -webkit-transform-origin: 0 0;  transform-origin: 0 0; }
+.border-b:after{ top:auto; bottom:0;  }*/
+
+#wrap{ height: 100%;}
+
+header{ 
+    background-color: #fff;  
+    height: 0.88rem; 
+    text-align: center; 
+}
+header a.logo{
+    width: 20%;
+    float: left;
+    display: block;
+    height: 100%;
+    position: relative;
+}
+header a.logo img{
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    margin: auto;
+}
+header ul.nav{
+    float: left;
+    width: 60%;
+    margin-left: 10%;
+}
+header ul.nav li{
+    float: left;
+    width: 25%;
+}
+header ul.nav li a{
+    font-size: 0.28rem;
+    line-height: 0.88rem;
+    color: #000;
+}
+header ul.nav li a.active{
+    color: #ff2741;
+}
+header a.search{
+    width: 10%;
+    float: left;
+    font-size: 0.42rem;
+    line-height: 0.88rem;
+    color: rgba(153,153,153,1);
+}
+
+.banner{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.banner ul.pic{
+    width: 400%;
+}
+.banner ul.pic li{
+    float: left;
+    width: 25%;
+}
+.banner ul.pic li a{
+    width: 100%;
+}
+.banner ul.pic li img{
+    max-width: 100%;
+    height: auto;
+}
+.banner .number{
+    position: absolute;
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 0.32rem;
+    right: 0.2rem;
+    bottom: 0.2rem;
+}
+
+.lifestyle{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 0.2rem;
+}
+.lifestyle h2{
+    font-size: 0.28rem;
+    color: #333;
+    font-weight: 400;
+    text-indent: 0.3rem;
+    line-height: 0.96rem;
+}
+.lifestyle h2 i{
+    font-style: normal;
+    font-size: 0.24rem;
+    color: #ccc;
+    font-weight: lighter;
+}
+.lifestyle ul{
+    width: 100%;
+}
+.lifestyle ul li{
+    float: left;
+    width: 21%;
+    height: 1.5rem;
+    margin: 0 2% 2%;
+    outline: 0.01rem solid #ddd;
+}
+.lifestyle ul li a{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.lifestyle ul li a img{
+    max-width: 0.88rem;
+    margin: 0.1rem 0;
+}
+.lifestyle ul li a h3{
+    font-size: 0.24rem;
+    line-height: 150%;
+    color: #666;
+}
+.lifestyle ul li a p{
+    margin: 0.2rem auto 0.2rem;
+    font-size: 0.2rem;
+    line-height: 300%;
+    color: #666;
+    border-bottom: 0.01rem solid #ccc;
+    width: 0.9rem;
+}
+
+.destinations{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 0.2rem;
+    position: relative;
+}
+.destinations h2{
+    font-size: 0.28rem;
+    color: #333;
+    font-weight: 400;
+    text-indent: 0.3rem;
+    line-height: 0.96rem;
+}
+.destinations h2 i{
+    font-style: normal;
+    font-size: 0.24rem;
+    color: #ccc;
+    font-weight: lighter;
+}
+.destinations a.more{
+    position: absolute;
+    right: 0.22rem;
+    top: 0;
+    line-height: 0.96rem;
+    font-size: 0.24rem;
+    color: #999;
+}
+.destinations a.more i{
+    font-size: 0.2rem;
+    line-height: 0.9rem;
+}
+.destinations ul{
+    padding-left: 0.3rem;
+    overflow-x:scroll; 
+    overflow-y:hidden; 
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+}
+.destinations ul li{
+    display: inline-block;
+    margin-right: 0.26rem;
+    border-radius: 0.18rem;
+    overflow: hidden;
+}
+.destinations ul li a img{
+    max-width: 2rem;
+}
+
+.brands{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 0.2rem;
+    position: relative;
+}
+.brands h2{
+    font-size: 0.28rem;
+    color: #333;
+    font-weight: 400;
+    text-indent: 0.3rem;
+    line-height: 0.96rem;
+}
+.brands h2 i{
+    font-style: normal;
+    font-size: 0.24rem;
+    color: #ccc;
+    font-weight: lighter;
+}
+.brands a.more{
+    position: absolute;
+    right: 0.22rem;
+    top: 0;
+    line-height: 0.96rem;
+    font-size: 0.24rem;
+    color: #999;
+}
+.brands a.more i{
+    font-size: 0.2rem;
+    line-height: 0.9rem;
+}
+.brands ul{
+    padding-left: 0.3rem;
+    overflow-x:scroll; 
+    overflow-y:hidden; 
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+}
+.brands ul li{
+    display: inline-block;
+    margin-right: 0.26rem;
+    border-radius: 0.18rem;
+    overflow: hidden;
+}
+.brands ul li a img{
+    max-width: 2rem;
+}
+
+.boards{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 0.2rem;
+    position: relative;
+}
+.boards h2{
+    font-size: 0.28rem;
+    color: #333;
+    font-weight: 400;
+    text-indent: 0.3rem;
+    line-height: 0.96rem;
+}
+.boards h2 i{
+    font-style: normal;
+    font-size: 0.24rem;
+    color: #ccc;
+    font-weight: lighter;
+}
+.boards .list{
+    margin-bottom: 0.2rem;
+    position: relative;
+    overflow: hidden;
+}
+.boards .list a{
+    display: block;
+    width: 7.1rem;
+    border: 0.01rem solid #eee;
+    margin: 0 auto 0.2rem;
+}
+.boards .list a h3{
+    font-size: 0.28rem;
+    line-height: 140%;
+    color: #333;
+    font-weight: 400;
+    margin: 0.2rem 0;
+    text-indent: 0.3rem;
+}
+.boards .list a .info{
+    font-size: 0.24rem;
+    color: #999;
+    padding-left: 0.3rem;
+}
+.boards .list a .info span{
+    margin-right: 0.1rem;
+}
+.boards .list a .pic{
+    padding-left: 0.3rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.2rem;
+    height: 1.4rem;
+    zoom: 1;
+}
+.boards .list a .pic img{
+    max-width: 100%;
+}
+.boards .list a .pic div{
+    float: left;
+    margin-right: 0.3rem;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+.boards .list a .author{
+    height: 0.8rem;
+    margin-top: 0.2rem;
+    position: relative;
+    line-height: 0.8rem;
+    font-size: 0.24rem;
+    color: #999;
+}
+.boards .list a .author img{
+    float: left;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0.15rem 0.2rem 0.15rem 0.3rem;
+}
+.boards .more{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: .88rem;
+    line-height: .88rem;
+    font-size: .28rem;
+    color: #999;
+    text-align: center;
+    border-top: 0.01rem solid #eee;
+}
+
+/*--------------------search页面--------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+.search{
+    width: 100%;
+    height: 1.2rem;
+    background:#fff;
+    border-top: 0.01rem solid #eee;
+    overflow: hidden;
+}
+.search .txt{
+    width: 90%;
+    height: 0.5rem;
+    border-radius: 0.1rem;
+    margin: 0.3rem auto;
+    background: rgba(235,235,235,1);
+    line-height: 0.5rem;
+    position: relative;
+}
+.search .txt i{
+    width: 5%;
+    display: block;
+    position: absolute;
+    font-size: 0.24rem;
+    margin: 0 0.04rem 0 0.1rem;
+    color: #999;
+    left: 0;
+}
+.search .txt input{
+    border: none;
+    background: transparent;
+    line-height: 0.5rem;
+    position: absolute;
+    width: 93%;
+    right: 0;
+    font-size: 0.2rem;
+}
+.search .txt input:focus{
+    outline: none;
+}
