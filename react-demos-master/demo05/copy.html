@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>copy</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="show"></div>
+    <script type="text/babel">
+    var List = React.createClass({
+        render:function(){
+            return (
+                <ul>
+                    {
+                        React.Children.map(this.props.children,function(item){
+                            return <li>{item}</li>;
+                        })
+                    }
+                </ul>
+                );
+        }
+    });
+
+    ReactDOM.render(
+        <List>
+            <span>列表项1</span>
+            <span>列表项2</span>
+            <span>列表项3</span>
+            <span>列表项4</span>
+        </List>,
+        document.getElementById("show")
+    );
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>copy</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="show"></div>
+    <script type="text/babel">
+    var H1 = React.createClass({
+        render:function(){
+            return <h1>{this.props.txt}</h1>;
+        }
+    });
+
+    ReactDOM.render(
+        <H1 txt="h1标题" />,
+        document.getElementById("show")
+    );
+    </script>
+</body>
+</html>
